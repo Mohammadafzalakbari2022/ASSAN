@@ -16,7 +16,7 @@ services:
     branch: main
     dockerfilePath: ./Dockerfile
     dockerContext: .
-    autoDeploy: true
+    autoDeployTrigger: commit
     healthCheckPath: /ready
     envVars:
       - key: APP_ENV

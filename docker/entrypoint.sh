@@ -42,7 +42,6 @@ if [ "${RUN_SETUP:-true}" = "true" ]; then
 fi
 
 php artisan config:cache || true
-php artisan route:cache || true
 php artisan view:cache || true
 
 chown -R www-data:www-data storage bootstrap/cache public/aimeos
