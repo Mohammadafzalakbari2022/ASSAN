@@ -9,6 +9,22 @@ sed -i "s/\*:80/*:${PORT}/" /etc/apache2/sites-available/000-default.conf
 mkdir -p storage/framework/cache/data storage/framework/sessions storage/framework/views bootstrap/cache public/aimeos
 chown -R www-data:www-data storage bootstrap/cache public/aimeos
 
+if [ -n "${DATABASE_URL:-}" ] && [ -z "${DB_HOST:-}" ]; then
+    echo "=== Deriving DB connection settings from DATABASE_URL ==="
+    eval "$(php -r '
+        $u = getenv("DATABASE_URL");
+        $p = parse_url($u);
+        $out = array(
+            "DB_HOST" => isset($p["host"]) ? $p["host"] : "127.0.0.1",
+            "DB_PORT" => isset($p["port"]) ? $p["port"] : "5432",
+            "DB_DATABASE" => ltrim(isset($p["path"]) ? $p["path"] : "", "/"),
+            "DB_USERNAME" => rawurldecode(isset($p["user"]) ? $p["user"] : ""),
+            "DB_PASSWORD" => rawurldecode(isset($p["pass"]) ? $p["pass"] : ""),
+        );
+        foreach($out as $k => $v) { echo "export $k=" . escapeshellarg($v) . "\n"; }
+    ')"
+fi
+
 if [ "${RUN_SETUP:-true}" = "true" ]; then
     echo "=== ASSAN database setup ==="
 
