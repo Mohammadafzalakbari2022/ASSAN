@@ -6,6 +6,11 @@ PORT="${PORT:-80}"
 sed -i "s/Listen 80/Listen ${PORT}/" /etc/apache2/ports.conf
 sed -i "s/\*:80/*:${PORT}/" /etc/apache2/sites-available/000-default.conf
 
+# serve the Laravel public directory as Apache document root
+sed -ri -e 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/000-default.conf /etc/apache2/apache2.conf
+echo "ServerName localhost" > /etc/apache2/conf-available/servername.conf
+a2enconf servername >/dev/null 2>&1 || true
+
 mkdir -p storage/framework/cache/data storage/framework/sessions storage/framework/views bootstrap/cache public/aimeos
 chown -R www-data:www-data storage bootstrap/cache public/aimeos
 
