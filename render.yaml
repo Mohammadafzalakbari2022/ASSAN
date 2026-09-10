@@ -29,7 +29,7 @@ services:
         fromService:
           type: web
           name: assan
-          property: url
+          envVarKey: RENDER_EXTERNAL_HOSTNAME
       - key: DB_CONNECTION
         value: pgsql
       - key: DATABASE_URL

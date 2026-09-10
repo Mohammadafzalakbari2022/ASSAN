@@ -41,6 +41,11 @@ if [ "${RUN_SETUP:-true}" = "true" ]; then
     echo "=== ASSAN database setup finished ==="
 fi
 
+if [ -n "${RENDER_EXTERNAL_HOSTNAME:-}" ] && [[ "${APP_URL:-}" != http* ]]; then
+    export APP_URL="https://${RENDER_EXTERNAL_HOSTNAME}"
+    echo "=== APP_URL set to ${APP_URL} ==="
+fi
+
 php artisan config:cache || true
 php artisan view:cache || true
 
