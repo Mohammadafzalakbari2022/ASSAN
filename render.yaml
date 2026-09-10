@@ -45,8 +45,8 @@ services:
       - key: LOG_CHANNEL
         value: stderr
       - key: APP_KEY
-        sync: false
+        value: "base64:/qXJkRnCj7qxzjBBxyM5p10/QrI4YAxnDHcRRSP/VwY="
       - key: ADMIN_EMAIL
-        sync: false
+        value: "afzalakbari2017@gmail.com"
       - key: ADMIN_PASSWORD
-        sync: false
+        value: "Princekhan@2020"
