@@ -1,3 +1,84 @@
+# ASSAN
+
+Initial test project based on Aimeos.
+
+## Current status
+
+Initial Aimeos evaluation — no custom branding/features yet. This repository
+contains the untouched official Aimeos Laravel shop,
+[imported from the upstream project](https://github.com/aimeos/aimeos).
+
+## Local requirements
+
+- PHP >= 8.2 (tested with PHP 8.3.32)
+- Composer >= 2.2 (tested with Composer 2.10.2)
+- Database: MySQL >= 5.7.8, MariaDB >= 10.2.2, PostgreSQL 9.6+, SQL Server 2019+
+- Git (tested with git 2.54.0)
+- Node/npm only needed if the frontend bundle is rebuilt (not required to run)
+
+## Local setup
+
+```bash
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan migrate
+php artisan aimeos:setup --option=setup/default/demo:1
+php artisan serve
+```
+
+## Storefront
+
+Local URL: `http://127.0.0.1:8000`
+
+Expected route: storefront home and `/shop`
+
+## Admin
+
+Local URL: `http://127.0.0.1:8000/admin`
+
+Create an admin account with:
+
+```bash
+php artisan aimeos:account --super you@example.com
+```
+
+## Cloud test
+
+The cloud test runs on Render (free plan) using Docker and free PostgreSQL.
+Deployment configuration lives in:
+
+- `render.yaml` — Render blueprint (web service + PostgreSQL)
+- `Dockerfile` — PHP 8.3 Apache container
+- `docker/entrypoint.sh` — port handling, database setup, server start
+
+## Important
+
+This is an evaluation deployment, not production hosting:
+
+- Render free web services sleep after 15 minutes without traffic; the first
+  request after sleep can take about a minute.
+- Render free PostgreSQL expires after the free period and has no backups.
+- Render free web services have an ephemeral filesystem; uploaded files are
+  not guaranteed to survive restarts.
+- `.env` is never committed.
+
+## Upstream
+
+Official Aimeos repository: https://github.com/aimeos/aimeos
+
+## License
+
+Aimeos is licensed under the terms of the MIT and LGPLv3 licenses. All
+upstream license files and notices are preserved in this repository. ASSAN
+does not claim ownership of the original Aimeos code.
+
+---
+
+Below this line is the original, unchanged upstream README.
+
+---
+
 <p align="center">
     <a href="https://aimeos.org/">
         <img src="https://aimeos.org/fileadmin/template/icons/logo.png" alt="Aimeos logo" title="Aimeos" align="center" />
