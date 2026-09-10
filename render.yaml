@@ -1,0 +1,52 @@
+databases:
+  - name: assan-db
+    databaseName: assan
+    user: assan
+    plan: free
+    region: frankfurt
+    postgresMajorVersion: "16"
+
+services:
+  - type: web
+    name: assan
+    runtime: docker
+    repo: https://github.com/Mohammadafzalakbari2022/ASSAN
+    plan: free
+    region: frankfurt
+    branch: main
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    autoDeploy: true
+    healthCheckPath: /ready
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: "false"
+      - key: APP_NAME
+        value: Aimeos
+      - key: APP_URL
+        fromService:
+          type: web
+          name: assan
+          property: url
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DATABASE_URL
+        fromDatabase:
+          name: assan-db
+          property: connectionString
+      - key: SESSION_DRIVER
+        value: file
+      - key: CACHE_DRIVER
+        value: file
+      - key: QUEUE_CONNECTION
+        value: sync
+      - key: LOG_CHANNEL
+        value: stderr
+      - key: APP_KEY
+        sync: false
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
