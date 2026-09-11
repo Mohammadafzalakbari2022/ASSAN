@@ -46,7 +46,24 @@ if [ "${RUN_SETUP:-true}" = "true" ]; then
     done
 
     if [ ${migrated} -eq 1 ]; then
-        php artisan aimeos:setup --option=setup/default/demo:1
+        # The demo setup tasks delete and re-create all "demo-*" catalog nodes,
+        # which changes their IDs on every boot and breaks the category URLs.
+        # Seed them only once; afterwards run setup without the demo option so
+        # the schema stays up-to-date but the catalog data keeps stable IDs.
+        demo_count="$(DATABASE_URL="$DATABASE_URL" php -r '
+            $u = getenv( "DATABASE_URL" );
+            $p = parse_url( $u );
+            $dsn = "pgsql:host=" . ( $p["host"] ?? "127.0.0.1" ) . ";port=" . ( $p["port"] ?? "5432" ) . ";dbname=" . ltrim( $p["path"] ?? "", "/" );
+            $pdo = new PDO( $dsn, rawurldecode( $p["user"] ?? "" ), rawurldecode( $p["pass"] ?? "" ) );
+            $sql = "SELECT COUNT(*) FROM mshop_catalog WHERE code LIKE " . $pdo->quote( "demo-%" ) . " AND level = 1";
+            echo (int) $pdo->query( $sql )->fetchColumn();
+        ' 2>/dev/null || true)"
+
+        if [ "${demo_count:-0}" != "0" ]; then
+            php artisan aimeos:setup
+        else
+            php artisan aimeos:setup --option=setup/default/demo:1
+        fi
         php artisan aimeos:clear
 
         if [ -n "${ADMIN_EMAIL:-}" ] && [ -n "${ADMIN_PASSWORD:-}" ]; then
