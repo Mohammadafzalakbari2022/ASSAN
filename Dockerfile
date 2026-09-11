@@ -24,15 +24,6 @@ RUN composer install --no-dev --no-interaction --no-progress --prefer-dist --opt
     && mkdir -p storage/framework/cache/data storage/framework/sessions storage/framework/views bootstrap/cache public/aimeos \
     && chown -R www-data:www-data storage bootstrap/cache public/aimeos
 
-# The admin bundle's CKEditor plugin list references an undeclared "Markdown"
-# identifier, which aborts the whole global registration (map/chart widgets
-# never load). The feature is disabled (markdown:false) anyway, so drop it.
-RUN f=$(find vendor/aimeos/ai-admin-jqadm -name vendor.js -type f | head -1) \
-    && test -n "$f" \
-    && sed -i 's/TH,Markdown,LH/TH,LH/' "$f" \
-    && ! grep -q 'TH,Markdown,LH' "$f" \
-    && echo "Admin vendor.js patched: $f"
-
 EXPOSE 80
 
 ENTRYPOINT ["/var/www/html/docker/entrypoint.sh"]

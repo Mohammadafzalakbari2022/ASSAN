@@ -70,6 +70,21 @@ fi
 php artisan config:cache || true
 php artisan view:cache || true
 
+# The admin panel's JS bundle references an undeclared "Markdown" CKEditor
+# plugin, which aborts registration of the map/chart widgets and breaks the
+# admin UI. It is disabled (markdown:false) anyway, so drop it from the list.
+f=$(find vendor/aimeos/ai-admin-jqadm -name vendor.js -type f | head -1 || true)
+if [ -z "$f" ]; then
+    echo "ERROR: admin vendor.js not found for patch"
+    exit 1
+fi
+sed -i 's/TH,Markdown,LH/TH,LH/' "$f"
+if grep -q 'TH,Markdown,LH' "$f"; then
+    echo "ERROR: admin vendor.js patch did not apply: $f"
+    exit 1
+fi
+echo "Admin vendor.js patched: $f"
+
 chown -R www-data:www-data storage bootstrap/cache public/aimeos
 
 exec apache2-foreground
