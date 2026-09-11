@@ -65,6 +65,7 @@ if [ "${RUN_SETUP:-true}" = "true" ]; then
             php artisan aimeos:setup --option=setup/default/demo:1
         fi
         php artisan aimeos:clear
+        php artisan asaan:setup
 
         if [ -n "${ADMIN_EMAIL:-}" ] && [ -n "${ADMIN_PASSWORD:-}" ]; then
             php artisan aimeos:account --super "${ADMIN_EMAIL}" --password "${ADMIN_PASSWORD}"

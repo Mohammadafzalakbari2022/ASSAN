@@ -63,7 +63,7 @@ return array_replace_recursive( $multiroute, $multishop + [
 
 	'apc_enabled' => false, // enable for maximum performance if APCu is available
 	'apc_prefix' => 'aimeos:', // prefix for caching config and translation in APCu
-	'num_formatter' => 'Locale', // locale based number formatter (alternative: "Standard")
+	'num_formatter' => 'Standard', // locale based number formatter (alternative: "Standard"); "Standard" keeps Western digits for AFN prices
 	'pcntl_max' => 4, // maximum number of parallel command line processes when starting jobs
 	'version' => env( 'APP_VERSION', 1 ), // shop CSS/JS file version
 	'roles' => ['admin', 'editor'], // user groups allowed to access the admin backend
@@ -73,9 +73,9 @@ return array_replace_recursive( $multiroute, $multishop + [
 		// Docs: https://aimeos.org/docs/latest/laravel/extend/#custom-routes
 		// Multi-sites: https://aimeos.org/docs/latest/laravel/customize/#multiple-shops
 		'admin' => ['prefix' => 'admin', 'middleware' => ['web']],
-		'jqadm' => ['prefix' => 'admin/{site}/jqadm', 'middleware' => ['web', 'auth']],
+		'jqadm' => ['prefix' => 'admin/{site}/jqadm', 'middleware' => ['web', 'auth', 'asan.guard']],
 		'graphql' => ['prefix' => 'admin/{site}/graphql', 'middleware' => ['web', 'auth']],
-		'jsonadm' => ['prefix' => 'admin/{site}/jsonadm', 'middleware' => ['web', 'auth']],
+		'jsonadm' => ['prefix' => 'admin/{site}/jsonadm', 'middleware' => ['web', 'auth', 'asan.guard']],
 		'jsonapi' => ['prefix' => 'jsonapi', 'middleware' => ['web', 'api']],
 		'account' => ['prefix' => $prefix . 'profile', 'middleware' => ['web', 'auth']],
 		'default' => ['prefix' => $prefix . 'shop', 'middleware' => ['web']],
@@ -194,7 +194,7 @@ return array_replace_recursive( $multiroute, $multishop + [
 		]
 	],
 
-	'client' => [
+'client' => [
 		'html' => [
 			'basket' => [
 				'cache' => [
@@ -202,9 +202,11 @@ return array_replace_recursive( $multiroute, $multishop + [
 				],
 			],
 			'common' => [
-				'cache' => [
-					// 'force' => true // enforce caching for logged in users
+				'format' => [
+					'separator1000' => ',',
+					'separatorDecimal' => '.',
 				],
+				// 'force' => true // enforce caching for logged in users
 			],
 			'catalog' => [
 				'lists' => [
@@ -235,8 +237,48 @@ return array_replace_recursive( $multiroute, $multishop + [
 		'en' => [
 			'client' => [
 				'Suppliers' => ['Brands']
-			]
-		]
+			],
+			'currency' => [
+				'AFN' => ['AFN'],
+			],
+			'language' => [
+				'fa' => ['Dari'],
+				'ps' => ['Pashto'],
+			],
+			'country' => [
+				'AF' => ['Afghanistan'],
+			],
+		],
+		'fa' => [
+			'client' => [
+				'Suppliers' => ['برندها'],
+			],
+			'currency' => [
+				'AFN' => ['افغانی'],
+			],
+			'language' => [
+				'fa' => ['دری'],
+				'ps' => ['پښتو'],
+			],
+			'country' => [
+				'AF' => ['افغانستان'],
+			],
+		],
+		'ps' => [
+			'client' => [
+				'Suppliers' => ['برندونه'],
+			],
+			'currency' => [
+				'AFN' => ['افغانی'],
+			],
+			'language' => [
+				'fa' => ['دری'],
+				'ps' => ['پښتو'],
+			],
+			'country' => [
+				'AF' => ['افغانستان'],
+			],
+		],
 	],
 
 	'madmin' => [

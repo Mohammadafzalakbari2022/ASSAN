@@ -1,0 +1,144 @@
+<?php
+
+/**
+ * @license LGPLv3, http://opensource.org/licenses/LGPL-3.0
+ * @copyright Metaways Infosystems GmbH, 2013
+ * @copyright Aimeos (aimeos.org), 2015-2026
+ */
+
+$enc = $this->encoder();
+
+
+/** client/html/catalog/stock/level/low
+ * The number of products in stock below it's considered a low stock level
+ *
+ * There are four stock levels available:
+ *
+ * * unlimited
+ * * high
+ * * low
+ * * out
+ *
+ * If no stock information is available, the number of products is considered
+ * unlimited, which is useful for digital products. Zero or less products in
+ * stock means out of stock while a quantity of products above the option value
+ * represents a high stock value.
+ *
+ * There can be the case that a stock level is sometimes negative even if only
+ * products that are in stock can be bought. This is due to the time difference
+ * the product is actually ordered and the stock level is decreased. If you've
+ * configured the stock level update every minute, within this minute another
+ * customer can buy the same product that is considered to be still in stock at
+ * this time.
+ *
+ * @param integer Number of products in stock
+ * @since 2014.03
+ * @see client/html/catalog/stock/sort
+ */
+$stockLow = $this->config( 'client/html/catalog/stock/level/low', 5 );
+
+/// Stock string composition with stock type (%1$s, normally left out) and stock level string (%2$s)
+$textStockIn = $this->translate( 'client', 'Stock: %1$s, %2$s' );
+/// Stock string composition with stock type (%1$s, normally left out), stock level string (%2$s) and back in stock date (%3$s)
+$textStockOut = $this->translate( 'client', 'Stock: %1$s, %2$s, back on %3$s' );
+$dateFormat = $this->translate( 'client', 'Y-m-d' );
+$dateMode = $this->config( 'date/customer-mode', 'afghan' );
+
+$textStock = array(
+	/// code for "product is out of stock"
+	'stock-out' => $this->translate( 'client', 'stock-out' ),
+	/// code for "only a few products are available"
+	'stock-low' => $this->translate( 'client', 'stock-low' ),
+	/// code for "product is in stock"
+	'stock-high' => $this->translate( 'client', 'stock-high' ),
+	/// code for "product is available (without stock limit)"
+	'stock-unlimited' => $this->translate( 'client', 'stock-unlimited' ),
+);
+
+
+$result = [];
+
+foreach( $this->get( 'stockItemsByProducts', [] ) as $prodId => $list )
+{
+	$stocks = array( 'stock-unlimited' => '', 'stock-high' => '', 'stock-low' => '', 'stock-out' => '' );
+
+	foreach( $list as $item )
+	{
+		$stockType = 'stocktype:' . $item->getType();
+
+		if( !isset( $typeText[$stockType] ) ) {
+			$typeText[$stockType] = $this->translate( 'client/code', $stockType );
+		}
+
+		$stocklevel = $item->getStockLevel();
+
+		if( $stocklevel === null ) {
+			$level = 'stock-unlimited'; $link = 'http://schema.org/InStock';
+		} elseif( $stocklevel <= 0 ) {
+			$level = 'stock-out'; $link = 'http://schema.org/OutOfStock';
+		} elseif( $stocklevel <= $stockLow ) {
+			$level = 'stock-low'; $link = 'http://schema.org/LimitedAvailability';
+		} else {
+			$level = 'stock-high'; $link = 'http://schema.org/InStock';
+		}
+
+		if( $stocklevel <= 0 && ( $date = $item->getDateBack() ) != '' )
+		{
+			$text = sprintf( $textStockOut,
+				$typeText[$stockType],
+				$textStock[$level],
+				\App\Support\AsaanDate::formatString( $date, $dateMode )
+			);
+		}
+		else
+		{
+			$text = sprintf( $textStockIn,
+				$typeText[$stockType],
+				$textStock[$level]
+			);
+		}
+
+		$stocks[$level] .= '
+			<div class="stockitem ' . $level . '" data-prodid="' . $enc->attr( $prodId ) . '" title="' . $enc->attr( $textStock[$level] ) . '">
+				<meta itemprop="availability" href="' . $link . '">
+				<div class="stocklevel"></div>
+				<span class="stocktext">' . nl2br( $enc->html( $text ) ) . '</span>
+			</div>
+		';
+	}
+
+	$result[$prodId] = implode( '', $stocks );
+}
+
+
+?>
+// <!--
+var aimeosStockHtml = <?= json_encode( $result, JSON_FORCE_OBJECT | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT ) ?>;
+
+document.querySelectorAll(".aimeos .product .stock-list .articleitem").forEach(function(elem) {
+	var prodid = elem.dataset.prodid;
+
+	if( aimeosStockHtml.hasOwnProperty( prodid ) ) {
+		elem.innerHTML = aimeosStockHtml[prodid];
+	}
+});
+
+document.querySelectorAll(".aimeos .product .selection .select-stock").forEach(function(elem) {
+	var prodid = elem.dataset.prodid;
+
+	if( aimeosStockHtml.hasOwnProperty( prodid ) ) {
+		elem.innerHTML = aimeosStockHtml[prodid];
+	}
+});
+
+document.querySelectorAll(".aimeos .catalog-detail-basket").forEach(function(elem) {
+
+	if( elem.dataset.reqstock && elem.querySelector(".articleitem:first-child .stockitem:first-child .stock-out") ) {
+		var action = elem.querySelector(".addbasket .btn-action")
+		if(action) {
+			action.classList.add("btn-disabled");
+			action.disabled = true;
+		}
+	}
+});
+// -->
