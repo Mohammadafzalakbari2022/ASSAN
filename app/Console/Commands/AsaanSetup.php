@@ -309,6 +309,7 @@ protected $attributes = [
 	{
 		$this->translateProducts( $context );
 		$this->translateCategories( $context );
+		$this->assignCategoryMembers( $context );
 		$this->translateAttributes( $context );
 	}
 
@@ -390,6 +391,94 @@ protected function translateProducts( $context ) : void
 
 			$this->translateItemTexts( $context, $manager, $item, $newLabel, [$faLabel, $psLabel, $faLabel, $psLabel, $faLabel, $psLabel], true );
 		}
+	}
+
+
+	/**
+	 * Links the kitchen products into their renamed subcategories so every
+	 * storefront category page shows matching items instead of an empty list.
+	 */
+	protected function assignCategoryMembers( $context ) : void
+	{
+		$map = [
+			'Cookware set (12 pcs)' => ['Cookware'],
+			'Non-stick frying pan 26 cm' => ['Cookware'],
+			'Chef knife 20 cm' => ['Knives'],
+			'Stainless steel kettle' => ['Appliances'],
+			'Mixing bowl set (5 pcs)' => ['Utensils'],
+			'Vegetable slicing set' => ['Utensils'],
+			'Cast iron pot 24 cm' => ['Bakeware', 'Cookware'],
+			'Gift voucher' => ['Vouchers'],
+			'Knife and cutting board set' => ['Knives'],
+			'Kitchen utensils set' => ['Utensils', 'Storage'],
+			'Kitchen bundle' => ['Cooking sets'],
+			'New kitchenware event' => ['Events'],
+			'Discount' => ['Misc'],
+		];
+
+		$cmanager = MShop::create( $context, 'catalog' );
+		$catIds = [];
+
+		foreach( $cmanager->search( $cmanager->filter()->add( 'catalog.status', '>=', 0 ) ) as $item )
+		{
+			$catIds[$item->getLabel()] = $item->getId();
+		}
+
+		$manager = MShop::create( $context, 'product' );
+		$added = 0;
+		$touched = [];
+
+		foreach( $map as $label => $cats )
+		{
+			$filter = $manager->filter()->add( 'product.label', '==', $label )->add( 'product.status', '>=', 0 );
+			$items = $manager->search( $filter, ['catalog'] );
+
+			foreach( $items as $item )
+			{
+				$pos = 0;
+				$existing = [];
+
+				foreach( $item->getListItems( 'catalog', 'default', null, false ) as $listItem )
+				{
+					$existing[] = $listItem->getRefId();
+					$pos = max( $pos, $listItem->getPosition() );
+				}
+
+				$itemAdded = false;
+
+				foreach( $cats as $cat )
+				{
+					$catId = $catIds[$cat] ?? null;
+
+					if( $catId === null || in_array( $catId, $existing ) ) {
+						continue;
+					}
+
+					$listItem = $manager->createListItem()->setType( 'default' )->setRefId( $catId )->setPosition( ++$pos );
+					$item->addListItem( 'catalog', $listItem );
+					$existing[] = $catId;
+					$added++;
+					$itemAdded = true;
+				}
+
+				if( $itemAdded )
+				{
+					$manager->save( $item );
+					$touched[$item->getId()] = $item;
+				}
+			}
+		}
+
+		if( $added > 0 ) {
+			$this->info( sprintf( 'Products linked to kitchen categories: %1$d new product-category links', $added ) );
+		}
+
+		// The storefront lists products through the product index, so the
+		// category memberships must be reindexed to become visible. Cheap and
+		// idempotent, therefore run on every pass to heal stale indexes too.
+		$context->config()->set( 'mshop/index/manager/domains', ['text', 'price', 'media', 'attribute', 'supplier', 'catalog'] );
+		MShop::create( $context, 'index' )->rebuild();
+		$this->info( sprintf( 'Product index rebuilt (%1$d products in pass)', $added ? count( $touched ) : 0 ) );
 	}
 
 
