@@ -326,7 +326,7 @@ protected $attributes = [
 			// languages/currencies after the first page stay behind forever.
 			do
 			{
-				$filter = $manager->filter()->slice( 0, 500 )->order( $key . '.code' );
+				$filter = $manager->filter()->slice( 0, 500 );
 				$found = false;
 
 				foreach( $manager->search( $filter ) as $item )
