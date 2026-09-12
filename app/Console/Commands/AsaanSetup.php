@@ -13,6 +13,7 @@ use Aimeos\MShop;
  * - Enables the 3 languages: Dari (fa), Pashto (ps), English (en)
  * - Adds the AFN currency
  * - Creates the locale matrix: (fa, ps, en) x (AFN, USD), default fa + AFN
+ * - Seeds an AFN price for every product from its USD price (rate: SHOP_AFN_RATE)
  * - Sets the site label to "ASAAN" and default customer date mode to Afghan
  * - Replaces the demo catalog with a kitchen-tools store and translates it
  * - Points all media at the ASAAN.af.png brand image, hero banners at kitchen photos
@@ -140,6 +141,7 @@ protected $attributes = [
 		$this->addCurrencies( $scontext );
 		$this->updateSite( $scontext, $site );
 		$this->createLocales( $scontext, $site );
+		$this->seedPrices( $scontext );
 		$this->translateCatalog( $scontext );
 		$this->seedBrandMedia( $scontext );
 		$this->seedBrandAssets();
@@ -299,6 +301,88 @@ protected $attributes = [
 				$manager->save( $item );
 				$this->info( sprintf( 'Locale row created: %1$s (%2$s)', $key, $key === 'fa/AFN' ? 'default' : $position ) );
 			}
+		}
+	}
+
+
+	/**
+	 * Seeds an AFN price row for every product from its USD price.
+	 *
+	 * The storefront has no currency converter, so each currency needs its own
+	 * price. Products only have USD prices, which breaks prices and add-to-basket
+	 * in the default AFN locale. This creates whole-afghani prices at the
+	 * configured rate (SHOP_AFN_RATE), idempotent: products that already have an
+	 * AFN price are left untouched so admin edits survive re-runs.
+	 */
+	protected function seedPrices( $context ) : void
+	{
+		$rate = (float) ( env( 'SHOP_AFN_RATE', 63 ) ?: 63 );
+		$manager = MShop::create( $context, 'product' );
+		$priceManager = MShop::create( $context, 'price' );
+
+		$filter = $manager->filter()->add( 'product.status', '>=', 0 );
+		$seeded = 0;
+
+		foreach( $manager->search( $filter, ['price'] ) as $item )
+		{
+			$usdPrices = [];
+			$hasAfn = false;
+
+			foreach( $item->getListItems( 'price', null, null, false ) as $listItem )
+			{
+				$ref = $listItem->getRefItem();
+
+				if( $ref === null ) {
+					continue;
+				}
+
+				if( $ref->getCurrencyId() === 'AFN' ) {
+					$hasAfn = true;
+				} elseif( $ref->getCurrencyId() === 'USD' && $ref->getValue() > 0 ) {
+					$usdPrices[] = $listItem;
+				}
+			}
+
+			if( $hasAfn || empty( $usdPrices ) ) {
+				continue;
+			}
+
+			$added = false;
+
+			foreach( $usdPrices as $listItem )
+			{
+				$usd = $listItem->getRefItem();
+
+				$afn = $priceManager->create()
+					->setCurrencyId( 'AFN' )
+					->setType( $usd->getType() )
+					->setStatus( $usd->getStatus() )
+					->setValue( round( $usd->getValue() * $rate ) )
+					->setRebate( round( $usd->getRebate() * $rate ) )
+					->setCosts( round( $usd->getCosts() * $rate ) )
+					->setTaxrate( $usd->getTaxrate() )
+					->setTaxFlag( $usd->getTaxFlag() )
+					->setPrecision( 0 )
+					->setQuantity( $usd->getQuantity() );
+
+				$newList = $manager->createListItem()
+					->setType( $listItem->getType() )
+					->setPosition( $listItem->getPosition() );
+
+				$item->addListItem( 'price', $newList, $afn );
+				$added = true;
+				$seeded++;
+			}
+
+			if( $added ) {
+				$manager->save( $item );
+			}
+		}
+
+		if( $seeded > 0 ) {
+			$this->info( sprintf( 'AFN prices seeded: %1$d price items at %2$s AFN per USD', $seeded, rtrim( $rate, '.0' ) ) );
+		} else {
+			$this->info( 'AFN prices already seeded, nothing to do' );
 		}
 	}
 
