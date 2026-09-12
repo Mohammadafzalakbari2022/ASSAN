@@ -21,15 +21,19 @@ class Asaan
 	protected function fromArray( array $data ) : \Aimeos\MShop\Locale\Item\Site\Iface
 	{
 		$item = $this->context()->locale()->getSiteItem();
-		$config = (array) ( $data['locale.site.config'] ?? [] );
+		$config = (array) $item->getConfig();
 		unset( $config['resource'] );
+
+		$incoming = (array) ( $data['locale.site.config'] ?? [] );
+		unset( $incoming['resource'] );
+		$config = array_replace_recursive( $config, $incoming );
 
 		$files = (array) $this->view()->request()->getUploadedFiles();
 
 		$item = $this->fromArrayIcon( $item, $files );
 		$item = $this->fromArrayLogo( $item, $files );
 
-		return $item->setConfig( array_replace_recursive( $item->getConfig(), $config ) )
+		return $item->setConfig( $config )
 			->setTheme( (string) $data['locale.site.theme'] )
 			->setLabel( (string) $data['locale.site.label'] )
 			->setCode( (string) $data['locale.site.code'] );
