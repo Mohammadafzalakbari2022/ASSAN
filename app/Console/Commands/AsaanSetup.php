@@ -141,6 +141,7 @@ protected $attributes = [
 		$this->addCurrencies( $scontext );
 		$this->updateSite( $scontext, $site );
 		$this->createLocales( $scontext, $site );
+		$this->removeExtras( $scontext );
 		$this->seedPrices( $scontext );
 		$this->translateCatalog( $scontext );
 		$this->seedBrandMedia( $scontext );
@@ -250,7 +251,7 @@ protected $attributes = [
 
 
 	/**
-	 * Creates the locale rows for (fa, ps, en) x (AFN, USD).
+	 * Creates the locale rows for (fa, ps, en) x (AFN, USD) and removes the rest.
 	 */
 	protected function createLocales( $context, string $site ) : void
 	{
@@ -268,13 +269,13 @@ protected $attributes = [
 		$position = 0;
 		$targets = [['fa', 'AFN'], ['fa', 'USD'], ['ps', 'AFN'], ['ps', 'USD'], ['en', 'AFN'], ['en', 'USD']];
 
-		foreach( $existing as $key => $row )
+		foreach( $existing as $row )
 		{
 			if( !in_array( [$row->getLanguageId(), $row->getCurrencyId()], $targets ) )
 			{
-				$row->setStatus( 0 );
-				$manager->save( $row );
-				$this->info( sprintf( 'Locale row disabled: %1$s', $key ) );
+				$key = $row->getLanguageId() . '/' . $row->getCurrencyId();
+				$manager->delete( $row->getId() );
+				$this->info( sprintf( 'Locale row deleted: %1$s', $key ) );
 				unset( $rows[$key] );
 			}
 		}
@@ -301,6 +302,53 @@ protected $attributes = [
 				$manager->save( $item );
 				$this->info( sprintf( 'Locale row created: %1$s (%2$s)', $key, $key === 'fa/AFN' ? 'default' : $position ) );
 			}
+		}
+	}
+
+
+	/**
+	 * Removes all languages except English, Dari and Pashto and all
+	 * currencies except AFN and USD from the shop.
+	 *
+	 * The locale rows for the removed languages/currencies are deleted by
+	 * createLocales() first, so the language/currency catalog entries can be
+	 * removed without breaking the default (fa/AFN) or any other locale row.
+	 */
+	protected function removeExtras( $context ) : void
+	{
+		$languages = ['en', 'fa', 'ps'];
+		$manager = MShop::create( $context, 'locale/language' );
+		$removed = ['language' => [], 'currency' => []];
+
+		foreach( $manager->search( $manager->filter() ) as $item )
+		{
+			if( !in_array( $item->getCode(), $languages ) )
+			{
+				$manager->delete( $item->getId() );
+				$removed['language'][] = $item->getCode();
+			}
+		}
+
+		$currencies = ['AFN', 'USD'];
+		$manager = MShop::create( $context, 'locale/currency' );
+
+		foreach( $manager->search( $manager->filter() ) as $item )
+		{
+			if( !in_array( $item->getCode(), $currencies ) )
+			{
+				$manager->delete( $item->getId() );
+				$removed['currency'][] = $item->getCode();
+			}
+		}
+
+		if( !empty( $removed['language'] ) ) {
+			$this->info( sprintf( 'Languages removed (kept en/fa/ps): %1$s', implode( ', ', $removed['language'] ) ) );
+		}
+		if( !empty( $removed['currency'] ) ) {
+			$this->info( sprintf( 'Currencies removed (kept AFN/USD): %1$s', implode( ', ', $removed['currency'] ) ) );
+		}
+		if( empty( $removed['language'] ) && empty( $removed['currency'] ) ) {
+			$this->info( 'Languages/currencies already restricted to en/fa/ps and AFN/USD, nothing to do' );
 		}
 	}
 

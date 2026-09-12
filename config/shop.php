@@ -70,7 +70,7 @@ return array_replace_recursive( $multiroute, $multishop + [
 
 	'apc_enabled' => false, // enable for maximum performance if APCu is available
 	'apc_prefix' => 'aimeos:', // prefix for caching config and translation in APCu
-	'num_formatter' => 'Standard', // locale based number formatter (alternative: "Standard"); "Standard" keeps Western digits for AFN prices
+	'num_formatter' => 'Locale', // locale based number formatter: natural digits per language (alternative: "Standard")
 	'pcntl_max' => 4, // maximum number of parallel command line processes when starting jobs
 	'version' => env( 'APP_VERSION', 1 ), // shop CSS/JS file version
 	'roles' => ['admin', 'editor'], // user groups allowed to access the admin backend
@@ -191,6 +191,11 @@ return array_replace_recursive( $multiroute, $multishop + [
 
 	'admin' => [
 		'jqadm' => [
+			'common' => [
+				'decorators' => [
+					'default' => ['Asaan', 'Page'],
+				],
+			],
 			'resource' => [
 				// Single-shop: block site switching and locale management for all user groups
 				'site' => ['groups' => 'no-access'],
