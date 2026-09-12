@@ -1,0 +1,56 @@
+Product photos for the ASAAN demo shop
+======================================
+
+All photos come from Wikimedia Commons / Openverse and are used under their
+respective Creative Commons licenses. See the individual entries below.
+
+product-cast-iron-pot.jpg
+  "Trivet with cast iron pot" by Davidbena
+  License: CC BY-SA 4.0
+  Source: https://commons.wikimedia.org/wiki/File:Trivet_with_cast_iron_pot.jpg
+
+product-chef-knife.jpg
+  "Steelport 6-Inch Chef Knife (2026)-104A7331" by Frank Schulenburg
+  License: CC BY-SA 4.0
+  Source: https://commons.wikimedia.org/wiki/File:Steelport_6-Inch_Chef_Knife_(2026)-104A7331.jpg
+
+product-event.jpg
+  "Person cooks in a cozy wooden kitchen with various utensils and cookware
+  during the day in a rural setting" by Shixart1985
+  License: CC BY 2.0
+  Source: Openverse (flickr.com photo aggregation)
+
+product-frying-pan.jpg
+  "Stainless Steel Frying Pan" by Jim Stonos
+  License: CC BY-SA 4.0
+  Source: https://commons.wikimedia.org/wiki/File:Stainless_Steel_Frying_Pan.jpg
+
+product-gift-voucher.jpg
+  "Brown gift box with red ribbon and bow" by Shixart1985
+  License: CC BY 2.0
+  Source: https://commons.wikimedia.org/wiki/File:Brown_gift_box_with_red_ribbon_and_bow.jpg
+
+product-kettle.jpg
+  "Stainless Steel Kopi Pot (1)"
+  License: CC BY 4.0
+  Source: https://commons.wikimedia.org/wiki/File:Stainless_Steel_Kopi_Pot_(1).jpg
+
+product-knife-board.jpg
+  "Ainu cutting board itatani" by タクナワン
+  License: CC BY-SA 4.0
+  Source: https://commons.wikimedia.org/wiki/File:Ainu_cutting_board%22itatani%22.jpg
+
+product-mixing-bowls.jpg
+  "Yellowware mixing bowls" by Tropic-7
+  License: CC BY 2.0
+  Source: https://commons.wikimedia.org/wiki/File:Yellowware_mixing_bowls.jpg
+
+product-utensils.jpg
+  "Set of seven handcrafted made in India wooden kitchen utensils (68607)"
+  by Badhan.kv
+  License: CC BY-SA 4.0
+  Source: https://commons.wikimedia.org/wiki/File:Set_of_seven_handcrafted_made_in_India_wooden_kitchen_utensils_(68607).jpg
+
+Note: the "Cookware set (12 pcs)" and "Vegetable slicing set" product images
+reuse the in-repo kitchen banner photos (hero-2.jpg and hero-3.jpg), which are
+original to this project.

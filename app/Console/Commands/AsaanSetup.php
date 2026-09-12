@@ -82,6 +82,21 @@ class AsaanSetup extends Command
 		],
 	];
 
+	/** @var array<string, string> Product label => image file served from public/aimeos/ */
+protected $productImages = [
+		'Cookware set (12 pcs)' => 'hero-2.jpg',
+		'Non-stick frying pan 26 cm' => 'products/product-frying-pan.jpg',
+		'Chef knife 20 cm' => 'products/product-chef-knife.jpg',
+		'Stainless steel kettle' => 'products/product-kettle.jpg',
+		'Mixing bowl set (5 pcs)' => 'products/product-mixing-bowls.jpg',
+		'Vegetable slicing set' => 'hero-3.jpg',
+		'Cast iron pot 24 cm' => 'products/product-cast-iron-pot.jpg',
+		'Gift voucher' => 'products/product-gift-voucher.jpg',
+		'Knife and cutting board set' => 'products/product-knife-board.jpg',
+		'Kitchen utensils set' => 'products/product-utensils.jpg',
+		'New kitchenware event' => 'products/product-event.jpg',
+	];
+
 	/** @var array<string, array> Old catalog label => [new label, fa label, ps label] */
 	protected $categories = [
 		'Home' => ['Home', 'خانه', 'کور'],
@@ -145,6 +160,7 @@ protected $attributes = [
 		$this->seedPrices( $scontext );
 		$this->translateCatalog( $scontext );
 		$this->seedBrandMedia( $scontext );
+		$this->seedProductImages( $scontext );
 		$this->seedBrandAssets();
 
 		\Aimeos\MShop::cache( true );
@@ -705,6 +721,62 @@ if( $item->getLabel() !== $translations[0] )
 		}
 
 		$this->info( sprintf( 'Media seeded: %1$d items (stage = kitchen hero photos, rest = %2$s)', count( $items ), basename( $brand ) ) );
+	}
+
+
+	/**
+	 * Points each demo product's main image to its own local photo.
+	 *
+	 * The photos live in ext/asaan/media/products (attribution in
+	 * ATTRIBUTION.txt) and are copied to public/aimeos/products so the admin
+	 * image previews work under the restrictive img-src content policy. Two
+	 * products reuse the in-repo kitchen heroes. Idempotent: it only rewrites
+	 * the URL of each product's existing first media item.
+	 */
+	protected function seedProductImages( $context ) : void
+	{
+		$srcDir = base_path( 'ext/asaan/media/products' );
+		$imgDir = public_path( 'aimeos/products' );
+
+		if( !is_dir( $imgDir ) ) {
+			@mkdir( $imgDir, 0777, true );
+		}
+
+		$copied = 0;
+
+		if( is_dir( $srcDir ) )
+		{
+			foreach( glob( $srcDir . '/*.jpg' ) as $src )
+			{
+				if( @copy( $src, $imgDir . '/' . basename( $src ) ) ) {
+					$copied++;
+				}
+			}
+		}
+
+		$manager = MShop::create( $context, 'product' );
+		$mediaManager = MShop::create( $context, 'media' );
+		$set = 0;
+
+		foreach( $manager->search( $manager->filter()->add( 'product.status', '>=', 0 ), ['media'] ) as $item )
+		{
+			$target = $this->productImages[$item->getLabel()] ?? null;
+			$listItem = $target ? $item->getListItems( 'media', null, null, false )->first() : null;
+			$media = $listItem ? $listItem->getRefItem() : null;
+
+			if( $media === null ) {
+				continue;
+			}
+
+			$url = '/aimeos/' . $target;
+			$media->setMimeType( 'image/jpeg' )
+				->setUrl( $url )
+				->setPreviews( array_fill_keys( [240, 480, 720, 960, 1350, 1920], $url ) );
+			$mediaManager->save( $media );
+			$set++;
+		}
+
+		$this->info( sprintf( 'Product images assigned: %1$d products, %2$d photos copied', $set, $copied ) );
 	}
 
 
