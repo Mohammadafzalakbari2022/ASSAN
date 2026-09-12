@@ -318,6 +318,9 @@ protected $attributes = [
 	{
 		$rate = (float) ( env( 'SHOP_AFN_RATE', 63 ) ?: 63 );
 		$manager = MShop::create( $context, 'product' );
+		// New price items use this precision; keeping AFN prices as whole
+		// afghanis while the existing USD prices keep their two decimals
+		$context->config()->set( 'mshop/price/precision', 0 );
 		$priceManager = MShop::create( $context, 'price' );
 
 		$filter = $manager->filter()->add( 'product.status', '>=', 0 );
@@ -355,14 +358,12 @@ protected $attributes = [
 
 				$afn = $priceManager->create()
 					->setCurrencyId( 'AFN' )
-					->setType( $usd->getType() )
 					->setStatus( $usd->getStatus() )
 					->setValue( round( $usd->getValue() * $rate ) )
 					->setRebate( round( $usd->getRebate() * $rate ) )
 					->setCosts( round( $usd->getCosts() * $rate ) )
-					->setTaxrate( $usd->getTaxrate() )
+					->setTaxRate( $usd->getTaxRate() )
 					->setTaxFlag( $usd->getTaxFlag() )
-					->setPrecision( 0 )
 					->setQuantity( $usd->getQuantity() );
 
 				$newList = $manager->createListItem()
