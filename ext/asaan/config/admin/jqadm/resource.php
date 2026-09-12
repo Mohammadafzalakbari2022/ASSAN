@@ -2,18 +2,18 @@
 
 return [
 	'site' => [
-		'groups' => [],
+		'groups' => 'no-access',
 	],
 	'locale' => [
-		'groups' => [],
+		'groups' => 'no-access',
 		'site' => [
-			'groups' => [],
+			'groups' => 'no-access',
 		],
 		'language' => [
-			'groups' => [],
+			'groups' => 'no-access',
 		],
 		'currency' => [
-			'groups' => [],
+			'groups' => 'no-access',
 		],
 	],
 ];

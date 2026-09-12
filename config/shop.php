@@ -191,6 +191,28 @@ return array_replace_recursive( $multiroute, $multishop + [
 
 	'admin' => [
 		'jqadm' => [
+			'resource' => [
+				// Single-shop: block site switching and locale management for all user groups
+				'site' => ['groups' => 'no-access'],
+				'locale' => [
+					'groups' => 'no-access',
+					'site' => ['groups' => 'no-access'],
+					'language' => ['groups' => 'no-access'],
+					'currency' => ['groups' => 'no-access'],
+				],
+			],
+			// Sidebar: dashboard/sales/goods/users/marketing/settings/setup/type/log only
+			'navbar' => [
+				0 => 'dashboard',
+				10 => ['_' => 'sales', 10 => 'order', 20 => 'subscription', 30 => 'basket'],
+				20 => ['_' => 'goods', 10 => 'product', 20 => 'catalog', 30 => 'attribute', 40 => 'supplier'],
+				30 => ['_' => 'users', 10 => 'customer', 20 => 'group'],
+				40 => ['_' => 'marketing', 10 => 'coupon', 20 => 'rule', 30 => 'review'],
+				50 => 'settings',
+				60 => ['_' => 'setup', 20 => 'service', 30 => 'plugin'],
+				80 => 'type',
+				90 => 'log',
+			],
 			'settings' => [
 				'name' => 'Asaan',
 			],
