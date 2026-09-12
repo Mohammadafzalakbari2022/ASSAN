@@ -191,6 +191,9 @@ return array_replace_recursive( $multiroute, $multishop + [
 
 	'admin' => [
 		'jqadm' => [
+			'settings' => [
+				'name' => 'Asaan',
+			],
 			'api' => [
 				'openai' => [
 					'key' => env( 'SHOP_OPENAI_APIKEY' )
