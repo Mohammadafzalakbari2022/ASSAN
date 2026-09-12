@@ -32,6 +32,12 @@
 				margin-bottom: 1.5rem;
 			}
 
+			.login-wrapper .brand-logo {
+				display: block;
+				max-width: 8rem;
+				margin: 0 auto 0.5rem;
+			}
+
 			.login-wrapper .login {
 				background: #fff;
 				border-radius: 0.5rem;
@@ -48,7 +54,10 @@
 	<body>
 
 		<div class="login-wrapper">
-			<div class="brand">ASAAN</div>
+			<div class="brand">
+				<img class="brand-logo" src="{{ asset('aimeos/asaan.png') }}" alt="ASAAN">
+				<div>ASAAN</div>
+			</div>
 
 			<form class="login" method="POST" action="{{ url('login') }}" >
 				{!! csrf_field() !!}

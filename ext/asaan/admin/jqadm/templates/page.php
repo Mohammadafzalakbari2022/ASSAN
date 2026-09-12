@@ -133,6 +133,7 @@ $after = is_array( $after ) ? $after['_'] ?? reset( $after ) : $after;
 		<div class="sidebar-wrapper">
 
 			<a class="logo" href="#">
+				<img class="logo-image" src="<?= $enc->attr( $this->content( 'default/assets/logo.png', 'fs-theme' ) ) ?>" alt="ASAAN">
 				<span class="logo-text"><?= $enc->html( $this->translate( 'admin', 'ASAAN' ) ) ?></span>
 			</a>
 

@@ -142,6 +142,7 @@ protected $attributes = [
 		$this->createLocales( $scontext, $site );
 		$this->translateCatalog( $scontext );
 		$this->seedBrandMedia( $scontext );
+		$this->seedBrandAssets();
 
 		\Aimeos\MShop::cache( true );
 		\Aimeos\MAdmin::cache( true );
@@ -568,6 +569,39 @@ if( $item->getLabel() !== $translations[0] )
 		}
 
 		$this->info( sprintf( 'Media seeded: %1$d items (stage = kitchen hero photos, rest = %2$s)', count( $items ), basename( $brand ) ) );
+	}
+
+
+	/**
+	 * Overwrites the stock theme logo/favicon with the ASAAN brand assets.
+	 *
+	 * The Docker build publishes the original Aimeos theme into
+	 * public/vendor/shop/themes/default/ on every deploy, so the brand files
+	 * are copied back here (idempotent, runs on deploy and locally).
+	 */
+	protected function seedBrandAssets() : void
+	{
+		$srcDir = base_path( 'ext/asaan/media/brand' );
+		$themeDir = public_path( 'vendor/shop/themes/default/assets' );
+
+		if( !is_dir( $srcDir ) )
+		{
+			$this->warn( 'ext/asaan/media/brand not found, keeping stock theme logo' );
+			return;
+		}
+
+		foreach( ['logo.png', 'icon.png', 'icon-192.png', 'icon-512.png', 'apple-touch-icon.png'] as $file )
+		{
+			if( is_file( $srcDir . '/' . $file ) && is_dir( $themeDir ) ) {
+				@copy( $srcDir . '/' . $file, $themeDir . '/' . $file );
+			}
+		}
+
+		if( is_file( $srcDir . '/favicon.ico' ) ) {
+			@copy( $srcDir . '/favicon.ico', public_path( 'favicon.ico' ) );
+		}
+
+		$this->info( 'Brand assets seeded: theme logo, favicon, apple-touch-icon and PWA icons replaced with ASAAN.af.png' );
 	}
 
 
