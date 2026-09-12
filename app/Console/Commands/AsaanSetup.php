@@ -316,30 +316,33 @@ protected $attributes = [
 	 */
 	protected function removeExtras( $context ) : void
 	{
-		$languages = ['en', 'fa', 'ps'];
-		$manager = MShop::create( $context, 'locale/language' );
 		$removed = ['language' => [], 'currency' => []];
+		$trim = function( string $managerName, array $keep, string $key ) use ( $context, &$removed ) {
 
-		foreach( $manager->search( $manager->filter() ) as $item )
-		{
-			if( !in_array( $item->getCode(), $languages ) )
+			$manager = MShop::create( $context, $managerName );
+
+			// Aimeos filters default to a 100-item slice, so page through the
+			// catalog in batches until nothing non-target is left, otherwise the
+			// languages/currencies after the first page stay behind forever.
+			do
 			{
-				$manager->delete( $item->getId() );
-				$removed['language'][] = $item->getCode();
-			}
-		}
+				$filter = $manager->filter()->slice( 0, 500 )->order( $key . '.code' );
+				$found = false;
 
-		$currencies = ['AFN', 'USD'];
-		$manager = MShop::create( $context, 'locale/currency' );
+				foreach( $manager->search( $filter ) as $item )
+				{
+					if( !in_array( $item->getCode(), $keep ) )
+					{
+						$manager->delete( $item->getId() );
+						$removed[$key][] = $item->getCode();
+						$found = true;
+					}
+				}
+			} while( $found );
+		};
 
-		foreach( $manager->search( $manager->filter() ) as $item )
-		{
-			if( !in_array( $item->getCode(), $currencies ) )
-			{
-				$manager->delete( $item->getId() );
-				$removed['currency'][] = $item->getCode();
-			}
-		}
+		$trim( 'locale/language', ['en', 'fa', 'ps'], 'locale/language' );
+		$trim( 'locale/currency', ['AFN', 'USD'], 'locale/currency' );
 
 		if( !empty( $removed['language'] ) ) {
 			$this->info( sprintf( 'Languages removed (kept en/fa/ps): %1$s', implode( ', ', $removed['language'] ) ) );
@@ -679,7 +682,7 @@ if( $item->getLabel() !== $translations[0] )
 
 		$brand = '/aimeos/asaan.png';
 		$manager = MShop::create( $context, 'media' );
-		$items = $manager->search( $manager->filter() );
+		$items = $manager->search( $manager->filter()->slice( 0, 1000 ) );
 		$heroIdx = 0;
 
 		foreach( $items as $item )
