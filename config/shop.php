@@ -2,6 +2,13 @@
 
 $multishop = $multiroute = [];
 $prefix = env( 'SHOP_MULTILOCALE' ) ? '{locale}/' : '';
+$dbconn = config( 'database.connections.' . config( 'database.default', 'mysql' ) );
+$dbdriver = $dbconn['driver'] ?? 'mysql';
+// Doctrine/DBAL doesn't know the "sqlite" driver name, use the concrete one so
+// local SQLite-based development keeps working; Postgres and MySQL are unaffected
+if( $dbdriver === 'sqlite' ) {
+	$dbdriver = 'pdo_sqlite';
+}
 
 if( env( 'SHOP_MULTISHOP' ) ) {
 	$multishop = ['routes' => [
@@ -69,6 +76,10 @@ return array_replace_recursive( $multiroute, $multishop + [
 	'roles' => ['admin', 'editor'], // user groups allowed to access the admin backend
 	'panel' => 'dashboard', // panel shown in admin backend after login
 
+	'common' => [
+		'countries' => ['AF'], // single country (Afghanistan) for checkout and user profiles
+	],
+
 	'routes' => [
 		// Docs: https://aimeos.org/docs/latest/laravel/extend/#custom-routes
 		// Multi-sites: https://aimeos.org/docs/latest/laravel/customize/#multiple-shops
@@ -109,7 +120,7 @@ return array_replace_recursive( $multiroute, $multishop + [
 
 	'resource' => [
 		'db' => [
-			'adapter' => config( 'database.connections.' . config( 'database.default', 'mysql' ) . '.driver', 'mysql' ),
+			'adapter' => $dbdriver,
 			'host' => config( 'database.connections.' . config( 'database.default', 'mysql' ) . '.host', '127.0.0.1' ),
 			'port' => config( 'database.connections.' . config( 'database.default', 'mysql' ) . '.port', '3306' ),
 			'socket' => config( 'database.connections.' . config( 'database.default', 'mysql' ) . '.unix_socket', '' ),
