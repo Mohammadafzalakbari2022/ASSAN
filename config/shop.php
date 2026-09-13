@@ -223,8 +223,11 @@ return array_replace_recursive( $multiroute, $multishop + [
 			],
 			'dashboard' => [
 				'order' => [
-					// Widgets shown on the dashboard; "countcountry" (orders by country) is omitted
-					'subparts' => ['quick', 'latest', 'salesday', 'salesmonth', 'salesweekday', 'countday', 'countpaystatus', 'counthour', 'servicepayment', 'servicedelivery'],
+					// The "countcountry" (orders by country) widget is removed by the custom
+					// "Asaan" class. It can't be removed via "subparts" config because the
+					// config overlay merges with array_replace_recursive() which never
+					// deletes existing keys.
+					'name' => 'Asaan',
 				],
 			],
 			'api' => [

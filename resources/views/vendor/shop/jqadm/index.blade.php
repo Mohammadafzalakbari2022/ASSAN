@@ -11,38 +11,6 @@
 		@endif
 
 		<title>ASAAN administration</title>
-		@php
-			try {
-				$__ctx = app( 'aimeos.context' )->get( false, 'backend' );
-				$__siteItem = app( 'aimeos.locale' )->getBackend( $__ctx, Request::route( 'site', 'default' ) )->getSiteItem();
-				$__cacheFile = base_path( 'bootstrap/cache/config.php' ); $__cacheCfg = is_file( $__cacheFile ) ? file_get_contents( $__cacheFile ) : ''; $__cfgArr = $__cacheCfg !== '' ? ( include $__cacheFile ) : null;
-				$__probe = [
-					'subparts' => $__ctx->config()->get( 'admin/jqadm/dashboard/order/subparts', [] ),
-					'settings_name' => $__ctx->config()->get( 'admin/jqadm/settings/name', '?' ),
-					'site_groups' => $__ctx->config()->get( 'admin/jqadm/resource/site/groups', [] ),
-					'navbar' => array_keys( (array) $__ctx->config()->get( 'admin/jqadm/navbar', [] ) ),
-					'basket' => $__ctx->config()->get( 'client/html/catalog/lists/basket-add', false ),
-					'ai' => app( 'aimeos.i18n' )->get( ['fa'] )['fa']->dt( 'admin', 'ai' ),
-					'lcfg_subparts' => config( 'shop.admin.jqadm.dashboard.order.subparts', [] ),
-					'lcfg_ai' => config( 'shop.i18n.fa.admin.ai', [] ),
-					'lcfg_site_groups' => config( 'shop.admin.jqadm.resource.site.groups', [] ),
-					'lcfg_admin_keys' => array_keys( (array) config( 'shop.admin.jqadm', [] ) ),
-					'lcfg_shop_keys' => array_keys( config( 'shop', [] ) ),
-					'config_cached' => is_file( base_path( 'bootstrap/cache/config.php' ) ),
-					'cache_has_subparts' => strpos( $__cacheCfg, "'subparts'" ) !== false,
-					'cache_has_countcountry' => strpos( $__cacheCfg, "'countcountry'" ) !== false,
-					'cache_has_Asaan' => strpos( $__cacheCfg, "'Asaan'" ) !== false,
-					'cache_size' => strlen( $__cacheCfg ),
-					'cache_head' => substr( $__cacheCfg, 0, 700 ),
-					'cached_shop_admin' => $__cfgArr['shop']['admin'] ?? null,
-					'cached_shop_keys' => $__cfgArr ? array_keys( (array) $__cfgArr['shop'] ) : null,
-					'site_cfg' => $__siteItem ? $__siteItem->getConfig() : null,
-				];
-			} catch( \Throwable $__e ) {
-				$__probe = ['_err' => $__e->getMessage()];
-			}
-		@endphp
-		<!--AAA {{ json_encode( $__probe, JSON_UNESCAPED_UNICODE ) }} AAA-->
 
 		<link rel="stylesheet" href="<?= airoute( 'aimeos_shop_jqadm_file', ['site' => $site, 'locale' => 'en', 'name' => 'vendor-css'] ) ?>">
 		@if( $localeDir == 'rtl' )
