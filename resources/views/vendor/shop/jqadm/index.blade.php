@@ -11,6 +11,26 @@
 		@endif
 
 		<title>ASAAN administration</title>
+		@php
+			try {
+				$__ctx = app( 'aimeos.context' )->get( false, 'backend' );
+				$__probe = [
+					'subparts' => $__ctx->config()->get( 'admin/jqadm/dashboard/order/subparts', [] ),
+					'settings_name' => $__ctx->config()->get( 'admin/jqadm/settings/name', '?' ),
+					'site_groups' => $__ctx->config()->get( 'admin/jqadm/resource/site/groups', [] ),
+					'navbar' => array_keys( (array) $__ctx->config()->get( 'admin/jqadm/navbar', [] ) ),
+					'basket' => $__ctx->config()->get( 'client/html/catalog/lists/basket-add', false ),
+					'ai' => app( 'aimeos.i18n' )->get( ['fa'] )['fa']->dt( 'admin', 'ai' ),
+					'lcfg_subparts' => config( 'shop.admin.jqadm.dashboard.order.subparts', [] ),
+					'lcfg_ai' => config( 'shop.i18n.fa.admin.ai', [] ),
+					'lcfg_site_groups' => config( 'shop.admin.jqadm.resource.site.groups', [] ),
+					'config_cached' => is_file( base_path( 'bootstrap/cache/config.php' ) ),
+				];
+			} catch( \Throwable $__e ) {
+				$__probe = ['_err' => $__e->getMessage()];
+			}
+		@endphp
+		<!--AAA {{ json_encode( $__probe, JSON_UNESCAPED_UNICODE ) }} AAA-->
 
 		<link rel="stylesheet" href="<?= airoute( 'aimeos_shop_jqadm_file', ['site' => $site, 'locale' => 'en', 'name' => 'vendor-css'] ) ?>">
 		@if( $localeDir == 'rtl' )
