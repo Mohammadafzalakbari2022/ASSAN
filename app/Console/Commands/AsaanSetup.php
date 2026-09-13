@@ -828,6 +828,36 @@ protected function translateItemTexts( $context, $manager, $item, string $label,
 		$textManager = MShop::create( $context, 'text' );
 		$this->removeDuplicateTexts( $item );
 
+		if( !$catalog )
+		{
+			foreach( ['name', 'short', 'long'] as $type )
+			{
+				$content = $type === 'name' ? $label
+					: 'ASAAN ' . $label . ' — quality kitchenware for everyday cooking';
+				$found = false;
+
+				foreach( $item->getListItems( 'text' ) as $listItem )
+				{
+					if( ( $refItem = $listItem->getRefItem() ) !== null
+						&& $refItem->getLanguageId() === 'en' && $refItem->getType() === $type )
+					{
+						$refItem->setContent( $content )->setLabel( 'ASAAN ' . $type . '/en' );
+						$found = true;
+						break;
+					}
+				}
+
+				if( !$found )
+				{
+					$listItem = $manager->createListItem();
+					$refItem = $textManager->create()
+						->setLanguageId( 'en' )->setType( $type )->setStatus( 1 )
+						->setContent( $content )->setLabel( 'ASAAN ' . $type . '/en' );
+					$item->addListItem( 'text', $listItem, $refItem );
+				}
+			}
+		}
+
 		foreach( ['fa', 'ps'] as $lang )
 		{
 			foreach( ['name', 'short', 'long'] as $idx => $type )
