@@ -137,9 +137,9 @@ $params = $this->get( 'pageParams', [] );
 										<label class="col-sm-4 form-control-label help"><?= $enc->html( $this->translate( 'admin', 'Shop e-mail' ) ) ?></label>
 										<div class="col-sm-8">
 											<input class="form-control item-email-address" type="email" tabindex="1"
-												name="<?= $enc->attr( $this->formparam( array( 'item', 'locale.site.config', 'resource', 'email', 'from-email' ) ) ) ?>"
+												name="<?= $enc->attr( $this->formparam( array( 'item', 'locale.site.config', 'client', 'html', 'email', 'from-email' ) ) ) ?>"
 												placeholder="<?= $enc->attr( $this->translate( 'admin', 'Shop e-mail address (required)' ) ) ?>"
-												value="<?= $enc->attr( $this->get( 'itemData/locale.site.config/resource/email/from-email' ) ) ?>">
+												value="<?= $enc->attr( $this->get( 'itemData/locale.site.config/client/html/email/from-email' ) ) ?>">
 										</div>
 										<div class="col-sm-12 form-text text-muted help-text">
 											<?= $enc->html( $this->translate( 'admin', 'E-Mail address used for sending shop related e-mails' ) ) ?>
