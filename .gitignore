@@ -15,3 +15,6 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+
+ender-api-key.txt
+render-api-key.txt

@@ -100,6 +100,9 @@
 								<div class="footer-block">
 									<h2 class="pb-3" aria-label="{{ __('About the company') }}">{{ __( 'ABOUT US' ) }}</h2>
 									<p><a href="{{ airoute(config('shop.client.html.cms.page.url.target', 'aimeos_page'), ['path' => 'contact']) }}">{{ __( 'Contact us' ) }}</a></p>
+									@if( $shopEmail = app( 'aimeos.context' )->get()->locale()->getSiteItem()->getConfigValue( 'client/html/email/from-email' ) )
+										<p><a href="mailto:{{ $shopEmail }}">{{ $shopEmail }}</a></p>
+									@endif
 									<p><a href="{{ airoute(config('shop.client.html.cms.page.url.target', 'aimeos_page'), ['path' => 'about']) }}">{{ __( 'Company' ) }}</a></p>
 								</div>
 							</div>

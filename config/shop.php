@@ -221,6 +221,12 @@ return array_replace_recursive( $multiroute, $multishop + [
 			'settings' => [
 				'name' => 'Asaan',
 			],
+			'dashboard' => [
+				'order' => [
+					// Widgets shown on the dashboard; "countcountry" (orders by country) is omitted
+					'subparts' => ['quick', 'latest', 'salesday', 'salesmonth', 'salesweekday', 'countday', 'countpaystatus', 'counthour', 'servicepayment', 'servicedelivery'],
+				],
+			],
 			'api' => [
 				'openai' => [
 					'key' => env( 'SHOP_OPENAI_APIKEY' )
@@ -279,6 +285,10 @@ return array_replace_recursive( $multiroute, $multishop + [
 			'client' => [
 				'Suppliers' => ['Brands']
 			],
+			'admin' => [
+				'ai' => ['AI'],
+				'AI' => ['AI'],
+			],
 			'currency' => [
 				'AFN' => ['AFN'],
 			],
@@ -293,6 +303,10 @@ return array_replace_recursive( $multiroute, $multishop + [
 		'fa' => [
 			'client' => [
 				'Suppliers' => ['برندها'],
+			],
+			'admin' => [
+				'ai' => ['هوش مصنوعی'],
+				'AI' => ['هوش مصنوعی'],
 			],
 			'currency' => [
 				'AFN' => ['افغانی'],
