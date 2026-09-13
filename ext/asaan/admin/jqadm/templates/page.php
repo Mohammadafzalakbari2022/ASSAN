@@ -101,6 +101,10 @@ foreach( $navlist as $key => $navitem )
 	}
 }
 
+// The ASSAN shop runs as a single shop without locale management, so the
+// "locale" menu is always hidden (the resource config blocks it server-side too)
+$navlist->remove( 70 );
+
 
 $resource = $this->param( 'resource', 'dashboard' );
 $site = $this->param( 'site', 'default' );
@@ -139,36 +143,8 @@ $after = is_array( $after ) ? $after['_'] ?? reset( $after ) : $after;
 
 			<ul class="sidebar-menu">
 
-				<?php if( $this->access( $this->config( 'admin/jqadm/resource/site/groups', [] ) ) ) : ?>
-
-					<li class="none"></li>
-					<li class="treeview menuitem-site <?= $before === null ? 'before' : '' ?>">
-						<a class="item-group" href="#">
-							<i class="icon"></i>
-							<span class="title"><?= $enc->html( $this->site()->label() ) ?></span>
-						</a>
-						<div class="tree-menu-wrapper">
-							<div class="menu-header">
-								<a href="#"><?= $enc->html( $this->translate( 'admin', 'Site' ) ) ?></a>
-								<span class="close"></span>
-							</div>
-							<div class="menu-body vue">
-								<tree
-									domain="locale/site"
-									placeholder="<?= $enc->attr( $this->translate( 'admin', 'Find site' ) ) ?>"
-									url="<?= $enc->attr( $this->link( 'admin/jqadm/url/search', ['site' => '_code_'] + $params ) ) ?>"
-									:readonly="true"
-									:rtl="rtl"
-								></tree>
-							</div>
-						</div>
-					</li>
-
-				<?php else : ?>
-
-					<li class="none <?= $before === null ? 'before' : '' ?>"></li>
-
-				<?php endif ?>
+				<?php /* The ASAAN shop runs as a single shop, so the "Site" popup is removed (no functional loss) */ ?>
+				<li class="none <?= $before === null ? 'before' : '' ?>"></li>
 
 				<?php foreach( $navlist as $nav => $navitem ) : ?>
 					<?php if( is_array( $navitem ) ) : $nav = $navitem['_'] ?? current( $navitem ) ?>
