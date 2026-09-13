@@ -26,6 +26,12 @@ class Asaan
 
 		$incoming = (array) ( $data['locale.site.config'] ?? [] );
 		unset( $incoming['resource'] );
+
+		// keep the stored SMTP password if the field was left empty
+		if( empty( $incoming['admin']['email']['password'] ?? null ) ) {
+			unset( $incoming['admin']['email']['password'] );
+		}
+
 		$config = array_replace_recursive( $config, $incoming );
 
 		$files = (array) $this->view()->request()->getUploadedFiles();

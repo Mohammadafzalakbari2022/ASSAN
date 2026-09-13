@@ -213,6 +213,84 @@ $params = $this->get( 'pageParams', [] );
 					</div>
 				</div>
 
+				<div class="box">
+					<div class="col-xl-12">
+						<h2 class="item-header"><?= $enc->html( $this->translate( 'admin', 'E-mail (SMTP)' ) ) ?></h2>
+						<div class="row">
+							<div class="col-xl-6">
+								<div class="form-group row">
+									<label class="col-sm-4 form-control-label help"><?= $enc->html( $this->translate( 'admin', 'Sender name' ) ) ?></label>
+									<div class="col-sm-8">
+										<input class="form-control item-sender-name" type="text" tabindex="1"
+											name="<?= $enc->attr( $this->formparam( array( 'item', 'locale.site.config', 'client', 'html', 'email', 'from-name' ) ) ) ?>"
+											placeholder="<?= $enc->attr( $this->translate( 'admin', 'Name shown as e-mail sender' ) ) ?>"
+											value="<?= $enc->attr( $this->get( 'itemData/locale.site.config/client/html/email/from-name' ) ) ?>">
+									</div>
+								</div>
+								<div class="form-group row">
+									<label class="col-sm-4 form-control-label help"><?= $enc->html( $this->translate( 'admin', 'SMTP host' ) ) ?></label>
+									<div class="col-sm-8">
+										<input class="form-control item-smtp-host" type="text" tabindex="1"
+											name="<?= $enc->attr( $this->formparam( array( 'item', 'locale.site.config', 'admin', 'email', 'host' ) ) ) ?>"
+											placeholder="<?= $enc->attr( $this->translate( 'admin', 'e.g. smtp.gmail.com' ) ) ?>"
+											value="<?= $enc->attr( $this->get( 'itemData/locale.site.config/admin/email/host' ) ) ?>">
+									</div>
+								</div>
+								<div class="form-group row">
+									<label class="col-sm-4 form-control-label help"><?= $enc->html( $this->translate( 'admin', 'SMTP port' ) ) ?></label>
+									<div class="col-sm-8">
+										<input class="form-control item-smtp-port" type="number" min="1" max="65535" tabindex="1"
+											name="<?= $enc->attr( $this->formparam( array( 'item', 'locale.site.config', 'admin', 'email', 'port' ) ) ) ?>"
+											placeholder="<?= $enc->attr( $this->translate( 'admin', 'e.g. 587' ) ) ?>"
+											value="<?= $enc->attr( $this->get( 'itemData/locale.site.config/admin/email/port' ) ) ?>">
+									</div>
+								</div>
+								<div class="form-group row">
+									<label class="col-sm-4 form-control-label help"><?= $enc->html( $this->translate( 'admin', 'SMTP username' ) ) ?></label>
+									<div class="col-sm-8">
+										<input class="form-control item-smtp-user" type="text" autocomplete="username" tabindex="1"
+											name="<?= $enc->attr( $this->formparam( array( 'item', 'locale.site.config', 'admin', 'email', 'username' ) ) ) ?>"
+											placeholder="<?= $enc->attr( $this->translate( 'admin', 'e.g. yourname@gmail.com' ) ) ?>"
+											value="<?= $enc->attr( $this->get( 'itemData/locale.site.config/admin/email/username' ) ) ?>">
+									</div>
+								</div>
+							</div>
+							<div class="col-xl-6">
+								<div class="form-group row">
+									<label class="col-sm-4 form-control-label help"><?= $enc->html( $this->translate( 'admin', 'SMTP password' ) ) ?></label>
+									<div class="col-sm-8">
+										<input class="form-control item-smtp-pass" type="password" autocomplete="new-password" tabindex="1"
+											name="<?= $enc->attr( $this->formparam( array( 'item', 'locale.site.config', 'admin', 'email', 'password' ) ) ) ?>"
+											placeholder="<?= $enc->attr( $this->get( 'itemData/locale.site.config/admin/email/password' ) ? '••••••••' : '' ) ?>">
+									</div>
+								</div>
+								<div class="form-group row">
+									<label class="col-sm-4 form-control-label help"><?= $enc->html( $this->translate( 'admin', 'SMTP encryption' ) ) ?></label>
+									<div class="col-sm-8">
+										<select class="form-select item-smtp-encryption" tabindex="1"
+											name="<?= $enc->attr( $this->formparam( array( 'item', 'locale.site.config', 'admin', 'email', 'encryption' ) ) ) ?>" >
+											<option value="" <?= $selected( $this->get( 'itemData/locale.site.config/admin/email/encryption' ), '' ) ?> >
+												<?= $enc->html( $this->translate( 'admin', 'None' ) ) ?>
+											</option>
+											<option value="tls" <?= $selected( $this->get( 'itemData/locale.site.config/admin/email/encryption' ), 'tls' ) ?> >
+												<?= $enc->html( $this->translate( 'admin', 'TLS (STARTTLS)' ) ) ?>
+											</option>
+											<option value="ssl" <?= $selected( $this->get( 'itemData/locale.site.config/admin/email/encryption' ), 'ssl' ) ?> >
+												<?= $enc->html( $this->translate( 'admin', 'SSL' ) ) ?>
+											</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group row">
+									<div class="col-sm-12 form-text text-muted help-text">
+										<?= $enc->html( $this->translate( 'admin', 'E-mails are sent through this account. Gmail: smtp.gmail.com, port 587, TLS, app password required.' ) ) ?>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
 			</div>
 
 			<?= $this->get( 'itemBody' ) ?>

@@ -44,6 +44,13 @@ return [
             'timeout' => null,
         ],
 
+        // SMTP settings entered in the admin Settings panel (Settings > Basic > E-mail (SMTP)).
+        // The transport is registered by AppServiceProvider and reads the shop's saved
+        // "admin/email/*" values at send time, falling back to the env-based "smtp" mailer.
+        'asaan' => [
+            'transport' => 'asaan',
+        ],
+
         'ses' => [
             'transport' => 'ses',
         ],
