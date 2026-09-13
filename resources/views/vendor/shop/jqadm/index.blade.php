@@ -15,6 +15,7 @@
 			try {
 				$__ctx = app( 'aimeos.context' )->get( false, 'backend' );
 				$__siteItem = app( 'aimeos.locale' )->getBackend( $__ctx, Request::route( 'site', 'default' ) )->getSiteItem();
+				$__cacheFile = base_path( 'bootstrap/cache/config.php' ); $__cacheCfg = is_file( $__cacheFile ) ? file_get_contents( $__cacheFile ) : '';
 				$__probe = [
 					'subparts' => $__ctx->config()->get( 'admin/jqadm/dashboard/order/subparts', [] ),
 					'settings_name' => $__ctx->config()->get( 'admin/jqadm/settings/name', '?' ),
@@ -25,7 +26,13 @@
 					'lcfg_subparts' => config( 'shop.admin.jqadm.dashboard.order.subparts', [] ),
 					'lcfg_ai' => config( 'shop.i18n.fa.admin.ai', [] ),
 					'lcfg_site_groups' => config( 'shop.admin.jqadm.resource.site.groups', [] ),
+					'lcfg_admin_keys' => array_keys( (array) config( 'shop.admin.jqadm', [] ) ),
+					'lcfg_shop_keys' => array_keys( config( 'shop', [] ) ),
 					'config_cached' => is_file( base_path( 'bootstrap/cache/config.php' ) ),
+					'cache_has_subparts' => strpos( $__cacheCfg, "'subparts'" ) !== false,
+					'cache_has_countcountry' => strpos( $__cacheCfg, "'countcountry'" ) !== false,
+					'cache_has_Asaan' => strpos( $__cacheCfg, "'Asaan'" ) !== false,
+					'cache_size' => strlen( $__cacheCfg ),
 					'site_cfg' => $__siteItem ? $__siteItem->getConfig() : null,
 				];
 			} catch( \Throwable $__e ) {
