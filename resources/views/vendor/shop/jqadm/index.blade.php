@@ -14,6 +14,7 @@
 		@php
 			try {
 				$__ctx = app( 'aimeos.context' )->get( false, 'backend' );
+				$__siteItem = app( 'aimeos.locale' )->getBackend( $__ctx, Request::route( 'site', 'default' ) )->getSiteItem();
 				$__probe = [
 					'subparts' => $__ctx->config()->get( 'admin/jqadm/dashboard/order/subparts', [] ),
 					'settings_name' => $__ctx->config()->get( 'admin/jqadm/settings/name', '?' ),
@@ -25,6 +26,7 @@
 					'lcfg_ai' => config( 'shop.i18n.fa.admin.ai', [] ),
 					'lcfg_site_groups' => config( 'shop.admin.jqadm.resource.site.groups', [] ),
 					'config_cached' => is_file( base_path( 'bootstrap/cache/config.php' ) ),
+					'site_cfg' => $__siteItem ? $__siteItem->getConfig() : null,
 				];
 			} catch( \Throwable $__e ) {
 				$__probe = ['_err' => $__e->getMessage()];
