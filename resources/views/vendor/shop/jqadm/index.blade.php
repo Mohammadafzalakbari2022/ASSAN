@@ -15,7 +15,7 @@
 			try {
 				$__ctx = app( 'aimeos.context' )->get( false, 'backend' );
 				$__siteItem = app( 'aimeos.locale' )->getBackend( $__ctx, Request::route( 'site', 'default' ) )->getSiteItem();
-				$__cacheFile = base_path( 'bootstrap/cache/config.php' ); $__cacheCfg = is_file( $__cacheFile ) ? file_get_contents( $__cacheFile ) : '';
+				$__cacheFile = base_path( 'bootstrap/cache/config.php' ); $__cacheCfg = is_file( $__cacheFile ) ? file_get_contents( $__cacheFile ) : ''; $__cfgArr = $__cacheCfg !== '' ? ( include $__cacheFile ) : null;
 				$__probe = [
 					'subparts' => $__ctx->config()->get( 'admin/jqadm/dashboard/order/subparts', [] ),
 					'settings_name' => $__ctx->config()->get( 'admin/jqadm/settings/name', '?' ),
@@ -34,6 +34,8 @@
 					'cache_has_Asaan' => strpos( $__cacheCfg, "'Asaan'" ) !== false,
 					'cache_size' => strlen( $__cacheCfg ),
 					'cache_head' => substr( $__cacheCfg, 0, 700 ),
+					'cached_shop_admin' => $__cfgArr['shop']['admin'] ?? null,
+					'cached_shop_keys' => $__cfgArr ? array_keys( (array) $__cfgArr['shop'] ) : null,
 					'site_cfg' => $__siteItem ? $__siteItem->getConfig() : null,
 				];
 			} catch( \Throwable $__e ) {
