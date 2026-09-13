@@ -33,6 +33,7 @@
 					'cache_has_countcountry' => strpos( $__cacheCfg, "'countcountry'" ) !== false,
 					'cache_has_Asaan' => strpos( $__cacheCfg, "'Asaan'" ) !== false,
 					'cache_size' => strlen( $__cacheCfg ),
+					'cache_head' => substr( $__cacheCfg, 0, 700 ),
 					'site_cfg' => $__siteItem ? $__siteItem->getConfig() : null,
 				];
 			} catch( \Throwable $__e ) {
