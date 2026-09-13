@@ -40,7 +40,7 @@
 				@endphp
 				<select class="lang-select" aria-label="Language" onchange="location.href=this.value">
 					@foreach( $langs as $lang => $name )
-						<option value="{{ route( 'aimeos_shop_jqadm_search', ['site' => $site, 'locale' => $lang] + $query ) }}" @if( $locale === $lang ) selected="selected" @endif>{{ $name }}</option>
+						<option value="{{ route( 'aimeos_shop_jqadm_search', ['site' => $site, 'resource' => Request::route( 'resource', 'dashboard' ), 'locale' => $lang] + $query ) }}" @if( $locale === $lang ) selected="selected" @endif>{{ $name }}</option>
 					@endforeach
 				</select>
 				<form id="logout-form" action="{{ airoute( 'logout', ['locale' => Request::get( 'locale', app()->getLocale() )] ) }}" method="POST">
