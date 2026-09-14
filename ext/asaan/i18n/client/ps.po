@@ -1,0 +1,828 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: asaan\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "%1$d article"
+msgstr "%1$d توکی"
+
+msgid "%1$d review"
+msgstr "%1$d بیاکتنه"
+
+msgid "%1$s %2$s"
+msgstr "%1$s %2$s"
+
+msgid "%1$s %2$s off"
+msgstr "%1$s %2$s تخفیف"
+
+msgid "%1$s (%4$s%2$s%3$s)"
+msgstr "%1$s (%4$s%2$s%3$s)"
+
+msgid "%1$s at %2$s"
+msgstr "%1$s په %2$s کې"
+
+msgid "%1$s%3$s + %2$s%3$s"
+msgstr "%1$s%3$s + %2$s%3$s"
+
+msgid "(opens in new window)"
+msgstr "(په نوې کړکۍ کې خلاصیږي)"
+
+msgid "+ %1$s %2$s"
+msgstr "+ %1$s %2$s"
+
+msgid "+ %1$s%% %2$s"
+msgstr "+ %1$s%% %2$s"
+
+msgid "+ %1$s%% VAT"
+msgstr "+ %1$s%% د ارزښت مالیه"
+
+msgid "+1 123 456 7890"
+msgstr "+1 123 456 7890"
+
+msgid "-%1$s%%"
+msgstr "-%1$s%%"
+
+msgid "A non-recoverable error occured"
+msgstr "بېرته نه راګرځېدونکې تېروتنه رامنځته شوه"
+
+msgid "Add"
+msgstr "زیاتول"
+
+msgid "Add billing address"
+msgstr "د بلنګ پته زیاتول"
+
+msgid "Add delivery address"
+msgstr "د سپارنې پته زیاتول"
+
+msgid "Add to basket"
+msgstr "ټوکرۍ ته ورزیاتول"
+
+msgid "Additional"
+msgstr "نور مالومات"
+
+msgid "Additional 2"
+msgstr "نور مالومات 2"
+
+msgid "Address part \"%1$s\" is invalid"
+msgstr "د پتې برخه «%1$s» سمه نه ده"
+
+msgid "Address part \"%1$s\" is missing"
+msgstr "د پتې برخه «%1$s» نشته"
+
+msgid "Apply"
+msgstr "عملي کول"
+
+msgid "Article"
+msgstr "توکی"
+
+msgid "Article no."
+msgstr "د توکي شمېره"
+
+msgid "At least one billing address part is missing or invalid"
+msgstr "د بلنګ پتې لږ تر لږه یوه برخه نیمګړې یا ناسمه ده"
+
+msgid "At least one delivery address part is missing or invalid"
+msgstr "د سپارنې پتې لږ تر لږه یوه برخه نیمګړې یا ناسمه ده"
+
+msgid "At least one payment address part is missing or invalid"
+msgstr "د تادیې پتې لږ تر لږه یوه برخه نیمګړې یا ناسمه ده"
+
+msgid "At least one product couldn't be added to the basket."
+msgstr "لږ تر لږه یو محصول ټوکرۍ ته نه شو اضافه کېدلای."
+
+msgid "Back"
+msgstr "شاته"
+
+msgid "Basket"
+msgstr "ټوکرۍ"
+
+msgid "Basket details"
+msgstr "د ټوکرۍ جزئیات"
+
+msgid "Basket name"
+msgstr "د ټوکرۍ نوم"
+
+msgid "Basket saved sucessfully"
+msgstr "ټوکرۍ په بریالیتوب سره خوندي شوه"
+
+msgid "Billing address"
+msgstr "د بلنګ پته"
+
+msgid "Billing address part \"%1$s\" is invalid"
+msgstr "د بلنګ پتې برخه «%1$s» سمه نه ده"
+
+msgid "Billing address part \"%1$s\" is missing"
+msgstr "د بلنګ پتې برخه «%1$s» نشته"
+
+msgid "Birthday"
+msgstr "د زوکړې نیټه"
+
+msgid "Breadcrumb navigation"
+msgstr "د لارښوونې ځای"
+
+msgid "Bulk order"
+msgstr "ټولیز امر"
+
+msgid "Bundled products"
+msgstr "یوځای بسته شوي محصولات"
+
+msgid "Buy now"
+msgstr "همدا اوس وپېرئ"
+
+msgid "Cancel"
+msgstr "لغوه کول"
+
+msgid "Categories"
+msgstr "ډولونه"
+
+msgid "Change"
+msgstr "بدلول"
+
+msgid "Change address"
+msgstr "پته بدلول"
+
+msgid "Change billing address"
+msgstr "د بلنګ پته بدلول"
+
+msgid "Change coupons"
+msgstr "کوپنونه بدلول"
+
+msgid "Change delivery"
+msgstr "سپارنه بدلول"
+
+msgid "Change delivery address"
+msgstr "د سپارنې پته بدلول"
+
+msgid "Change payment"
+msgstr "تادیه بدلول"
+
+msgid "Change products"
+msgstr "محصولات بدلول"
+
+msgid "Characteristics"
+msgstr "ځانګړتیاوې"
+
+msgid "Checkout"
+msgstr "تادیه کول"
+
+msgid "City"
+msgstr "ښار"
+
+msgid "Class \"%1$s\" not found"
+msgstr "طبقه «%1$s» ونه موندل شوه"
+
+msgid "Close"
+msgstr "تړل"
+
+msgid "Company"
+msgstr "شرکت"
+
+msgid "Confirmation"
+msgstr "تصدیق"
+
+msgid "Country"
+msgstr "هېواد"
+
+msgid "Coupon codes"
+msgstr "د کوپن کوډونه"
+
+msgid "Coupons"
+msgstr "کوپنونه"
+
+msgid "Create a customer account for me"
+msgstr "همدا راته د پیرودونکي حساب جوړ کړه"
+
+msgid "Created"
+msgstr "جوړ شو"
+
+msgid "Customer account"
+msgstr "د پیرودونکي حساب"
+
+msgid "Decrease"
+msgstr "کمول"
+
+msgid "Delete"
+msgstr "ړنګول"
+
+msgid "Delete item"
+msgstr "توکی ړنګول"
+
+msgid "Delivery"
+msgstr "سپارنه"
+
+msgid "Delivery address"
+msgstr "د سپارنې پته"
+
+msgid "Delivery address deleted successfully"
+msgstr "د سپارنې پته په بریالیتوب سره ړنګه شوه"
+
+msgid "Delivery address part \"%1$s\" is invalid"
+msgstr "د سپارنې پتې برخه «%1$s» سمه نه ده"
+
+msgid "Delivery address part \"%1$s\" is missing"
+msgstr "د سپارنې پتې برخه «%1$s» نشته"
+
+msgid "Delivery within"
+msgstr "سپارنه دننه"
+
+msgid "Description"
+msgstr "څرګندونه"
+
+msgid "Details"
+msgstr "جزئیات"
+
+msgid "Don't store address"
+msgstr "پته مه خوندي کوئ"
+
+msgid "Downloads"
+msgstr "ډاونلوډونه"
+
+msgid "E-Mail"
+msgstr "برېښنالیک"
+
+msgid "End date"
+msgstr "د پای نیټه"
+
+msgid "Favorite products"
+msgstr "غوره محصولات"
+
+msgid "Fax"
+msgstr "فکس"
+
+msgid "Fields with an * are mandatory"
+msgstr "هغه برخې چې * لري اړینې دي"
+
+msgid "Filter"
+msgstr "فیلتر"
+
+msgid "First"
+msgstr "لومړی"
+
+msgid "First name"
+msgstr "نوم"
+
+msgid "Found products"
+msgstr "موندل شوي محصولات"
+
+msgid "GB999999973"
+msgstr "GB999999973"
+
+msgid "Go to page"
+msgstr "پاڼې ته لاړ شئ"
+
+msgid "Grid view"
+msgstr "د ګریډ لید"
+
+msgid "HH:mm"
+msgstr "HH:mm"
+
+msgid "Highest price"
+msgstr "لوړه بیه"
+
+msgid "If back in stock"
+msgstr "که بیا په انبار کې وي"
+
+msgid "If price decreases"
+msgstr "که بیه راټیټه شي"
+
+msgid "Incl. %1$s%% %2$s"
+msgstr "شامل %1$s%% %2$s"
+
+msgid "Incl. %1$s%% VAT"
+msgstr "شامل %1$s%% د ارزښت مالیه"
+
+msgid "Included rebates"
+msgstr "شامل تخفیفونه"
+
+msgid "Increase"
+msgstr "زیاتول"
+
+msgid "Interval"
+msgstr "لړۍ"
+
+msgid "Invalid characters in client name \"%1$s\""
+msgstr "د پیرودونکي په نوم «%1$s» کې ناسم توري"
+
+msgid "Invalid class name \"%1$s\""
+msgstr "د طبقي نوم «%1$s» سم نه دی"
+
+msgid "Invalid domain \"%1$s\""
+msgstr "ډومین «%1$s» سم نه دی"
+
+msgid "Invoice"
+msgstr "بلنګ"
+
+msgid "Language"
+msgstr "ژبه"
+
+msgid "Last"
+msgstr "وروستی"
+
+msgid "Last name"
+msgstr "تخلص"
+
+msgid "Last seen"
+msgstr "وروستی لیدل شوی"
+
+msgid "Latest"
+msgstr "وروستۍ"
+
+msgid "Less"
+msgstr "لږ"
+
+msgid "List view"
+msgstr "د فهرست لید"
+
+msgid "Lowest price"
+msgstr "ټیټه بیه"
+
+msgid "Mobile"
+msgstr "ګرځنده"
+
+msgid "Mobile number"
+msgstr "د ګرځنده شمېره"
+
+msgid "More"
+msgstr "نور"
+
+msgid "More reviews"
+msgstr "نورې بیاکتنې"
+
+msgid "Name"
+msgstr "نوم"
+
+msgid "New"
+msgstr "نوی"
+
+msgid "New delivery address"
+msgstr "نوې سپارنې پته"
+
+msgid "Next"
+msgstr "راتلونکی"
+
+msgid "Next order"
+msgstr "راتلونکی امر"
+
+msgid "No order ID available in session"
+msgstr "په غونډه کې د امر پېژند شتون نلري"
+
+msgid "No view available"
+msgstr "هیڅ لید شتون نلري"
+
+msgid "One month"
+msgstr "یوه میاشت"
+
+msgid "One week"
+msgstr "یوه اوونۍ"
+
+msgid "Open submenu"
+msgstr "فرعي مینو پرانېستل"
+
+msgid "Order ID"
+msgstr "د امر پېژند"
+
+msgid "Order details"
+msgstr "د امر جزئیات"
+
+msgid "Order history"
+msgstr "د امر تاریخ"
+
+msgid "Order status"
+msgstr "د امر حالت"
+
+msgid "Other customers also bought"
+msgstr "نورو پیرودونکو هم پېرلي"
+
+msgid "Page %1$d of %2$d"
+msgstr "پاڼه %1$d له %2$d"
+
+msgid "Pay now"
+msgstr "همدا اوس تادیه کړئ"
+
+msgid "Payment"
+msgstr "تادیه"
+
+msgid "Payment address part \"%1$s\" is invalid"
+msgstr "د تادیې پتې برخه «%1$s» سمه نه ده"
+
+msgid "Payment address part \"%1$s\" is missing"
+msgstr "د تادیې پتې برخه «%1$s» نشته"
+
+msgid "Payment costs"
+msgstr "د تادیې لګښت"
+
+msgid "Payment status"
+msgstr "د تادیې حالت"
+
+msgid "Percentage"
+msgstr "سلنه"
+
+msgid "Pin product"
+msgstr "محصول نښلول"
+
+msgid "Pinned products"
+msgstr "نښل شوي محصولات"
+
+msgid "Please accept the terms and conditions"
+msgstr "مهرباني وکړئ شرایط او ضوابط ومنئ"
+
+msgid "Please check your order"
+msgstr "مهرباني وکړئ خپل امر وګورئ"
+
+msgid "Please choose your delivery method"
+msgstr "مهرباني وکړئ د سپارنې طریقه وټاکئ"
+
+msgid "Please choose your payment method"
+msgstr "مهرباني وکړئ د تادیې طریقه وټاکئ"
+
+msgid "Please enter at least three characters"
+msgstr "مهرباني وکړئ لږ تر لږه درې توري ولیکئ"
+
+msgid "Please enter your payment details"
+msgstr "مهرباني وکړئ د تادیې جزئیات ولیکئ"
+
+msgid "Please select"
+msgstr "مهرباني وکړئ یو څه وټاکئ"
+
+msgid "Postal code"
+msgstr "پوستنی کوډ"
+
+msgid "Previous"
+msgstr "مخکنی"
+
+msgid "Price"
+msgstr "بیه"
+
+msgid "Price filter"
+msgstr "د بیې فیلتر"
+
+msgid "Price range"
+msgstr "د بیې ساحه"
+
+msgid "Proceed"
+msgstr "دوام ورکول"
+
+msgid "Processing the payment failed"
+msgstr "د تادیې پروسه ناکامه شوه"
+
+msgid "Product"
+msgstr "محصول"
+
+msgid "Product actions"
+msgstr "د محصول کړنې"
+
+msgid "Product attributes"
+msgstr "د محصول ځانګړتیاوې"
+
+msgid "Product categories"
+msgstr "د محصول ډولونه"
+
+msgid "Product characteristics"
+msgstr "د محصول ځانګړتیاوې"
+
+msgid "Product description"
+msgstr "د محصول څرګندونه"
+
+msgid "Product downloads"
+msgstr "د محصول ډاونلوډونه"
+
+msgid "Product filters"
+msgstr "د محصول فیلترونه"
+
+msgid "Product image"
+msgstr "د محصول انځور"
+
+msgid "Product information"
+msgstr "د محصول مالومات"
+
+msgid "Product price"
+msgstr "د محصول بیه"
+
+msgid "Product reviews"
+msgstr "د محصول بیاکتنې"
+
+msgid "Product search"
+msgstr "د محصول لټون"
+
+msgid "Products you might be also interested in"
+msgstr "هغه محصولات چې تاسو یې شاید خوښ شي"
+
+msgid "Qty"
+msgstr "شمېر"
+
+msgid "Quantity"
+msgstr "کچه"
+
+msgid "Rating"
+msgstr "امتیاز"
+
+msgid "Reference"
+msgstr "ارجاع"
+
+msgid "Relevance"
+msgstr "مناسبت"
+
+msgid "Remove"
+msgstr "لیرې کول"
+
+msgid "Reset"
+msgstr "بیا تنظیمول"
+
+msgid "Result for \"%1$s\""
+msgstr "د «%1$s» لپاره پایله"
+
+msgid "Reviews"
+msgstr "بیاکتنې"
+
+msgid "SKU or article name"
+msgstr "د SKU کوډ یا د توکي نوم"
+
+msgid "Sale"
+msgstr "خرڅ"
+
+msgid "Salutation"
+msgstr "بدرګه"
+
+msgid "Save"
+msgstr "خوندي کول"
+
+msgid "Saved basket removed sucessfully"
+msgstr "خوندي شوې ټوکرۍ په بریالیتوب سره لیرې شوه"
+
+msgid "Saved baskets"
+msgstr "خوندي شوې ټوکرۍ"
+
+msgid "Search"
+msgstr "لټون"
+
+msgid "Search result for <span class=\"searchstring\">\"%1$s\"</span> (%2$d article)"
+msgstr "د <span class=\"searchstring\">«%1$s»</span> لټون پایله (%2$d توکی)"
+
+msgid "Select country"
+msgstr "هېواد وټاکئ"
+
+msgid "Select currency"
+msgstr "اسعار وټاکئ"
+
+msgid "Select language"
+msgstr "ژبه وټاکئ"
+
+msgid "Select salutation"
+msgstr "بدرګه وټاکئ"
+
+msgid "Select state"
+msgstr "ولایت وټاکئ"
+
+msgid "Share"
+msgstr "شریکول"
+
+msgid "Shipping"
+msgstr "لېږد"
+
+msgid "Show"
+msgstr "ښودل"
+
+msgid "Sort by"
+msgstr "ترتیبول چې له مخې"
+
+msgid "Sort by:"
+msgstr "ترتیب په اساس:"
+
+msgid "Stars"
+msgstr "ستوري"
+
+msgid "State"
+msgstr "ولایت"
+
+msgid "Stock"
+msgstr "موجودي"
+
+msgid "Stock: %1$s, %2$s"
+msgstr "موجودي: %1$s، %2$s"
+
+msgid "Stock: %1$s, %2$s, back on %3$s"
+msgstr "موجودي: %1$s، %2$s، بېرته په %3$s کې"
+
+msgid "Street"
+msgstr "کوڅه"
+
+msgid "Sub-total"
+msgstr "فرعي مجموعه"
+
+msgid "Submit"
+msgstr "استول"
+
+msgid "Subscription ID"
+msgstr "د ګډون پېژند"
+
+msgid "Subscription details"
+msgstr "د ګډون جزئیات"
+
+msgid "Subscriptions"
+msgstr "ګډونونه"
+
+msgid "Suggested products"
+msgstr "وړاندیز شوي محصولات"
+
+msgid "Sum"
+msgstr "مجموعه"
+
+msgid "Supplier information"
+msgstr "د عرضه کوونکي مالومات"
+
+msgid "Supplier list"
+msgstr "د عرضه کوونکو فهرست"
+
+msgid "Suppliers"
+msgstr "عرضه کوونکي"
+
+msgid "Take a look"
+msgstr "یو نظر وکړئ"
+
+msgid "Telephone"
+msgstr "ټیلیفون"
+
+msgid "Terms and conditions"
+msgstr "شرایط او ضوابط"
+
+msgid "Thank you for your review!"
+msgstr "د بیاکتنې لپاره له تاسو مننه!"
+
+msgid "Three month"
+msgstr "درې میاشتی"
+
+msgid "Time frame"
+msgstr "وخت"
+
+msgid "Title"
+msgstr "سرلیک"
+
+msgid "Toggle fullscreen"
+msgstr "ډکه پرده بدلول"
+
+msgid "Total"
+msgstr "مجموعه"
+
+msgid "Try again"
+msgstr "بیا هڅه وکړئ"
+
+msgid "Two weeks"
+msgstr "دوه اوونۍ"
+
+msgid "Unable to create an account: %1$s"
+msgstr "حساب نه شي جوړېدلای: %1$s"
+
+msgid "Unable to save address for customer \"%1$s\": %2$s"
+msgstr "د پیرودونکي «%1$s» لپاره پته نشي خوندي کېدلای: %2$s"
+
+msgid "Update"
+msgstr "تازه کول"
+
+msgid "Variant"
+msgstr "ډول"
+
+msgid "Vat ID"
+msgstr "د ارزښت مالیې پېژند"
+
+msgid "Vendor response"
+msgstr "د پلورونکي ځواب"
+
+msgid "Watch"
+msgstr "کتل"
+
+msgid "Watched products"
+msgstr "لیدل شوي محصولات"
+
+msgid "Web site"
+msgstr "وېبسایټ"
+
+msgid "What do you think about the product"
+msgstr "دا محصول ستاسې په اند څه ډول دی"
+
+msgid "Y-m-d"
+msgstr "Y-m-d"
+
+msgid "YYYY-MM-DD"
+msgstr "YYYY-MM-DD"
+
+msgid "YYYY-MM-DD HH:mm"
+msgstr "YYYY-MM-DD HH:mm"
+
+msgid "You are here:"
+msgstr "تاسو دلته یاست:"
+
+msgid "You can only save up to %1$s products as favorites"
+msgstr "تاسو یوازې %1$s محصولات د غوره په توګه خوندي کولی شئ"
+
+msgid "You can only watch up to %1$s products"
+msgstr "تاسو یوازې %1$s محصولات کتلای شئ"
+
+msgid "You must log in first"
+msgstr "لومړی باید ننوځئ"
+
+msgid "You will now be forwarded to the next step"
+msgstr "تاسو به همدا اوس راتلونکي ګام ته ولېږدول شئ"
+
+msgid "Your choice"
+msgstr "ستاسې انتخاب"
+
+msgid "Your comment"
+msgstr "ستاسې تبصره"
+
+msgid "Your rating"
+msgstr "ستاسې امتیاز"
+
+msgid "Your reference"
+msgstr "ستاسې ارجاع"
+
+msgid "Your reference number"
+msgstr "ستاسې د ارجاع شمېره"
+
+msgid "Your review"
+msgstr "ستاسې بیاکتنه"
+
+msgid "Zoom in/out"
+msgstr "لویول/کوچنیول"
+
+msgid "address"
+msgstr "پته"
+
+msgid "delivery"
+msgstr "سپارنه"
+
+msgid "favorite"
+msgstr "غوره"
+
+msgid "from %1$s"
+msgstr "له %1$s"
+
+msgid "like billing address"
+msgstr "لکه د بلنګ پته"
+
+msgid "new address"
+msgstr "نوې پته"
+
+msgid "none"
+msgstr "هېڅ"
+
+msgid "on request"
+msgstr "په غوښتنه"
+
+msgid "payment"
+msgstr "تادیه"
+
+msgid "pin"
+msgstr "نښلول"
+
+msgid "price:default"
+msgstr "بیه:منظوره"
+
+msgid "process"
+msgstr "پروسه"
+
+msgid "stock-high"
+msgstr "لوړه موجودي"
+
+msgid "stock-low"
+msgstr "ټیټه موجودي"
+
+msgid "stock-out"
+msgstr "موجودي پای ته رسېدلې"
+
+msgid "stock-unlimited"
+msgstr "بې حده موجودي"
+
+msgid "summary"
+msgstr "لنډیز"
+
+msgid "watch"
+msgstr "کتل"
+
+msgid "▲ Name"
+msgstr "▲ نوم"
+
+msgid "▲ Price"
+msgstr "▲ بیه"
+
+msgid "▶"
+msgstr "▶"
+
+msgid "▶▶"
+msgstr "▶▶"
+
+msgid "▼ Name"
+msgstr "▼ نوم"
+
+msgid "▼ Price"
+msgstr "▼ بیه"
+
+msgid "◀"
+msgstr "◀"
+
+msgid "◀◀"
+msgstr "◀◀"
+

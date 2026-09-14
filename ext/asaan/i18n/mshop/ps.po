@@ -1,0 +1,636 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: asaan\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "%1$s, %2$s, %3$s %4$s, %6$s %7$s"
+msgstr "%1$s، %2$s، %3$s %4$s، %6$s %7$s"
+
+msgid "Address for domain \"%1$s\" not available"
+msgstr "د «%1$s» ډومین لپاره پته شتون نلري"
+
+msgid "Address for type \"%1$s\" not available"
+msgstr "د «%1$s» ډول لپاره پته شتون نلري"
+
+msgid "Address item for removal not found"
+msgstr "د لیرې کولو لپاره پته ونه موندل شوه"
+
+msgid "Address not available"
+msgstr "پته شتون نلري"
+
+msgid "Address salutation \"%1$s\" not within allowed range"
+msgstr "د پتې بدرګه «%1$s» په اجازه شوې ساحه کې نه ده"
+
+msgid "Address search configuration not available"
+msgstr "د پتې د لټون تنظیم شتون نلري"
+
+msgid "Address type \"%1$s\" not within allowed range"
+msgstr "د پتې ډول «%1$s» په اجازه شوې ساحه کې نه دی"
+
+msgid "An unknown error occured with code %1$d"
+msgstr "د %1$d په کوډ ناپېژندل شوې تېروتنه رامنځته شوه"
+
+msgid "At least one key is required for aggregation"
+msgstr "د مجموعې لپاره لږ تر لږه یوه کلي هم اړینه ده"
+
+msgid "Basket empty"
+msgstr "ټوکرۍ خالي ده"
+
+msgid "Bought voucher is in currency \"%1$s\", basket uses \"%2$s\""
+msgstr "پېرل شوی کوپن په «%1$s» اسعار کې دی، ټوکرۍ یې په «%2$s» کې کاروي"
+
+msgid "Cache object not available"
+msgstr "د کیچ څیز شتون نلري"
+
+msgid "Called unknown method \"%1$s\" on class \"%2$s\""
+msgstr "په «%2$s» طبقه کې ناپېژندل شوې طریقه «%1$s» وغوښتل شوه"
+
+msgid "Catalog node for ID \"%1$s\" not available"
+msgstr "د «%1$s» پېژند لپاره کتلاګ نهشته"
+
+msgid "Catalog path for ID \"%1$s\" not found"
+msgstr "د «%1$s» پېژند لپاره د کتلاګ لار ونه موندل شوه"
+
+msgid "Checks for available addresses in basket failed"
+msgstr "په ټوکرۍ کې د پتې چک ناکام شو"
+
+msgid "Checks for available service items in basket failed"
+msgstr "په ټوکرۍ کې د خدماتو چک ناکام شو"
+
+msgid "Child node with index \"%1$d\" not available"
+msgstr "د «%1$d» شاخص سره کړنلار نشته"
+
+msgid "Class \"%1$s\" does not implement interface \"%2$s\""
+msgstr "«%1$s» طبقه د «%2$s» نښلون نه تطبیق کوي"
+
+msgid "Class \"%1$s\" not available"
+msgstr "«%1$s» طبقه شتون نلري"
+
+msgid "Code \"%1$s\" must not be longer than %2$d characters"
+msgstr "کوډ «%1$s» باید له %2$d تورو نه اوږد نه وي"
+
+msgid "Code \"%1$s\" must not be longer than 32 characters"
+msgstr "کوډ «%1$s» باید له 32 تورو نه اوږد نه وي"
+
+msgid "Code contains invalid characters: \"%1$s\""
+msgstr "کوډ ناسم توري لري: «%1$s»"
+
+msgid "Code is too long"
+msgstr "کوډ ډېر اوږد دی"
+
+msgid "Code must not be longer than 255 characters"
+msgstr "کوډ باید له 255 تورو نه اوږد نه وي"
+
+msgid "Code must not be longer than 32 characters"
+msgstr "کوډ باید له 32 تورو نه اوږد نه وي"
+
+msgid "Configuration for \"%1$s\" is missing"
+msgstr "د «%1$s» تنظیم ورک دی"
+
+msgid "Configuration invalid"
+msgstr "تنظیم سم نه دی"
+
+msgid "Configuration not available"
+msgstr "تنظیم شتون نلري"
+
+msgid "Configuration object not available"
+msgstr "د تنظیم څیز شتون نلري"
+
+msgid "Configuration of necessary SQL statement for \"%1$s\" not available"
+msgstr "د «%1$s» لپاره د اړین SQL بیان تنظیم شتون نلري"
+
+msgid "Coupon in basket is not available any more"
+msgstr "په ټوکرۍ کې کوپن نور شتون نلري"
+
+msgid "Coupon is not available any more"
+msgstr "کوپن نور شتون نلري"
+
+msgid "Curl could not be initialized"
+msgstr "Curl نه شو پیل کېدلای"
+
+msgid "Curl error: \"%1$s\" - \"%2$s\""
+msgstr "د Curl تېروتنه: «%1$s» - «%2$s»"
+
+msgid "Database manager object not available"
+msgstr "د ډیټابیس مدیر څیز شتون نلري"
+
+msgid "Date value before \"%1$s\""
+msgstr "د نیټې ارزښت له «%1$s» مخکې دی"
+
+msgid "Downloading file \"%1$s\" failed"
+msgstr "د «%1$s» فایل ډاونلوډ ناکام شو"
+
+msgid "Duplicate coupon code"
+msgstr "تکراري کوپن کوډ"
+
+msgid "Duplicate coupon code \"%1$s\""
+msgstr "تکراري کوپن کوډ «%1$s»"
+
+msgid "Expanding \"%1$s\" node failed"
+msgstr "د «%1$s» غوټه پراخول ناکام شول"
+
+msgid "File \"%1$s\" not found"
+msgstr "«%1$s» فایل ونه موندل شو"
+
+msgid "File or directory \"%1$s\" doesn't exist"
+msgstr "«%1$s» فایل یا لارښود شتون نلري"
+
+msgid "File system manager object not available"
+msgstr "د فایل سیسټم مدیر څیز شتون نلري"
+
+msgid "Finished order status import from \"%1$s\""
+msgstr "د «%1$s» څخه د امر حالت واردول پای ته ورسېدل"
+
+msgid "Finished order status import from file \"%1$s\""
+msgstr "له «%1$s» فایل څخه د امر حالت واردول پای ته ورسېدل"
+
+msgid "Flags \"%1$s\" not within allowed range"
+msgstr "د «%1$s» بیرغونه په اجازه شوې ساحه کې نه دي"
+
+msgid "Flags not within allowed range"
+msgstr "بیرغونه په اجازه شوې ساحه کې نه دي"
+
+msgid "ID of last inserted database record not available"
+msgstr "د وروستي داخل شوي ډیټابیس ثبت پېژند شتون نلري"
+
+msgid "Internationalization object not available for \"%1$s\""
+msgstr "د «%1$s» لپاره نړیوال کولو څیز شتون نلري"
+
+msgid "Invalid ISO country code"
+msgstr "ناسم د ISO هېواد کوډ"
+
+msgid "Invalid ISO country code \"%1$s\""
+msgstr "ناسم د ISO هېواد کوډ «%1$s»"
+
+msgid "Invalid ISO currency code"
+msgstr "ناسم د ISO اسعار کوډ"
+
+msgid "Invalid ISO currency code \"%1$s\""
+msgstr "ناسم د ISO اسعار کوډ «%1$s»"
+
+msgid "Invalid ISO language code"
+msgstr "ناسم د ISO ژبه کوډ"
+
+msgid "Invalid ISO language code \"%1$s\""
+msgstr "ناسم د ISO ژبه کوډ «%1$s»"
+
+msgid "Invalid JSON as result of search for ID \"%2$s\" in \"%1$s\": %3$s"
+msgstr "د «%1$s» کې د «%2$s» پېژند د لټون پایله ناسمه JSON ده: %3$s"
+
+msgid "Invalid attribute at position \"%1$d\""
+msgstr "په «%1$d» موقف کې ناسمه ځانګړتیا"
+
+msgid "Invalid characters in ISO currency code \"%1$s\""
+msgstr "په د ISO اسعار کوډ «%1$s» کې ناسم توري"
+
+msgid "Invalid characters in ISO language code \"%1$s\""
+msgstr "په د ISO ژبه کوډ «%1$s» کې ناسم توري"
+
+msgid "Invalid characters in class name \"%1$s\""
+msgstr "په «%1$s» طبقه کې ناسم توري"
+
+msgid "Invalid characters in date \"%1$s\". ISO format \"YYYY-MM-DD\" expected."
+msgstr "په نیټه «%1$s» کې ناسم توري. د ISO بڼه «YYYY-MM-DD» تمه کېږي."
+
+msgid "Invalid characters in date, ISO format \"YYYY-MM-DD hh:mm:ss\" expected"
+msgstr "په نیټه کې ناسم توري، د ISO بڼه «YYYY-MM-DD hh:mm:ss» تمه کېږي"
+
+msgid "Invalid characters in date, ISO format \"YYYY-MM-DD\" expected"
+msgstr "په نیټه کې ناسم توري، د ISO بڼه «YYYY-MM-DD» تمه کېږي"
+
+msgid "Invalid characters in domain name \"%1$s\""
+msgstr "په ډومین نوم «%1$s» کې ناسم توري"
+
+msgid "Invalid characters in email address: \"%1$s\""
+msgstr "په برېښنالیک پته «%1$s» کې ناسم توري"
+
+msgid "Invalid characters in manager name \"%1$s\""
+msgstr "په مدیر نوم «%1$s» کې ناسم توري"
+
+msgid "Invalid characters in manager name \"%1$s\" in \"%2$s\""
+msgstr "په «%2$s» کې د مدیر نوم «%1$s» ناسم توري لري"
+
+msgid "Invalid characters in price \"%1$s\""
+msgstr "په بیه «%1$s» کې ناسم توري"
+
+msgid "Invalid characters in provider name \"%1$s\""
+msgstr "په عرضه کوونکي نوم «%1$s» کې ناسم توري"
+
+msgid "Invalid characters in purchase date \"%1$s\""
+msgstr "په د پېرود نیټه «%1$s» کې ناسم توري"
+
+msgid "Invalid characters in type name \"%1$s\""
+msgstr "په ډول نوم «%1$s» کې ناسم توري"
+
+msgid "Invalid configuration for coupon provider \"%1$s\", needs \"%2$s\""
+msgstr "د کوپن عرضه کوونکي «%1$s» تنظیم سم نه دی، «%2$s» ته اړتیا ده"
+
+msgid "Invalid delivery type"
+msgstr "ناسم د سپارنې ډول"
+
+msgid "Invalid factory \"%1$s\""
+msgstr "«%1$s» فابریکه سمه نه ده"
+
+msgid "Invalid mime type \"%1$s\""
+msgstr "ناسم د MIME ډول «%1$s»"
+
+msgid "Invalid provider name \"%1$s\""
+msgstr "ناسم د عرضه کوونکي نوم «%1$s»"
+
+msgid "Invalid serialized basket. \"%1$s\" returned \"%2$s\"."
+msgstr "ناسمه تسلسل شوې ټوکرۍ. «%1$s» «%2$s» راوګرځوله."
+
+msgid "Invalid serialized basket. \"%1$s\" returns \"%2$s\"."
+msgstr "ناسمه تسلسل شوې ټوکرۍ. «%1$s» «%2$s» راوګرځوي."
+
+msgid "Invalid time interval format \"%1$s\""
+msgstr "ناسم د وخت فاصلې بڼه «%1$s»"
+
+msgid "Invalid type \"%1$s\""
+msgstr "ناسم ډول «%1$s»"
+
+msgid "Invalid web site URL \"%1$s\""
+msgstr "ناسم د وېبسایټ URL «%1$s»"
+
+msgid "Item can not be deleted. Site ID of item differs from present site ID."
+msgstr "توکی نشي ړنګېدلای. د توکي د سایټ پېژند له اوسني سایټ پېژند سره توپیر لري."
+
+msgid "Item could not be saved using method save(). Item ID not available."
+msgstr "توکی د د خوندي کولو طریقې په واسطه ونه شو خوندي کول. د توکي پېژند شتون نلري."
+
+msgid "Item referenced in domain \"%1$s\" not found: %2$s"
+msgstr "په «%1$s» ډومین کې راجع شوی توکی ونه موندل شو: %2$s"
+
+msgid "Item with ID \"%1$s\" not found"
+msgstr "د «%1$s» پېژند سره توکی ونه موندل شو"
+
+msgid "Item with ID \"%2$s\" in \"%1$s\" not found"
+msgstr "په «%1$s» کې د «%2$s» پېژند توکی ونه موندل شو"
+
+msgid "Job with ID \"%1$s\" not found"
+msgstr "د «%1$s» پېژند دنده ونه موندل شوه"
+
+msgid "List item for removal from domain \"%1$s\" not found"
+msgstr "له «%1$s» ډومین څخه د لیرې کولو فهرست توکی ونه موندل شو"
+
+msgid "List item with ID \"%2$s\" in \"%1$s\" not found"
+msgstr "په «%1$s» کې د «%2$s» پېژند فهرست توکی ونه موندل شو"
+
+msgid "List type for attribute item with ID \"%1$s\" not available"
+msgstr "د «%1$s» پېژند د ځانګړتیا لپاره فهرست ډول شتون نلري"
+
+msgid "List type for price item with ID \"%1$s\" not available"
+msgstr "د «%1$s» پېژند د بیې لپاره فهرست ډول شتون نلري"
+
+msgid "List type for text item with ID \"%1$s\" not available"
+msgstr "د «%1$s» پېژند د متن لپاره فهرست ډول شتون نلري"
+
+msgid "Loading of XML response \"%1$s\" from delivery provider failed"
+msgstr "د سپارنې عرضه کوونکي د XML ځواب «%1$s» بارول ناکام شول"
+
+msgid "Locale item for site \"%1$s\" not found"
+msgstr "د «%1$s» سایټ لپاره ځایي توکی ونه موندل شو"
+
+msgid "Locale object not available"
+msgstr "د ځایي کولو څیز شتون نلري"
+
+msgid "Lock flag \"%1$d\" not within allowed range"
+msgstr "د قفل بیرغ «%1$d» په اجازه شوې ساحه کې نه دی"
+
+msgid "Log entry with ID \"%1$s\" not found"
+msgstr "د «%1$s» پېژند لوګ ونه موندل شو"
+
+msgid "Log manager object not available"
+msgstr "د لوګ مدیر څیز شتون نلري"
+
+msgid "Mail object not available"
+msgstr "د برېښنا پوسته څیز شتون نلري"
+
+msgid "Manager path \"%1$s\" is invalid"
+msgstr "د مدیر لار «%1$s» سمه نه ده"
+
+msgid "Manager path is empty"
+msgstr "د مدیر لار خالي ده"
+
+msgid "Message queue object not available"
+msgstr "د پیغام قطار څیز شتون نلري"
+
+msgid "Method \"%1$s\" for locale site manager not available"
+msgstr "د ځایي سایټ مدیر «%1$s» طریقه شتون نلري"
+
+msgid "Method \"%1$s\" for provider not available"
+msgstr "د عرضه کوونکي «%1$s» طریقه شتون نلري"
+
+msgid "Missing configuration \"%1$s\""
+msgstr "تنظیم «%1$s» ورک دی"
+
+msgid "New ID \"%1$s\" for item differs from old ID \"%2$s\""
+msgstr "د توکي نوی پېژند «%1$s» له زاړه پېژند «%2$s» توپیر لري"
+
+msgid "No XML file \"%1$s\" found"
+msgstr "د «%1$s» XML فایل ونه موندل شو"
+
+msgid "No bought voucher for code \"%1$s\" available"
+msgstr "د «%1$s» کوډ لپاره پېرل شوی کوپن شتون نلري"
+
+msgid "No catalog node for ID \"%1$s\""
+msgstr "د «%1$s» پېژند لپاره کتلاګ نشته"
+
+msgid "No item found for conditions: %1$s"
+msgstr "د شرایطو لپاره هېڅ توکی ونه موندل شو: %1$s"
+
+msgid "No item with \"%2$s\" in \"%1$s\" found"
+msgstr "په «%1$s» کې د «%2$s» توکی ونه موندل شو"
+
+msgid "No more credit available for voucher \"%1$s\""
+msgstr "د «%1$s» کوپن لپاره نور کریډیټ شتون نلري"
+
+msgid "No order for ID \"%1$s\" found"
+msgstr "د «%1$s» پېژند لپاره امر ونه موندل شو"
+
+msgid "No price for product ID \"%1$s\" or product code \"%2$s\" available"
+msgstr "د «%1$s» محصول پېژند یا «%2$s» محصول کوډ لپاره بیه شتون نلري"
+
+msgid "No product with code \"%1$s\" found"
+msgstr "د «%1$s» کوډ محصول ونه موندل شو"
+
+msgid "No rebate for currency \"%1$s\" available"
+msgstr "د «%1$s» اسعار لپاره تخفیف شتون نلري"
+
+msgid "No search configuration available for \"%1$s\""
+msgstr "د «%1$s» لپاره د لټون تنظیم شتون نلري"
+
+msgid "No search configuration available for domain \"%1$s\""
+msgstr "د «%1$s» ډومین لپاره د لټون تنظیم شتون نلري"
+
+msgid "No search keys available"
+msgstr "د لټون کلي شتون نلري"
+
+msgid "No stock type for code \"%1$s\" found"
+msgstr "د «%1$s» کوډ لپاره د موجودي ډول ونه موندل شو"
+
+msgid "No type for code \"%1$s\" found"
+msgstr "د «%1$s» کوډ لپاره ډول ونه موندل شو"
+
+msgid "No warehouse for code \"%1$s\" found"
+msgstr "د «%1$s» کوډ لپاره ګودام ونه موندل شو"
+
+msgid "Not a date"
+msgstr "نیټه نه ده"
+
+msgid "Not a date and time"
+msgstr "نیټه او وخت نه دی"
+
+msgid "Not a key/value map"
+msgstr "د کلي/ارزښت نقشه نه ده"
+
+msgid "Not a list item"
+msgstr "د فهرست توکی نه دی"
+
+msgid "Not a listed value"
+msgstr "فهرست شوی ارزښت نه دی"
+
+msgid "Not a number"
+msgstr "شمېره نه ده"
+
+msgid "Not a string"
+msgstr "ټکی نه دی"
+
+msgid "Not a time"
+msgstr "وخت نه دی"
+
+msgid "Not a true/false value"
+msgstr "د سم/ناسم ارزښت نه دی"
+
+msgid "Not an integer number"
+msgstr "ټوله شمېره نه ده"
+
+msgid "Object is not of required type \"%1$s\""
+msgstr "څیز د اړین «%1$s» ډول نه دی"
+
+msgid "Operation not supported"
+msgstr "عملیه نه ملاتړ کېږي"
+
+msgid "Order address position \"%1$s\" must be greater than 0"
+msgstr "د امر پتې موقف «%1$s» باید له 0 نه لوی وي"
+
+msgid "Order base item with order ID \"%1$s\" not found"
+msgstr "د «%1$s» امر پېژند سره د امر بنسټ توکی ونه موندل شو"
+
+msgid "Order delivery status \"%1$s\" not within allowed range"
+msgstr "د امر سپارنې حالت «%1$s» په اجازه شوې ساحه کې نه دی"
+
+msgid "Order payment status \"%1$s\" not within allowed range"
+msgstr "د امر تادیې حالت «%1$s» په اجازه شوې ساحه کې نه دی"
+
+msgid "Order product position \"%1$s\" must be greater than 0"
+msgstr "د امر محصول موقف «%1$s» باید له 0 نه لوی وي"
+
+msgid "Order service position \"%1$s\" must be greater than 0"
+msgstr "د امر خدمت موقف «%1$s» باید له 0 نه لوی وي"
+
+msgid "Order type \"%1$s\" not within allowed range"
+msgstr "د امر ډول «%1$s» په اجازه شوې ساحه کې نه دی"
+
+msgid "Order with ID \"%1$s\" was rejected with code \"%2$s\": %3$s"
+msgstr "د «%1$s» پېژند امر د «%2$s» کوډ سره رد شو: %3$s"
+
+msgid "Parameter \"%1$s\" for configuration not available"
+msgstr "د تنظیم «%1$s» پیرامیټر شتون نلري"
+
+msgid "Password object not available"
+msgstr "د رمز څیز شتون نلري"
+
+msgid "PayPal Express: Duplicate transaction with ID \"%1$s\" and status \"%2$s\""
+msgstr "د PayPal Express: د «%1$s» پېژند او «%2$s» حالت سره تکراري لېږد"
+
+msgid "PayPal Express: Duplicate transaction with ID \"%1$s\" and status \"%2$s\" "
+msgstr "د PayPal Express: د «%1$s» پېژند او «%2$s» حالت سره تکراري لېږد"
+
+msgid "PayPal Express: Invalid request \"%1$s\""
+msgstr "د PayPal Express: ناسمه غوښتنه «%1$s»"
+
+msgid "PayPal Express: Payment transaction ID for order ID \"%1$s\" not available"
+msgstr "د PayPal Express: د «%1$s» امر پېژند د تادیې لېږد پېژند شتون نلري"
+
+msgid "PayPal Express: Request for order ID \"%1$s\" failed with \"%2$s\""
+msgstr "د PayPal Express: د «%1$s» امر پېژند غوښتنه د «%2$s» سره ناکامه شوه"
+
+msgid "PayPal Express: Wrong payment amount \"%1$s\" for order ID \"%2$s\""
+msgstr "د PayPal Express: د «%2$s» امر پېژند لپاره ناسمه تادیه اندازه «%1$s»"
+
+msgid "PayPal Express: Wrong receiver email \"%1$s\""
+msgstr "د PayPal Express: ناسم د ترلاسه کوونکي برېښنالیک «%1$s»"
+
+msgid "Payment costs"
+msgstr "د تادیې لګښت"
+
+msgid "Please have a look at the prices of the products in your basket"
+msgstr "مهرباني وکړئ د خپلې ټوکرۍ د محصولاتو بیې وګورئ"
+
+msgid "Price for the given quantity \"%1$d\" not available"
+msgstr "د ورکړل شوې «%1$d» کچې لپاره بیه شتون نلري"
+
+msgid "Price for the given quantity \"%1$s\" not available"
+msgstr "د ورکړل شوې «%1$s» کچې لپاره بیه شتون نلري"
+
+msgid "Price item not available"
+msgstr "د بیې توکی شتون نلري"
+
+msgid "Process object not available"
+msgstr "د پروسې څیز شتون نلري"
+
+msgid "Product  not available"
+msgstr "محصول شتون نلري"
+
+msgid "Product does not contain the SKU code"
+msgstr "محصول د SKU کوډ نه لري"
+
+msgid "Product matching given properties not found"
+msgstr "له ورکړل شویو ځانګړتیاوو سره برابر محصول ونه موندل شو"
+
+msgid "Product not available"
+msgstr "محصول شتون نلري"
+
+msgid "Product with array key \"%1$d\" not available"
+msgstr "د «%1$d» صف کلید سره محصول شتون نلري"
+
+msgid "Products in basket not available"
+msgstr "په ټوکرۍ کې محصولات شتون نلري"
+
+msgid "Products out of stock"
+msgstr "محصولات په انبار کې نشته"
+
+msgid "Property item for removal not found"
+msgstr "د لیرې کولو ملکیت ونه موندل شو"
+
+msgid "Property name \"%1$s\" not within allowed range"
+msgstr "د ملکیت نوم «%1$s» په اجازه شوې ساحه کې نه دی"
+
+msgid "Provider in \"%1$s\" not available"
+msgstr "په «%1$s» کې عرضه کوونکی شتون نلري"
+
+msgid "Quantity must be 0 or greater and must not exceed %1$d"
+msgstr "کچه باید 0 یا ډېره وي او له %1$d نه زیاته نه وي"
+
+msgid "Quantity must be 0 or greater and must not exceed ordered quantity"
+msgstr "کچه باید 0 یا ډېره وي او له امر شوې کچې نه زیاته نه وي"
+
+msgid "Quantity must be greater than 0 and must not exceed %1$d"
+msgstr "کچه باید له 0 نه زیاته وي او له %1$d نه زیاته نه وي"
+
+msgid "Quantity must be greater than 0 and must not exceed 2147483647"
+msgstr "کچه باید له 0 نه زیاته وي او له 2147483647 نه زیاته نه وي"
+
+msgid "Quantity scale must be greater than 0"
+msgstr "د کچې مقیاس باید له 0 نه لوی وي"
+
+msgid "Required parameter \"%1$s\" is missing"
+msgstr "اړین پیرامیټر «%1$s» ورک دی"
+
+msgid "Required value for \"%1$s\" is missing"
+msgstr "د «%1$s» اړین ارزښت ورک دی"
+
+msgid "Search configuration for \"%1$s\" not available"
+msgstr "د «%1$s» لټون تنظیم شتون نلري"
+
+msgid "Search configuration not available"
+msgstr "د لټون تنظیم شتون نلري"
+
+msgid "Sending order failed: \"%1$s\""
+msgstr "امر استول ناکام شول: «%1$s»"
+
+msgid "Sending order to delivery provider failed with HTTP status \"%1$s\""
+msgstr "د سپارنې عرضه کوونکي ته د امر استول د «%1$s» HTTP حالت سره ناکام شول"
+
+msgid "Sending order to delivery provider failed: \"%1$s\""
+msgstr "د سپارنې عرضه کوونکي ته د امر استول ناکام شول: «%1$s»"
+
+msgid "Service not available"
+msgstr "خدمت شتون نلري"
+
+msgid "Service of type \"%1$s\" not available"
+msgstr "د «%1$s» ډول خدمت شتون نلري"
+
+msgid "Session object not available"
+msgstr "د غونډې څیز شتون نلري"
+
+msgid "Site for code \"%1$s\" not found"
+msgstr "د «%1$s» کوډ سایټ ونه موندل شو"
+
+msgid "Started order status import from \"%1$s\""
+msgstr "د «%1$s» څخه د امر حالت واردول پیل شول"
+
+msgid "Started order status import from file \"%1$s\""
+msgstr "له «%1$s» فایل څخه د امر حالت واردول پیل شول"
+
+msgid "Status not available"
+msgstr "حالت شتون نلري"
+
+msgid "The algorithm \"%1$s\" is not supported"
+msgstr "الګوریتم «%1$s» نه ملاتړ کېږي"
+
+msgid "The maximum basket value of %1$s is exceeded"
+msgstr "د ټوکرۍ اعظمي ارزښت %1$s څخه ډېر شوی"
+
+msgid "The maximum product quantity is %1$d"
+msgstr "د محصول اعظمي کچه %1$d ده"
+
+msgid "The maximum product quantity of %1$d is exceeded"
+msgstr "د محصول اعظمي کچه %1$d څخه ډېره شوه"
+
+msgid "The maximum product value is %1$s"
+msgstr "د محصول اعظمي ارزښت %1$s دی"
+
+msgid "The maximum quantity of all products is %1$d"
+msgstr "د ټولو محصولاتو اعظمي کچه %1$d ده"
+
+msgid "The maximum value of all products is %1$s"
+msgstr "د ټولو محصولاتو اعظمي ارزښت %1$s دی"
+
+msgid "The minimum basket value of %1$s isn't reached"
+msgstr "د ټوکرۍ لږ تر لږه ارزښت %1$s ته نه دی رسېدلی"
+
+msgid "The minimum product quantity of %1$d isn't reached"
+msgstr "د محصول لږ تر لږه کچه %1$d ته نه ده رسېدلې"
+
+msgid "The type of the configuration option with key \"%1$s\" must be \"%2$s\""
+msgstr "د «%1$s» کلي تنظیم انتخاب ډول باید «%2$s» وي"
+
+msgid "Time value after \"%1$s\""
+msgstr "د وخت ارزښت له «%1$s» وروسته"
+
+msgid "Time value before \"%1$s\""
+msgstr "د وخت ارزښت له «%1$s» مخکې"
+
+msgid "Total results value not found"
+msgstr "د ټولو پایلو ارزښت ونه موندل شو"
+
+msgid "Tree root with code \"%1$s\" in \"%2$s\" not found"
+msgstr "په «%2$s» کې د «%1$s» کوډ ریښه ونه موندل شوه"
+
+msgid "Type item with ID \"%1$s\" in \"%2$s\" not found"
+msgstr "په «%2$s» کې د «%1$s» پېژند ډول توکی ونه موندل شو"
+
+msgid "Unable to call method \"%1$s\""
+msgstr "طریقه «%1$s» نشي غوښتل کېدای"
+
+msgid "Unable to create order XML file \"%1$s\""
+msgstr "د امر XML فایل «%1$s» نه شي جوړېدلای"
+
+msgid "Unable to move imported file \"%1$s\" to \"%2$s\""
+msgstr "وارد شوی فایل «%1$s» «%2$s» ته نشي انتقالېدلای"
+
+msgid "Unable to sort public holidays: \"%1$s\""
+msgstr "عمومي رخصتۍ نشي ترتیبېدلای: «%1$s»"
+
+msgid "Unknown search key \"%1$s\""
+msgstr "ناپېژندل شوې د لټون کلي «%1$s»"
+
+msgid "View object not available"
+msgstr "د لید څیز شتون نلري"
+

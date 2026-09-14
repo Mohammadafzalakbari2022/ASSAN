@@ -1,0 +1,174 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: asaan\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "%013.2F"
+msgstr "%013.2F"
+
+msgid "Adding product with ID \"%1$s\" is not allowed"
+msgstr "د «%1$s» پېژند محصول زیاتول اجازه نلري"
+
+msgid "Available attribute IDs \"%1$s\" do not match the given attribute IDs \"%2$s\""
+msgstr "شته د ځانګړتیاو پېژندونه «%1$s» له ورکړل شویو پېژندونو «%2$s» سره نه برابرېږي"
+
+msgid "Basket item at position \"%1$d\" cannot be changed"
+msgstr "په «%1$d» موقف کې د ټوکرۍ توکی نشي بدلېدلای"
+
+msgid "Basket item at position \"%1$d\" cannot be deleted manually"
+msgstr "په «%1$d» موقف کې د ټوکرۍ توکی په لاس نشي ړنګېدلای"
+
+msgid "Category is not available"
+msgstr "ډول شتون نلري"
+
+msgid "Class \"%1$s\" does not implement \"%2$s\""
+msgstr "«%1$s» طبقه «%2$s» نه تطبیق کوي"
+
+msgid "Class \"%1$s\" does not implement interface \"%2$s\""
+msgstr "«%1$s» طبقه د «%2$s» نښلون نه تطبیق کوي"
+
+msgid "Class \"%1$s\" not available"
+msgstr "«%1$s» طبقه شتون نلري"
+
+msgid "Class \"%1$s\" not found"
+msgstr "«%1$s» طبقه ونه موندل شوه"
+
+msgid "Controller path is empty"
+msgstr "د کنټرولر لار خالي ده"
+
+msgid "Coupon code \"%1$s\" is invalid"
+msgstr "د کوپن کوډ «%1$s» سم نه دی"
+
+msgid "Coupon code \"%1$s\" is invalid or not available any more"
+msgstr "د کوپن کوډ «%1$s» سم نه دی یا نور شتون نلري"
+
+msgid "Coupon for code \"%1$s\" is not available any more"
+msgstr "د «%1$s» کوډ کوپن نور شتون نلري"
+
+msgid "Domain \"%1$s\" is not supported"
+msgstr "ډومین «%1$s» نه ملاتړ کېږي"
+
+msgid "Invalid \"%1$s\" references for product with ID \"%2$s\""
+msgstr "د «%2$s» پېژند محصول لپاره ناسمې «%1$s» ارجاعونه"
+
+msgid "Invalid \"%1$s\" references for product with ID %2$s"
+msgstr "د %2$s پېژند محصول لپاره ناسمې «%1$s» ارجاعونه"
+
+msgid "Invalid address properties, please check your input"
+msgstr "د پتې ځانګړتیاوې ناسمې دي، مهرباني وکړئ خپل داخل کړی مال وګورئ"
+
+msgid "Invalid characters in class name \"%1$s\""
+msgstr "په «%1$s» طبقه کې ناسم توري"
+
+msgid "Invalid characters in controller name \"%1$s\""
+msgstr "په کنټرولر نوم «%1$s» کې ناسم توري"
+
+msgid "Invalid characters in controller name \"%1$s\" in \"%2$s\""
+msgstr "په «%2$s» کې د کنټرولر نوم «%1$s» ناسم توري لري"
+
+msgid "Invalid class name \"%1$s\""
+msgstr "د طبقي نوم «%1$s» سم نه دی"
+
+msgid "Invalid domain \"%1$s\""
+msgstr "ډومین «%1$s» سم نه دی"
+
+msgid "Invalid factory \"%1$s\""
+msgstr "«%1$s» فابریکه سمه نه ده"
+
+msgid "Invalid price value \"%1$s\""
+msgstr "ناسم د بیې ارزښت «%1$s»"
+
+msgid "Invalid service attributes"
+msgstr "ناسمې د خدماتو ځانګړتیاوې"
+
+msgid "Invalid value for address type \"%1$s\""
+msgstr "د «%1$s» پتې ډول لپاره ناسم ارزښت"
+
+msgid "List type for domain \"%1$s\" and code \"%2$s\" not found"
+msgstr "د «%1$s» ډومین او «%2$s» کوډ فهرست ډول ونه موندل شو"
+
+msgid "No article found for selected attributes and product ID \"%1$s\""
+msgstr "د غوره شویو ځانګړتیاوو او «%1$s» محصول پېژند لپاره توکی ونه موندل شو"
+
+msgid "No customer lists domain"
+msgstr "د پیرودونکو د فهرست ډومین نشته"
+
+msgid "No customer lists type code"
+msgstr "د پیرودونکو د فهرست ډول کوډ نشته"
+
+msgid "No item for \"%1$s\" (%2$s) found"
+msgstr "د «%1$s» (%2$s) لپاره هېڅ توکی ونه موندل شو"
+
+msgid "No order item for ID \"%1$s\" found"
+msgstr "د «%1$s» پېژند لپاره د امر توکی ونه موندل شو"
+
+msgid "No stock for product ID \"%1$s\" and type \"%2$s\" available"
+msgstr "د «%1$s» محصول پېژند او «%2$s» ډول لپاره موجودي شتون نلري"
+
+msgid "No unique article found for selected attributes and product ID \"%1$s\""
+msgstr "د غوره شویو ځانګړتیاوو او «%1$s» محصول پېژند لپاره بې سارې توکی ونه موندل شو"
+
+msgid "Not allowed to access customer data for ID \"%1$s\""
+msgstr "د «%1$s» پېژند لپاره د پیرودونکي مالوماتو ته لاسرسی اجازه نلري"
+
+msgid "Number of coupon codes exceeds the limit"
+msgstr "د کوپن کوډونو شمېر له حد نه ډېر دی"
+
+msgid "Product item with ID \"%1$s\" not found"
+msgstr "د «%1$s» پېژند محصول توکی ونه موندل شو"
+
+msgid "Requirements for coupon code \"%1$s\" aren't met"
+msgstr "د «%1$s» کوپن کوډ اړتیاوې نه دي پوره شوې"
+
+msgid "Service item for type \"%1$s\" and ID \"%2$s\" not found"
+msgstr "د «%1$s» ډول او «%2$s» پېژند خدمت توکی ونه موندل شو"
+
+msgid "Site is not available"
+msgstr "سایټ شتون نلري"
+
+msgid "Temporary limit reached"
+msgstr "موقت حد ته رسېدلې"
+
+msgid "Temporary order limit reached"
+msgstr "د موقت امر حد ته رسېدلې"
+
+msgid "The order has already been created"
+msgstr "امر لا دمخه جوړ شوی دی"
+
+msgid "There are not enough products \"%1$s\" in stock"
+msgstr "د «%1$s» محصولات په انبار کې کافي نشته"
+
+msgid "Unable to call method \"%1$s\""
+msgstr "طریقه «%1$s» نشي غوښتل کېدای"
+
+msgid "Unable to call method \"%1$s::%2$s\""
+msgstr "طریقه «%1$s::%2$s» نشي غوښتل کېدای"
+
+msgid "Unable to create provider \"%1$s\" for service with ID \"%2$s\""
+msgstr "د «%2$s» پېژند خدمت لپاره عرضه کوونکی «%1$s» نه شي جوړېدلای"
+
+msgid "Unable to find category \"%1$s\""
+msgstr "ډول «%1$s» ونه موندل شو"
+
+msgid "Unable to find product \"%1$s\""
+msgstr "محصول «%1$s» ونه موندل شو"
+
+msgid "Unable to find supplier \"%1$s\""
+msgstr "عرضه کوونکی «%1$s» ونه موندل شو"
+
+msgid "Unknown attributes \"%1$s\""
+msgstr "ناپېژندل شوې ځانګړتیاوې «%1$s»"
+
+msgid "Unknown service attributes"
+msgstr "ناپېژندل شوې د خدماتو ځانګړتیاوې"
+
+msgid "You are not allowed to manage groups"
+msgstr "تاسو ته د ډلو سمبالښت اجازه نشته"
+
+msgid "You can only add a review if you have ordered a product"
+msgstr "تاسو یوازې بیا کتنه زیاتولای شئ که یو محصول مو امر کړی وي"
+

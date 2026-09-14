@@ -1,0 +1,567 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: asaan\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "aa"
+msgstr "آفار"
+
+msgid "ab"
+msgstr "ابخازي"
+
+msgid "ae"
+msgstr "اویستن"
+
+msgid "af"
+msgstr "افریکانس"
+
+msgid "ak"
+msgstr "اکان"
+
+msgid "am"
+msgstr "امهاري"
+
+msgid "an"
+msgstr "ارګوني"
+
+msgid "ar"
+msgstr "عربي"
+
+msgid "as"
+msgstr "اسامي"
+
+msgid "av"
+msgstr "آوار"
+
+msgid "ay"
+msgstr "ایمارا"
+
+msgid "az"
+msgstr "ازربي"
+
+msgid "ba"
+msgstr "باشکیر"
+
+msgid "be"
+msgstr "بیلاروسي"
+
+msgid "bg"
+msgstr "بلغاري"
+
+msgid "bh"
+msgstr "بهاري"
+
+msgid "bi"
+msgstr "بیسلاما"
+
+msgid "bm"
+msgstr "بمباره"
+
+msgid "bn"
+msgstr "بنګالي"
+
+msgid "bo"
+msgstr "تبتي"
+
+msgid "br"
+msgstr "بریټون"
+
+msgid "bs"
+msgstr "بوسنیایي"
+
+msgid "ca"
+msgstr "کاتالاني"
+
+msgid "ce"
+msgstr "چیچن"
+
+msgid "ch"
+msgstr "چمورو"
+
+msgid "co"
+msgstr "کورسیکايي"
+
+msgid "cr"
+msgstr "کري"
+
+msgid "cs"
+msgstr "چکي"
+
+msgid "cu"
+msgstr "سلاویک کلیسايي"
+
+msgid "cv"
+msgstr "چواش"
+
+msgid "cy"
+msgstr "ویلشي"
+
+msgid "da"
+msgstr "دانمارکي"
+
+msgid "de"
+msgstr "الماني"
+
+msgid "dv"
+msgstr "دیویهي"
+
+msgid "dz"
+msgstr "ژونگخه"
+
+msgid "ee"
+msgstr "ایوې"
+
+msgid "el"
+msgstr "یوناني"
+
+msgid "en"
+msgstr "انګلیسي"
+
+msgid "eo"
+msgstr "اسپرانتو"
+
+msgid "es"
+msgstr "هسپانوي"
+
+msgid "et"
+msgstr "استوني"
+
+msgid "eu"
+msgstr "باسکی"
+
+msgid "fa"
+msgstr "فارسي"
+
+msgid "ff"
+msgstr "فولاني"
+
+msgid "fi"
+msgstr "فنلني"
+
+msgid "fj"
+msgstr "فجي"
+
+msgid "fo"
+msgstr "فارویي"
+
+msgid "fr"
+msgstr "فرانسوي"
+
+msgid "fy"
+msgstr "فریزي"
+
+msgid "ga"
+msgstr "ایرلني"
+
+msgid "gd"
+msgstr "سکاټلني ګیلیک"
+
+msgid "gl"
+msgstr "ګالیشي"
+
+msgid "gn"
+msgstr "ګواراني"
+
+msgid "gu"
+msgstr "ګجراتي"
+
+msgid "gv"
+msgstr "مانکس"
+
+msgid "ha"
+msgstr "هوسا"
+
+msgid "he"
+msgstr "عبري"
+
+msgid "hi"
+msgstr "هندي"
+
+msgid "ho"
+msgstr "هیري موټو"
+
+msgid "hr"
+msgstr "کروشيايي"
+
+msgid "ht"
+msgstr "هایتي"
+
+msgid "hu"
+msgstr "هنګري"
+
+msgid "hy"
+msgstr "ارمني"
+
+msgid "hz"
+msgstr "هیررو"
+
+msgid "ia"
+msgstr "اینټرلنګوا"
+
+msgid "id"
+msgstr "اندونیزیايي"
+
+msgid "ie"
+msgstr "اینټرلنګ"
+
+msgid "ig"
+msgstr "ایګبو"
+
+msgid "ii"
+msgstr "یي"
+
+msgid "ik"
+msgstr "اینوپياک"
+
+msgid "io"
+msgstr "ایدو"
+
+msgid "is"
+msgstr "یخیلينډي"
+
+msgid "it"
+msgstr "ایټالوي"
+
+msgid "iu"
+msgstr "اینوکټيټوت"
+
+msgid "ja"
+msgstr "جاپاني"
+
+msgid "jv"
+msgstr "جاواني"
+
+msgid "ka"
+msgstr "جیورجي"
+
+msgid "kg"
+msgstr "کانګو"
+
+msgid "ki"
+msgstr "کیکویو"
+
+msgid "kj"
+msgstr "کوانیاما"
+
+msgid "kk"
+msgstr "قزاقي"
+
+msgid "kl"
+msgstr "ګرينلني"
+
+msgid "km"
+msgstr "خمير"
+
+msgid "kn"
+msgstr "کنړا"
+
+msgid "ko"
+msgstr "کوريايي"
+
+msgid "kr"
+msgstr "کنوري"
+
+msgid "ks"
+msgstr "کشميري"
+
+msgid "ku"
+msgstr "کردي"
+
+msgid "kv"
+msgstr "کومي"
+
+msgid "kw"
+msgstr "کرنشي"
+
+msgid "ky"
+msgstr "قیرغیزي"
+
+msgid "la"
+msgstr "لاتيني"
+
+msgid "lb"
+msgstr "لوکزامبورګي"
+
+msgid "lg"
+msgstr "لوګانډا"
+
+msgid "li"
+msgstr "ليمبورګي"
+
+msgid "ln"
+msgstr "لینګالا"
+
+msgid "lo"
+msgstr "لاوي"
+
+msgid "lt"
+msgstr "لتواني"
+
+msgid "lu"
+msgstr "لوبا-کاتانګا"
+
+msgid "lv"
+msgstr "لاتويايي"
+
+msgid "mg"
+msgstr "ملاغاسي"
+
+msgid "mh"
+msgstr "مارشالي"
+
+msgid "mi"
+msgstr "ماوري"
+
+msgid "mk"
+msgstr "مقدوني"
+
+msgid "ml"
+msgstr "مالايالم"
+
+msgid "mn"
+msgstr "منګولي"
+
+msgid "mo"
+msgstr "مولداوی"
+
+msgid "mr"
+msgstr "مراټي"
+
+msgid "ms"
+msgstr "ملایايي"
+
+msgid "mt"
+msgstr "مالټي"
+
+msgid "my"
+msgstr "برمايي"
+
+msgid "na"
+msgstr "ناورو"
+
+msgid "nb"
+msgstr "نارويژي بوکمال"
+
+msgid "nd"
+msgstr "شمالي ندېبېل"
+
+msgid "ne"
+msgstr "نیپالي"
+
+msgid "ng"
+msgstr "ندونګا"
+
+msgid "nl"
+msgstr "هالنډي"
+
+msgid "nn"
+msgstr "نارويژي نايونورسک"
+
+msgid "no"
+msgstr "نارويژي"
+
+msgid "nr"
+msgstr "جنوبي ندېبېل"
+
+msgid "nv"
+msgstr "ناواهو"
+
+msgid "ny"
+msgstr "چيچوا"
+
+msgid "oc"
+msgstr "اوکسېټان"
+
+msgid "oj"
+msgstr "اوجيبه"
+
+msgid "om"
+msgstr "اورومو"
+
+msgid "or"
+msgstr "اوريا"
+
+msgid "os"
+msgstr "اوسيتي"
+
+msgid "pa"
+msgstr "پنجابي"
+
+msgid "pi"
+msgstr "پالي"
+
+msgid "pl"
+msgstr "پولندي"
+
+msgid "ps"
+msgstr "پښتو"
+
+msgid "pt"
+msgstr "پورتګالي"
+
+msgid "pt_BR"
+msgstr "برازیلي پورتګالي"
+
+msgid "qu"
+msgstr "کيچوا"
+
+msgid "rm"
+msgstr "ریتو-رومانش"
+
+msgid "rn"
+msgstr "کيرونډي"
+
+msgid "ro"
+msgstr "رومانيايي"
+
+msgid "ru"
+msgstr "روسي"
+
+msgid "rw"
+msgstr "کينياروانډا"
+
+msgid "sa"
+msgstr "سنسکريت"
+
+msgid "sc"
+msgstr "ساردينيايي"
+
+msgid "sd"
+msgstr "سيندي"
+
+msgid "se"
+msgstr "شمالي سامي"
+
+msgid "sg"
+msgstr "سانګو"
+
+msgid "si"
+msgstr "سنګهالي"
+
+msgid "sk"
+msgstr "سلوواکي"
+
+msgid "sl"
+msgstr "سلووانیایي"
+
+msgid "sm"
+msgstr "سامواني"
+
+msgid "sn"
+msgstr "شونا"
+
+msgid "so"
+msgstr "سومالۍ"
+
+msgid "sq"
+msgstr "البانيايي"
+
+msgid "sr"
+msgstr "سربي"
+
+msgid "ss"
+msgstr "سواتي"
+
+msgid "st"
+msgstr "سیسوتو"
+
+msgid "su"
+msgstr "سينډني"
+
+msgid "sv"
+msgstr "سويډني"
+
+msgid "sw"
+msgstr "سواهيلي"
+
+msgid "ta"
+msgstr "تامل"
+
+msgid "te"
+msgstr "تلګو"
+
+msgid "tg"
+msgstr "تاجکي"
+
+msgid "th"
+msgstr "تايلنډي"
+
+msgid "ti"
+msgstr "تيګرينيا"
+
+msgid "tk"
+msgstr "ترکمني"
+
+msgid "tl"
+msgstr "تګالوګ"
+
+msgid "tn"
+msgstr "سیتسوانا"
+
+msgid "to"
+msgstr "تونګايي"
+
+msgid "tr"
+msgstr "تورکي"
+
+msgid "ts"
+msgstr "تسونګا"
+
+msgid "tt"
+msgstr "تاتار"
+
+msgid "tw"
+msgstr "توي"
+
+msgid "ty"
+msgstr "تايتي"
+
+msgid "ug"
+msgstr "ايغور"
+
+msgid "uk"
+msgstr "اوکرايني"
+
+msgid "ur"
+msgstr "اردو"
+
+msgid "uz"
+msgstr "اوزبکي"
+
+msgid "ve"
+msgstr "وينډا"
+
+msgid "vi"
+msgstr "ويېتنامي"
+
+msgid "vo"
+msgstr "ولاپوک"
+
+msgid "wa"
+msgstr "والونی"
+
+msgid "wo"
+msgstr "وولوف"
+
+msgid "xh"
+msgstr "خوسا"
+
+msgid "yi"
+msgstr "يديش"
+
+msgid "yo"
+msgstr "يوروبا"
+
+msgid "za"
+msgstr "ژوانګ"
+
+msgid "zh"
+msgstr "چيني"
+
+msgid "zu"
+msgstr "زولو"
+

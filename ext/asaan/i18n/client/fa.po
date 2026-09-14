@@ -1,0 +1,45 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: asaan\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "ABOUT US"
+msgstr "درباره ما"
+
+msgid "About the company"
+msgstr "درباره شرکت"
+
+msgid "Back to top"
+msgstr "بازگشت به بالا"
+
+msgid "Cancellation"
+msgstr "لغو"
+
+msgid "Company"
+msgstr "شرکت"
+
+msgid "Contact us"
+msgstr "تماس با ما"
+
+msgid "LEGAL"
+msgstr "قانوني"
+
+msgid "Legal information"
+msgstr "اطلاعات حقوقی"
+
+msgid "Privacy Notice"
+msgstr "حریم خصوصی"
+
+msgid "Social media links"
+msgstr "لینک‌های شبکه‌های اجتماعی"
+
+msgid "Terms & Conditions"
+msgstr "شرایط و ضوابط"
+
+msgid "To the home page"
+msgstr "بازگشت به صفحه اصلی"
+

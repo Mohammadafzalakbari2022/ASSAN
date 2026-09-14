@@ -1,0 +1,759 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: asaan\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "AD"
+msgstr "اندورا"
+
+msgid "AE"
+msgstr "متحده عربي امارات"
+
+msgid "AF"
+msgstr "افغانستان"
+
+msgid "AG"
+msgstr "انتيګوا او باربودا"
+
+msgid "AI"
+msgstr "انګیلا"
+
+msgid "AL"
+msgstr "البانیا"
+
+msgid "AM"
+msgstr "ارمنیا"
+
+msgid "AO"
+msgstr "انګولا"
+
+msgid "AQ"
+msgstr "انتارکتیکا"
+
+msgid "AR"
+msgstr "ارجنټاين"
+
+msgid "AS"
+msgstr "امریکایي ساموا"
+
+msgid "AT"
+msgstr "اتریش"
+
+msgid "AU"
+msgstr "آسترالیا"
+
+msgid "AW"
+msgstr "اروبا"
+
+msgid "AX"
+msgstr "الند ټاپوان"
+
+msgid "AZ"
+msgstr "ازربایجان"
+
+msgid "BA"
+msgstr "بوسنیا او هیرزیګوینا"
+
+msgid "BB"
+msgstr "بارباډوس"
+
+msgid "BD"
+msgstr "بنګله‌دیش"
+
+msgid "BE"
+msgstr "بلجیم"
+
+msgid "BF"
+msgstr "بورکینا فاسو"
+
+msgid "BG"
+msgstr "بلغاریا"
+
+msgid "BH"
+msgstr "بحرین"
+
+msgid "BI"
+msgstr "بوروندي"
+
+msgid "BJ"
+msgstr "بینن"
+
+msgid "BL"
+msgstr "سینټ بارتیلمي"
+
+msgid "BM"
+msgstr "برمودا"
+
+msgid "BN"
+msgstr "بروني"
+
+msgid "BO"
+msgstr "بولیویا"
+
+msgid "BQ"
+msgstr "بونایر، سینټ یوستاتیوس او سابا"
+
+msgid "BR"
+msgstr "برازیل"
+
+msgid "BS"
+msgstr "بهاماس"
+
+msgid "BT"
+msgstr "بوټان"
+
+msgid "BV"
+msgstr "بوویټ ټاپو"
+
+msgid "BW"
+msgstr "بوتسوانا"
+
+msgid "BY"
+msgstr "بیلاروس"
+
+msgid "BZ"
+msgstr "بیلیز"
+
+msgid "CA"
+msgstr "کاناډا"
+
+msgid "CC"
+msgstr "کوکوس (کیلینګ) ټاپوان"
+
+msgid "CD"
+msgstr "کانګو (ولسي جمهوریت)"
+
+msgid "CF"
+msgstr "مرکزي افریقايي جمهوریت"
+
+msgid "CG"
+msgstr "کانګو"
+
+msgid "CH"
+msgstr "سویس"
+
+msgid "CI"
+msgstr "د عاج ساحه"
+
+msgid "CK"
+msgstr "کوک ټاپوان"
+
+msgid "CL"
+msgstr "چیلي"
+
+msgid "CM"
+msgstr "کامرون"
+
+msgid "CN"
+msgstr "چین"
+
+msgid "CO"
+msgstr "کولمبیا"
+
+msgid "CR"
+msgstr "کوستاریکا"
+
+msgid "CU"
+msgstr "کوبا"
+
+msgid "CV"
+msgstr "کیپ ورد"
+
+msgid "CW"
+msgstr "کوراکاو"
+
+msgid "CX"
+msgstr "د کرېسټمېس ټاپو"
+
+msgid "CY"
+msgstr "قبرس"
+
+msgid "CZ"
+msgstr "چک جمهوریت"
+
+msgid "DE"
+msgstr "جرمني"
+
+msgid "DJ"
+msgstr "جیبوتي"
+
+msgid "DK"
+msgstr "دنمارک"
+
+msgid "DM"
+msgstr "دومینیکا"
+
+msgid "DO"
+msgstr "دومینیکن جمهوریت"
+
+msgid "DZ"
+msgstr "الجیریا"
+
+msgid "EC"
+msgstr "اکوادور"
+
+msgid "EE"
+msgstr "استونیا"
+
+msgid "EG"
+msgstr "مصر"
+
+msgid "EH"
+msgstr "لویدیځه صحرا"
+
+msgid "ER"
+msgstr "اریتریا"
+
+msgid "ES"
+msgstr "هسپانیه"
+
+msgid "ET"
+msgstr "ایتوپیا"
+
+msgid "FI"
+msgstr "فنلینډ"
+
+msgid "FJ"
+msgstr "فجي"
+
+msgid "FK"
+msgstr "فالکلنډ ټاپوان"
+
+msgid "FM"
+msgstr "میکرونیزیا"
+
+msgid "FO"
+msgstr "فارو ټاپوان"
+
+msgid "FR"
+msgstr "فرانسه"
+
+msgid "GA"
+msgstr "ګابون"
+
+msgid "GB"
+msgstr "بریتانیا"
+
+msgid "GD"
+msgstr "ګرینادا"
+
+msgid "GE"
+msgstr "جورجیا"
+
+msgid "GF"
+msgstr "فرانسوي ګیان"
+
+msgid "GG"
+msgstr "ګرنسي"
+
+msgid "GH"
+msgstr "ګانا"
+
+msgid "GI"
+msgstr "ګیبرالتار"
+
+msgid "GL"
+msgstr "ګرینلینډ"
+
+msgid "GM"
+msgstr "ګامبیا"
+
+msgid "GN"
+msgstr "ګینه"
+
+msgid "GP"
+msgstr "ګاډلوپ"
+
+msgid "GQ"
+msgstr "استوایی ګینه"
+
+msgid "GR"
+msgstr "یونان"
+
+msgid "GS"
+msgstr "جنوبي جورجیا او جنوبي ساؤت ویچ ټاپوان"
+
+msgid "GT"
+msgstr "ګواتیمالا"
+
+msgid "GU"
+msgstr "ګوام"
+
+msgid "GW"
+msgstr "ګینه بیساو"
+
+msgid "GY"
+msgstr "ګیانا"
+
+msgid "HK"
+msgstr "هانګ کانګ"
+
+msgid "HM"
+msgstr "هیرډ او مک‌ډونلډ ټاپوان"
+
+msgid "HN"
+msgstr "هندوراس"
+
+msgid "HR"
+msgstr "کروشیا"
+
+msgid "HT"
+msgstr "هایتي"
+
+msgid "HU"
+msgstr "هنګري"
+
+msgid "ID"
+msgstr "اندونیزیا"
+
+msgid "IE"
+msgstr "ایرلینډ"
+
+msgid "IL"
+msgstr "اسرائیل"
+
+msgid "IM"
+msgstr "د مان ټاپو"
+
+msgid "IN"
+msgstr "هند"
+
+msgid "IO"
+msgstr "بریتانوي هند سمندري سیمه"
+
+msgid "IQ"
+msgstr "عراق"
+
+msgid "IR"
+msgstr "ایران"
+
+msgid "IS"
+msgstr "آیسلینډ"
+
+msgid "IT"
+msgstr "ایټالیا"
+
+msgid "JE"
+msgstr "جرسي"
+
+msgid "JM"
+msgstr "جامایکا"
+
+msgid "JO"
+msgstr "اردن"
+
+msgid "JP"
+msgstr "جاپان"
+
+msgid "KE"
+msgstr "کینیا"
+
+msgid "KG"
+msgstr "قرغزستان"
+
+msgid "KH"
+msgstr "کمبودیا"
+
+msgid "KI"
+msgstr "کیریباتي"
+
+msgid "KM"
+msgstr "کوموروس"
+
+msgid "KN"
+msgstr "سینټ کټس او نویس"
+
+msgid "KP"
+msgstr "کوریا (ولسي جمهوریت)"
+
+msgid "KR"
+msgstr "کوریا (سویلي)"
+
+msgid "KW"
+msgstr "کوېټ"
+
+msgid "KY"
+msgstr "کیمن ټاپوان"
+
+msgid "KZ"
+msgstr "قزاقستان"
+
+msgid "LA"
+msgstr "لاوس"
+
+msgid "LB"
+msgstr "لبنان"
+
+msgid "LC"
+msgstr "سینټ لوشیا"
+
+msgid "LI"
+msgstr "لیختن اشتاین"
+
+msgid "LK"
+msgstr "سريلانکا"
+
+msgid "LR"
+msgstr "لیبریا"
+
+msgid "LS"
+msgstr "لیسوتو"
+
+msgid "LT"
+msgstr "لیتوانیا"
+
+msgid "LU"
+msgstr "لوکزامبورګ"
+
+msgid "LV"
+msgstr "لاتویا"
+
+msgid "LY"
+msgstr "لیبیا"
+
+msgid "MA"
+msgstr "مراکش"
+
+msgid "MC"
+msgstr "موناکو"
+
+msgid "MD"
+msgstr "مولداویا"
+
+msgid "ME"
+msgstr "مانټینیګرو"
+
+msgid "MF"
+msgstr "سینټ مارټین (فرانسوي برخه)"
+
+msgid "MG"
+msgstr "مدغاسکر"
+
+msgid "MH"
+msgstr "مارشال ټاپوان"
+
+msgid "MK"
+msgstr "مقدونیه"
+
+msgid "ML"
+msgstr "مالي"
+
+msgid "MM"
+msgstr "میانمار"
+
+msgid "MN"
+msgstr "منګولیا"
+
+msgid "MO"
+msgstr "ماکاو"
+
+msgid "MP"
+msgstr "شمالي ماریانا ټاپوان"
+
+msgid "MQ"
+msgstr "مارټینیک"
+
+msgid "MR"
+msgstr "موریتانیا"
+
+msgid "MS"
+msgstr "مانټسيرات"
+
+msgid "MT"
+msgstr "مالټا"
+
+msgid "MU"
+msgstr "موریشس"
+
+msgid "MV"
+msgstr "مالدیو"
+
+msgid "MW"
+msgstr "مالاوي"
+
+msgid "MX"
+msgstr "مکسیکو"
+
+msgid "MY"
+msgstr "مالیزیا"
+
+msgid "MZ"
+msgstr "موزمبیق"
+
+msgid "NA"
+msgstr "نمیبیا"
+
+msgid "NC"
+msgstr "نوې کالدونیا"
+
+msgid "NE"
+msgstr "نیجر"
+
+msgid "NF"
+msgstr "نورفولک ټاپو"
+
+msgid "NG"
+msgstr "نیجیریا"
+
+msgid "NI"
+msgstr "نیکاراګوا"
+
+msgid "NL"
+msgstr "هالنډ"
+
+msgid "NO"
+msgstr "ناروی"
+
+msgid "NP"
+msgstr "نیپال"
+
+msgid "NR"
+msgstr "ناورو"
+
+msgid "NU"
+msgstr "نيو"
+
+msgid "NZ"
+msgstr "نيوزیلنډ"
+
+msgid "OM"
+msgstr "عمان"
+
+msgid "PA"
+msgstr "پاناما"
+
+msgid "PE"
+msgstr "پیرو"
+
+msgid "PF"
+msgstr "فرانسوي پولینیزیا"
+
+msgid "PG"
+msgstr "پاپوا نیو ګینه"
+
+msgid "PH"
+msgstr "فیلیپین"
+
+msgid "PK"
+msgstr "پاکستان"
+
+msgid "PL"
+msgstr "پولنډ"
+
+msgid "PM"
+msgstr "سینټ پییر او میکلون"
+
+msgid "PN"
+msgstr "پیتکیرن"
+
+msgid "PR"
+msgstr "پورټو ریکو"
+
+msgid "PS"
+msgstr "فلسطین"
+
+msgid "PT"
+msgstr "پورتګال"
+
+msgid "PW"
+msgstr "پالاو"
+
+msgid "PY"
+msgstr "پاراګوای"
+
+msgid "QA"
+msgstr "قطر"
+
+msgid "RE"
+msgstr "ریونین"
+
+msgid "RO"
+msgstr "رومانیا"
+
+msgid "RS"
+msgstr "سربیا"
+
+msgid "RU"
+msgstr "روسیه"
+
+msgid "RW"
+msgstr "روانډا"
+
+msgid "SA"
+msgstr "سعودي عربستان"
+
+msgid "SB"
+msgstr "سولومون ټاپوان"
+
+msgid "SC"
+msgstr "سیشیل"
+
+msgid "SD"
+msgstr "سوډان"
+
+msgid "SE"
+msgstr "سویډن"
+
+msgid "SG"
+msgstr "سنګاپور"
+
+msgid "SH"
+msgstr "سینټ هېلینا"
+
+msgid "SI"
+msgstr "سلووانیا"
+
+msgid "SJ"
+msgstr "سوالبرد او جان ماین"
+
+msgid "SK"
+msgstr "سلوواکیا"
+
+msgid "SL"
+msgstr "سییرالیون"
+
+msgid "SM"
+msgstr "سان مارینو"
+
+msgid "SN"
+msgstr "سینیګال"
+
+msgid "SO"
+msgstr "سومالیا"
+
+msgid "SR"
+msgstr "سورینام"
+
+msgid "SS"
+msgstr "جنوبي سوډان"
+
+msgid "ST"
+msgstr "ساوتومه او پرینسیپ"
+
+msgid "SV"
+msgstr "السالوادور"
+
+msgid "SX"
+msgstr "سینټ مارټین (هالنډي برخه)"
+
+msgid "SY"
+msgstr "سوریه"
+
+msgid "SZ"
+msgstr "سوازیلنډ"
+
+msgid "TC"
+msgstr "ترک او کیکوس ټاپوان"
+
+msgid "TD"
+msgstr "چاډ"
+
+msgid "TF"
+msgstr "فرانسوي سویلي سیمې"
+
+msgid "TG"
+msgstr "توګو"
+
+msgid "TH"
+msgstr "تایلنډ"
+
+msgid "TJ"
+msgstr "تاجکستان"
+
+msgid "TK"
+msgstr "توکلاو"
+
+msgid "TL"
+msgstr "تیمر-لسته"
+
+msgid "TM"
+msgstr "ترکمنستان"
+
+msgid "TN"
+msgstr "تونس"
+
+msgid "TO"
+msgstr "تونګا"
+
+msgid "TR"
+msgstr "تورکیه"
+
+msgid "TT"
+msgstr "ترینیداد او توباګو"
+
+msgid "TV"
+msgstr "تووالو"
+
+msgid "TW"
+msgstr "تایوان"
+
+msgid "TZ"
+msgstr "تانزانیا"
+
+msgid "UA"
+msgstr "اوکراین"
+
+msgid "UG"
+msgstr "یوګانډا"
+
+msgid "UM"
+msgstr "د متحده ایالتونو ګاڼې ټاپوان"
+
+msgid "US"
+msgstr "متحده ایالتونه"
+
+msgid "UY"
+msgstr "یوروګوای"
+
+msgid "UZ"
+msgstr "ازبکستان"
+
+msgid "VA"
+msgstr "وټیکان"
+
+msgid "VC"
+msgstr "سینټ وینسینټ او ګرینادین"
+
+msgid "VE"
+msgstr "وینزویلا"
+
+msgid "VG"
+msgstr "بریتانوي ورجن ټاپوان"
+
+msgid "VI"
+msgstr "امریکایي ورجن ټاپوان"
+
+msgid "VN"
+msgstr "ویتنام"
+
+msgid "VU"
+msgstr "وانواتو"
+
+msgid "WF"
+msgstr "والیس او فوتونا"
+
+msgid "WS"
+msgstr "ساموا"
+
+msgid "XK"
+msgstr "کوسوو"
+
+msgid "YE"
+msgstr "یمن"
+
+msgid "YT"
+msgstr "میوټ"
+
+msgid "ZA"
+msgstr "جنوبي افریقا"
+
+msgid "ZM"
+msgstr "زامبیا"
+
+msgid "ZW"
+msgstr "زیمبابوي"
+

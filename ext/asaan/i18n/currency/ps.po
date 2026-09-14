@@ -1,0 +1,477 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: asaan\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "AED"
+msgstr "د.إ"
+
+msgid "AFN"
+msgstr "افغانۍ"
+
+msgid "ALL"
+msgstr "L"
+
+msgid "AMD"
+msgstr "AMD"
+
+msgid "ANG"
+msgstr "ƒ"
+
+msgid "AOA"
+msgstr "Kz"
+
+msgid "ARS"
+msgstr "$"
+
+msgid "AUD"
+msgstr "A$"
+
+msgid "AWG"
+msgstr "Afl."
+
+msgid "AZN"
+msgstr "man."
+
+msgid "BAM"
+msgstr "KM"
+
+msgid "BBD"
+msgstr "Bds$"
+
+msgid "BDT"
+msgstr "৳"
+
+msgid "BGN"
+msgstr "лв"
+
+msgid "BHD"
+msgstr ".د.ب"
+
+msgid "BIF"
+msgstr "FBu"
+
+msgid "BMD"
+msgstr "BD$"
+
+msgid "BND"
+msgstr "B$"
+
+msgid "BOB"
+msgstr "Bs."
+
+msgid "BRL"
+msgstr "R$"
+
+msgid "BSD"
+msgstr "B$"
+
+msgid "BTN"
+msgstr "Nu."
+
+msgid "BWP"
+msgstr "P"
+
+msgid "BYR"
+msgstr "Br"
+
+msgid "BZD"
+msgstr "BZ$"
+
+msgid "CAD"
+msgstr "C$"
+
+msgid "CDF"
+msgstr "FC"
+
+msgid "CHF"
+msgstr "Fr"
+
+msgid "CLP"
+msgstr "$"
+
+msgid "CNY"
+msgstr "¥"
+
+msgid "COP"
+msgstr "COL$"
+
+msgid "CRC"
+msgstr "₡"
+
+msgid "CUP"
+msgstr "$MN"
+
+msgid "CVE"
+msgstr "Esc"
+
+msgid "CZK"
+msgstr "Kč"
+
+msgid "DJF"
+msgstr "Fdj"
+
+msgid "DKK"
+msgstr "kr."
+
+msgid "DOP"
+msgstr "RD$"
+
+msgid "DZD"
+msgstr "د.ج"
+
+msgid "EGP"
+msgstr "ج.م"
+
+msgid "ERN"
+msgstr "Nfk"
+
+msgid "ETB"
+msgstr "Br"
+
+msgid "EUR"
+msgstr "€"
+
+msgid "FJD"
+msgstr "FJ$"
+
+msgid "FKP"
+msgstr "£"
+
+msgid "GBP"
+msgstr "£"
+
+msgid "GEL"
+msgstr "lari"
+
+msgid "GHC"
+msgstr "GH₵"
+
+msgid "GIP"
+msgstr "£"
+
+msgid "GMD"
+msgstr "D"
+
+msgid "GNF"
+msgstr "FG"
+
+msgid "GTQ"
+msgstr "Q"
+
+msgid "GYD"
+msgstr "G$"
+
+msgid "HKD"
+msgstr "HK$"
+
+msgid "HNL"
+msgstr "L"
+
+msgid "HRK"
+msgstr "kn"
+
+msgid "HTG"
+msgstr "G"
+
+msgid "HUF"
+msgstr "Ft"
+
+msgid "IDR"
+msgstr "Rp"
+
+msgid "ILS"
+msgstr "₪"
+
+msgid "INR"
+msgstr "₨"
+
+msgid "IQD"
+msgstr "ع.د"
+
+msgid "IRR"
+msgstr "﷼"
+
+msgid "ISK"
+msgstr "kr"
+
+msgid "JMD"
+msgstr "J$"
+
+msgid "JOD"
+msgstr "JOD"
+
+msgid "JPY"
+msgstr "¥"
+
+msgid "KES"
+msgstr "KSh"
+
+msgid "KGS"
+msgstr "som"
+
+msgid "KHR"
+msgstr "៛"
+
+msgid "KMF"
+msgstr "CF"
+
+msgid "KPW"
+msgstr "₩"
+
+msgid "KRW"
+msgstr "₩"
+
+msgid "KWD"
+msgstr "د.ك"
+
+msgid "KYD"
+msgstr "$"
+
+msgid "KZT"
+msgstr "₸"
+
+msgid "LAK"
+msgstr "₭"
+
+msgid "LBP"
+msgstr "ل.ل"
+
+msgid "LKR"
+msgstr "රු"
+
+msgid "LRD"
+msgstr "L$"
+
+msgid "LSL"
+msgstr "M"
+
+msgid "LTL"
+msgstr "Lt"
+
+msgid "LVL"
+msgstr "Ls"
+
+msgid "LYD"
+msgstr "ل.د"
+
+msgid "MAD"
+msgstr "د.م."
+
+msgid "MDL"
+msgstr "lei"
+
+msgid "MGA"
+msgstr "Ar"
+
+msgid "MKD"
+msgstr "ден"
+
+msgid "MMK"
+msgstr "K"
+
+msgid "MNT"
+msgstr "₮"
+
+msgid "MOP"
+msgstr "MOP$"
+
+msgid "MRO"
+msgstr "UM"
+
+msgid "MTL"
+msgstr "Rs"
+
+msgid "MVR"
+msgstr "Rf"
+
+msgid "MWK"
+msgstr "MK"
+
+msgid "MXN"
+msgstr "Mex$"
+
+msgid "MYR"
+msgstr "RM"
+
+msgid "MZM"
+msgstr "MT"
+
+msgid "NAD"
+msgstr "N$"
+
+msgid "NGN"
+msgstr "₦"
+
+msgid "NIO"
+msgstr "C$"
+
+msgid "NOK"
+msgstr "kr"
+
+msgid "NPR"
+msgstr "Rs"
+
+msgid "NZD"
+msgstr "NZ$"
+
+msgid "OMR"
+msgstr "ر.ع."
+
+msgid "PAB"
+msgstr "B/."
+
+msgid "PEN"
+msgstr "S/."
+
+msgid "PGK"
+msgstr "K"
+
+msgid "PHP"
+msgstr "₱"
+
+msgid "PKR"
+msgstr "Rs"
+
+msgid "PLN"
+msgstr "zł"
+
+msgid "PYG"
+msgstr "₲"
+
+msgid "QAR"
+msgstr "ر.ق"
+
+msgid "RON"
+msgstr "lei"
+
+msgid "RSD"
+msgstr "РСД"
+
+msgid "RUB"
+msgstr "руб."
+
+msgid "RWF"
+msgstr "FRw"
+
+msgid "SAR"
+msgstr "﷼"
+
+msgid "SBD"
+msgstr "SI$"
+
+msgid "SCR"
+msgstr "SR"
+
+msgid "SDG"
+msgstr "SDG"
+
+msgid "SEK"
+msgstr "kr"
+
+msgid "SGD"
+msgstr "S$"
+
+msgid "SHP"
+msgstr "£"
+
+msgid "SLL"
+msgstr "Le"
+
+msgid "SOS"
+msgstr "Sh.So."
+
+msgid "SRD"
+msgstr "$"
+
+msgid "STD"
+msgstr "Db"
+
+msgid "SYP"
+msgstr "LS"
+
+msgid "SZL"
+msgstr "E"
+
+msgid "THB"
+msgstr "฿"
+
+msgid "TJS"
+msgstr "TJS"
+
+msgid "TMT"
+msgstr "m"
+
+msgid "TND"
+msgstr "د.ت"
+
+msgid "TOP"
+msgstr "T$"
+
+msgid "TRY"
+msgstr "lira"
+
+msgid "TTD"
+msgstr "TT$"
+
+msgid "TWD"
+msgstr "NT$"
+
+msgid "TZS"
+msgstr "TZS"
+
+msgid "UAH"
+msgstr "₴"
+
+msgid "UGX"
+msgstr "USh"
+
+msgid "USD"
+msgstr "US$"
+
+msgid "UYU"
+msgstr "$U"
+
+msgid "UZS"
+msgstr "som"
+
+msgid "VEF"
+msgstr "Bs."
+
+msgid "VND"
+msgstr "₫"
+
+msgid "VUV"
+msgstr "VT"
+
+msgid "WST"
+msgstr "WS$"
+
+msgid "XAF"
+msgstr "FCFA"
+
+msgid "XCD"
+msgstr "$"
+
+msgid "XOF"
+msgstr "CFA"
+
+msgid "XPF"
+msgstr "F"
+
+msgid "YER"
+msgstr "YER"
+
+msgid "ZAR"
+msgstr "R"
+
+msgid "ZMW"
+msgstr "ZK"
+
+msgid "ZWL"
+msgstr "Z$"
+

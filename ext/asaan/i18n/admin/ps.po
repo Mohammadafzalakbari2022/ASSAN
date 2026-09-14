@@ -1,0 +1,2280 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: asaan\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "%1$d/%2$d"
+msgstr "%1$d/%2$d"
+
+msgid "%1$s %2$s"
+msgstr "%1$s %2$s"
+
+msgid "%1$s (Ctrl+Alt+%2$s)"
+msgstr "%1$s (Ctrl+Alt+%2$s)"
+
+msgid "%s/%s/%s.%s"
+msgstr "%s/%s/%s.%s"
+
+msgid "+ Tax"
+msgstr "+ مالیه"
+
+msgid "<hidden>"
+msgstr "<پټ>"
+
+msgid "?"
+msgstr "؟"
+
+msgid "API key"
+msgstr "د API کلي"
+
+msgid "Account"
+msgstr "کارن حساب"
+
+msgid "Active"
+msgstr "فعال"
+
+msgid "Actual price"
+msgstr "اصلي بیه"
+
+msgid "Actual price customers can buy the article for on the web site"
+msgstr "اصلي بیه چې پیرودونکي کولی شي پر ویبسایټ توکی وپېري"
+
+msgid "Add"
+msgstr "زیاتول"
+
+msgid "Add after"
+msgstr "وروسته زیاتول"
+
+msgid "Add before"
+msgstr "مخکې زیاتول"
+
+msgid "Additional information where the customer's apartment can be found"
+msgstr "اضافي مالومات چې د پیرودونکي اپارتمان هلته موندل کېږي"
+
+msgid "Additional information where the supplier's apartment can be found"
+msgstr "اضافي مالومات چې د عرضه کوونکي اپارتمان هلته موندل کېږي"
+
+msgid "Address 1"
+msgstr "پته 1"
+
+msgid "Address 2"
+msgstr "پته 2"
+
+msgid "Address 3"
+msgstr "پته 3"
+
+msgid "Address identifier of the customer's house for delivery"
+msgstr "د سپارنې لپاره د پیرودونکي د کور پېژند"
+
+msgid "Address identifier of the supplier's house for delivery"
+msgstr "د سپارنې لپاره د عرضه کوونکي د کور پېژند"
+
+msgid "Admin JQAdm type is empty"
+msgstr "د Admin JQAdm ډول خالي دی"
+
+msgid "Advanced"
+msgstr "پرمختللی"
+
+msgid "Aimeos caching is disabled by \"%1$s\""
+msgstr "د Aimeos کش د «%1$s» له لوري بې کاره شوی"
+
+msgid "Aimeos debug logging is enabled by \"%1$s\""
+msgstr "د Aimeos ډي بګ لوګ د «%1$s» له لوري فعال شوی"
+
+msgid "Aimeos object not available"
+msgstr "د Aimeos څیز شتون نلري"
+
+msgid "All"
+msgstr "ټول"
+
+msgid "Allow custom price"
+msgstr "دودیزه بیه وړ کړئ"
+
+msgid "Allow customers to choose themselves how much they want to pay"
+msgstr "پیرودونکو ته پرېږدئ چې پخپله وټاکي څومره غواړي ورکړي"
+
+msgid "Alphanumeric string that can identify the group uniquely"
+msgstr "حروفشمېر ټکی چې ډله په بې سارې توګه پېژندلای شي"
+
+msgid "Apply"
+msgstr "عملي کول"
+
+msgid "Attribute"
+msgstr "ځانګړتیا"
+
+msgid "Attribute Lists Type"
+msgstr "د ځانګړتیاو فهرست ډول"
+
+msgid "Attribute Lists Types"
+msgstr "د ځانګړتیاو فهرست ډولونه"
+
+msgid "Attribute Property Type"
+msgstr "د ځانګړتیا ملکیت ډول"
+
+msgid "Attribute Property Types"
+msgstr "د ځانګړتیا ملکیت ډولونه"
+
+msgid "Attribute Type"
+msgstr "د ځانګړتیا ډول"
+
+msgid "Attribute Types"
+msgstr "د ځانګړتیا ډولونه"
+
+msgid "Attribute position (optional)"
+msgstr "د ځانګړتیا موقف (اختیاري)"
+
+msgid "Attribute properties that are not shared with other attributes"
+msgstr "د ځانګړتیا ملکیتونه چې له نورو ځانګړتیاوو سره نه شریکېږي"
+
+msgid "Attribute type that limits the list of available attributes"
+msgstr "د ځانګړتیا ډول چې د شته ځانګړتیاو فهرست محدودوي"
+
+msgid "Attributes"
+msgstr "ځانګړتیاوې"
+
+msgid "Available currency for the current site"
+msgstr "د اوسني سایټ لپاره شته اسعار"
+
+msgid "Available intervals in the front-end"
+msgstr "په مخکنۍ برخه کې شته وقفې"
+
+msgid "Available language for the current site"
+msgstr "د اوسني سایټ لپاره شته ژبه"
+
+msgid "Back in stock"
+msgstr "بېرته په انبار کې"
+
+msgid "Basic"
+msgstr "بنسټیز"
+
+msgid "Basket"
+msgstr "ټوکرۍ"
+
+msgid "Billing address"
+msgstr "د بلنګ پته"
+
+msgid "Birthday"
+msgstr "د زوکړې نیټه"
+
+msgid "Birthday of the customer"
+msgstr "د پیرودونکي د زوکړې نیټه"
+
+msgid "Boost factor"
+msgstr "د لوړولو عامل"
+
+msgid "Boost factor (optional)"
+msgstr "د لوړولو عامل (اختیاري)"
+
+msgid "Bug or suggestion?"
+msgstr "ستونزه یا وړاندیز؟"
+
+msgid "Bulk edit"
+msgstr "ډله ییز سمون"
+
+msgid "Cancel"
+msgstr "لغوه کول"
+
+msgid "Cancel and return to list"
+msgstr "لغوه کول او فهرست ته بېرته ورتلل"
+
+msgid "Catalog"
+msgstr "کتلاګ"
+
+msgid "Catalog Lists Type"
+msgstr "د کتلاګ فهرست ډول"
+
+msgid "Catalog Lists Types"
+msgstr "د کتلاګ فهرست ډولونه"
+
+msgid "Categories"
+msgstr "ډولونه"
+
+msgid "Categories the product can be found in by the user on the web site"
+msgstr "هغه ډولونه چې کارن پر ویبسایټ محصول پکې موندلی شي"
+
+msgid "Categories the product will be shown for in the promotional section"
+msgstr "هغه ډولونه چې محصول به یې د ودې په برخه کې ښودل کېږي"
+
+msgid "Change costs/item in %"
+msgstr "د هر توکي لګښت په سلنه بدلول"
+
+msgid "Change rebate in %"
+msgstr "تخفیف په سلنه بدلول"
+
+msgid "Change value in %"
+msgstr "ارزښت په سلنه بدلول"
+
+msgid "Channel"
+msgstr "کانال"
+
+msgid "Channel the order has been placed"
+msgstr "کانال چې امر ورکړل شو"
+
+msgid "Choose file"
+msgstr "فایل وټاکئ"
+
+msgid "City"
+msgstr "ښار"
+
+msgid "City or town name (required)"
+msgstr "د ښار نوم (اړین)"
+
+msgid "Class \"%1$s\" does not implement \"%2$s\""
+msgstr "«%1$s» طبقه «%2$s» نه تطبیق کوي"
+
+msgid "Class \"%1$s\" not available"
+msgstr "«%1$s» طبقه شتون نلري"
+
+msgid "Class \"%1$s\" not found"
+msgstr "«%1$s» طبقه ونه موندل شوه"
+
+msgid "Close"
+msgstr "تړل"
+
+msgid "Code"
+msgstr "کوډ"
+
+msgid "Code to uniquely identify the site, renaming is dangerous!"
+msgstr "کوډ چې سایټ په بې سارې توګه پېژني، بدلول یې خطرناک دي!"
+
+msgid "Columns"
+msgstr "ستونونه"
+
+msgid "Comment"
+msgstr "تبصره"
+
+msgid "Comment of the reviewer"
+msgstr "د بیا کتونکي تبصره"
+
+msgid "Communication"
+msgstr "اړیکه"
+
+msgid "Company"
+msgstr "شرکت"
+
+msgid "Company details"
+msgstr "د شرکت جزئیات"
+
+msgid "Company name (optional)"
+msgstr "د شرکت نوم (اختیاري)"
+
+msgid "Completed orders"
+msgstr "تکمیل شوي امرونه"
+
+msgid "Config"
+msgstr "تنظیم"
+
+msgid "Configurable"
+msgstr "قابل تنظیم"
+
+msgid "Context"
+msgstr "بستر"
+
+msgid "Copy"
+msgstr "کاپي"
+
+msgid "Copy this entry"
+msgstr "دا منښت کاپي کړئ"
+
+msgid "Costs"
+msgstr "لګښتونه"
+
+msgid "Count"
+msgstr "شمېر"
+
+msgid "Country"
+msgstr "هېواد"
+
+msgid "Country ID"
+msgstr "د هېواد پېژند"
+
+msgid "Country code (required)"
+msgstr "د هېواد کوډ (اړین)"
+
+msgid "Country state code (optional)"
+msgstr "د ولایت کوډ (اختیاري)"
+
+msgid "Coupon"
+msgstr "کوپن"
+
+msgid "Coupon provider or coupon decorator configuration name"
+msgstr "د کوپن عرضه کوونکي یا کوپن سینګار کوونکي د تنظیم نوم"
+
+msgid "Created"
+msgstr "جوړ شو"
+
+msgid "Currencies"
+msgstr "اسعار"
+
+msgid "Currency"
+msgstr "اسعار"
+
+msgid "Custom"
+msgstr "دودیز"
+
+msgid "Custom domain or unique code of your shop"
+msgstr "د خپل پلورنځي دودیز ډومین یا بې ساری کوډ"
+
+msgid "Customer"
+msgstr "پیرودونکی"
+
+msgid "Customer ID"
+msgstr "د پیرودونکي پېژند"
+
+msgid "Customer Lists Type"
+msgstr "د پیرودونکو فهرست ډول"
+
+msgid "Customer Lists Types"
+msgstr "د پیرودونکو فهرست ډولونه"
+
+msgid "Customer Property Type"
+msgstr "د پیرودونکي ملکیت ډول"
+
+msgid "Customer Property Types"
+msgstr "د پیرودونکي ملکیت ډولونه"
+
+msgid "Customer characteristics that are not shared with other customers"
+msgstr "د پیرودونکي ځانګړتیاوې چې له نورو پیرودونکو سره نه شریکېږي"
+
+msgid "Customer comment (optional)"
+msgstr "د پیرودونکي تبصره (اختیاري)"
+
+msgid "Customer e-mail address"
+msgstr "د پیرودونکي برېښنالیک پته"
+
+msgid "Customer password"
+msgstr "د پیرودونکي رمز"
+
+msgid "Customer properties that are not shared with other customers"
+msgstr "د پیرودونکي ملکیتونه چې له نورو پیرودونکو سره نه شریکېږي"
+
+msgid "Customer reference"
+msgstr "د پیرودونکي ارجاع"
+
+msgid "Customer reference (optional)"
+msgstr "د پیرودونکي ارجاع (اختیاري)"
+
+msgid "Dashboard"
+msgstr "ډشبورډ"
+
+msgid "Data"
+msgstr "مالومات"
+
+msgid "Data set"
+msgstr "مالوماتو ټولګه"
+
+msgid "Dataset"
+msgstr "مالوماتو ټولګه"
+
+msgid "Date of the last delivery status change"
+msgstr "د وروستۍ سپارنې حالت د بدلون نیټه"
+
+msgid "Date of the last payment status change"
+msgstr "د وروستۍ تادیې حالت د بدلون نیټه"
+
+msgid "Date the subscription ends"
+msgstr "هغه نیټه چې ګډون پای ته رسېږي"
+
+msgid "Days"
+msgstr "ورځې"
+
+msgid "Default"
+msgstr "منظوره"
+
+msgid "Delete"
+msgstr "ړنګول"
+
+msgid "Delete entries?"
+msgstr "منښتونه ړنګ کړم؟"
+
+msgid "Delete selected entries"
+msgstr "ټاکل شوي منښتونه ړنګول"
+
+msgid "Delete this entry"
+msgstr "دا منښت ړنګول"
+
+msgid "Deleting reviews is not allowed"
+msgstr "د بیاکتنو ړنګول اجازه نلري"
+
+msgid "Delivery"
+msgstr "سپارنه"
+
+msgid "Delivery address"
+msgstr "د سپارنې پته"
+
+msgid "Delivery date"
+msgstr "د سپارنې نیټه"
+
+msgid "Delivery in"
+msgstr "سپارنه په"
+
+msgid "Delivery status"
+msgstr "د سپارنې حالت"
+
+msgid "Delivery timeframe (optional)"
+msgstr "د سپارنې موده (اختیاري)"
+
+msgid "Delivery types"
+msgstr "د سپارنې ډولونه"
+
+msgid "Delivery within"
+msgstr "سپارنه دننه"
+
+msgid "Describe your image"
+msgstr "خپل انځور تشریح کړئ"
+
+msgid "Description of the text content if it's in a foreign language"
+msgstr "د متن مینځپانګې تشریح که په بلې ژبې کې وي"
+
+msgid "Descritive name of the currency"
+msgstr "د اسعار تشریحي نوم"
+
+msgid "Descritive name of the language"
+msgstr "د ژبې تشریحي نوم"
+
+msgid "Descritive name of the site"
+msgstr "د سایټ تشریحي نوم"
+
+msgid "Discount"
+msgstr "تخفیف"
+
+msgid "Display help texts"
+msgstr "د مرستې متنونه ښودل"
+
+msgid "Domain"
+msgstr "ډومین"
+
+msgid "Download"
+msgstr "ډاونلوډ"
+
+msgid "Download this file"
+msgstr "دا فایل ډاونلوډ کړئ"
+
+msgid "Duplicate entry"
+msgstr "تکراري منښت"
+
+msgid "Duplicate entry (Ctrl+D)"
+msgstr "تکراري منښت (Ctrl+D)"
+
+msgid "E-Mail"
+msgstr "برېښنالیک"
+
+msgid "E-Mail address (required)"
+msgstr "د برېښنالیک پته (اړین)"
+
+msgid "E-Mail address or account name (required)"
+msgstr "د برېښنالیک پته یا د حساب نوم (اړین)"
+
+msgid "E-Mail address used for sending shop related e-mails"
+msgstr "د برېښنالیک پته چې د پلورنځي اړوند برېښنالیکونو د استولو لپاره کارېږي"
+
+msgid "E-mail"
+msgstr "برېښنالیک"
+
+msgid "E-mail address (optional)"
+msgstr "د برېښنالیک پته (اختیاري)"
+
+msgid "E-mail address that belongs to the address"
+msgstr "د برېښنالیک پته چې پتې پورې اړه لري"
+
+msgid "EAN, SKU or article number (required)"
+msgstr "EAN، SKU یا د توکي شمېره (اړین)"
+
+msgid "Edit"
+msgstr "سمول"
+
+msgid "Edit selected entries"
+msgstr "ټاکل شوي منښتونه سمول"
+
+msgid "Edit this entry"
+msgstr "دا منښت سمول"
+
+msgid "Editor"
+msgstr "سمونګر"
+
+msgid "Email"
+msgstr "برېښنالیک"
+
+msgid "End date"
+msgstr "د پای نیټه"
+
+msgid "End date (optional)"
+msgstr "د پای نیټه (اختیاري)"
+
+msgid "Enter group ID, code or label"
+msgstr "د ډلې پېژند، کوډ یا ټاګ ولیکئ"
+
+msgid "Entry deleted successfully"
+msgstr "منښت په بریالیتوب سره ړنګ شو"
+
+msgid "Entry saved successfully"
+msgstr "منښت په بریالیتوب سره خوندي شو"
+
+msgid "Error"
+msgstr "تېروتنه"
+
+msgid "Error deleting data"
+msgstr "په مالوماتو د ړنګولو تېروتنه"
+
+msgid "Error retrieving data"
+msgstr "د مالوماتو په راګرځولو کې تېروتنه"
+
+msgid "Error saving data"
+msgstr "د مالوماتو په خوندي کولو کې تېروتنه"
+
+msgid "Excl. tax"
+msgstr "د مالیې پرته"
+
+msgid "Execution order of the plugins"
+msgstr "د پلګینونو اجرا ترتیب"
+
+msgid "Execution order of the rules"
+msgstr "د قوانینو اجرا ترتیب"
+
+msgid "Export"
+msgstr "صادرول"
+
+msgid "Facility"
+msgstr "اسانتیاوې"
+
+msgid "Facsimile"
+msgstr "فکس"
+
+msgid "Facsimile number (optional)"
+msgstr "د فکس شمېره (اختیاري)"
+
+msgid "Failed to write file to disk"
+msgstr "فایل د ډیسک پر مخ ونه لیکل شو"
+
+msgid "File"
+msgstr "فایل"
+
+msgid "File does not exists: \"%1$s\""
+msgstr "فایل شتون نلري: «%1$s»"
+
+msgid "File upload stopped by extension"
+msgstr "د فایل لوړول د درستیز له لوري ودرول شو"
+
+msgid "File uploaded successfully"
+msgstr "فایل په بریالیتوب سره لوړ شو"
+
+msgid "Find category"
+msgstr "ډول ومومئ"
+
+msgid "Find site"
+msgstr "سایټ ومومئ"
+
+msgid "First"
+msgstr "لومړی"
+
+msgid "First name"
+msgstr "نوم"
+
+msgid "First name (optional)"
+msgstr "نوم (اختیاري)"
+
+msgid "First name of the person if used in cultures where they are used"
+msgstr "د شخص نوم که په هغو کلتورونو کې کارول کېږي چې نومونه پکې کارول کېږي"
+
+msgid "Floor"
+msgstr "پوړ"
+
+msgid "Floor / Appartment"
+msgstr "پوړ / اپارتمان"
+
+msgid "Floor and/or apartment (optional)"
+msgstr "پوړ او/یا اپارتمان (اختیاري)"
+
+msgid "For"
+msgstr "لپاره"
+
+msgid "Generate"
+msgstr "جوړول"
+
+msgid "Generate image"
+msgstr "انځور جوړول"
+
+msgid "Generate text"
+msgstr "متن جوړول"
+
+msgid "Given rebate amount"
+msgstr "ورکړل شوی تخفیف اندازه"
+
+msgid "Go to attribute panel"
+msgstr "د ځانګړتیاو تختې ته ورتګ"
+
+msgid "Go to property type panel"
+msgstr "د ملکیت ډول تختې ته ورتګ"
+
+msgid "Go to the list of attribute types"
+msgstr "د ځانګړتیاو ډولونو فهرست ته ورتګ"
+
+msgid "Granted rebate"
+msgstr "ورکړل شوی تخفیف"
+
+msgid "Group"
+msgstr "ډله"
+
+msgid "Group name describing for which members the group is for"
+msgstr "د ډلې نوم چې تشریح کوي ډله د کوم غړو لپاره ده"
+
+msgid "Groups"
+msgstr "ډلې"
+
+msgid "Height"
+msgstr "لوړوالی"
+
+msgid "Hidden attributes"
+msgstr "پټې ځانګړتیاوې"
+
+msgid "Hidden product attributes that are stored with the ordered products"
+msgstr "پټې د محصول ځانګړتیاوې چې له امر شویو محصولاتو سره خوندي کېږي"
+
+msgid "Highlighted suppliers of the product"
+msgstr "د محصول روښانه شوي عرضه کوونکي"
+
+msgid "Honorary title (optional)"
+msgstr "افتخاري لقب (اختیاري)"
+
+msgid "Honorary titles like Dr., Ph.D, etc."
+msgstr "افتخاري لقبونه لکه ډاکټر، پی ایچ ډي او داسې نور"
+
+msgid "Hours"
+msgstr "ساعتونه"
+
+msgid "House number"
+msgstr "د کور شمېره"
+
+msgid "House number (optional)"
+msgstr "د کور شمېره (اختیاري)"
+
+msgid "How the customer is addressed in e-mails"
+msgstr "پیرودونکی په برېښنالیکونو کې څنګه خطاب کېږي"
+
+msgid "How the supplier is addressed in e-mails"
+msgstr "عرضه کوونکی په برېښنالیکونو کې څنګه خطاب کېږي"
+
+msgid "Hyper-real and dramatic"
+msgstr "له حقایقو ډېر ریښتینی او ډراماتیک"
+
+msgid "ID"
+msgstr "پېژند"
+
+msgid "ID of a related invoice, e.g. of a changed or refunded invoice"
+msgstr "د یو اړوند بلنګ پېژند، لکه د بدل شوي یا بېرته ورکړل شوي بلنګ"
+
+msgid "ISO currency code (required)"
+msgstr "د ISO اسعار کوډ (اړین)"
+
+msgid "ISO language code (required)"
+msgstr "د ISO ژبه کوډ (اړین)"
+
+msgid "Image"
+msgstr "انځور"
+
+msgid "Image description"
+msgstr "د انځور تشریح"
+
+msgid "Import"
+msgstr "واردول"
+
+msgid "Import/Export jobs"
+msgstr "د واردولو/صادرولو دندې"
+
+msgid "Incl. tax"
+msgstr "د مالیې په ګډون"
+
+msgid "Info"
+msgstr "مالومات"
+
+msgid "Insert into"
+msgstr "په کې داخلول"
+
+msgid "Insert new entry"
+msgstr "نوی منښت داخلول"
+
+msgid "Insert new entry (Ctrl+I)"
+msgstr "نوی منښت داخلول (Ctrl+I)"
+
+msgid "Internal name (required)"
+msgstr "داخلي نوم (اړین)"
+
+msgid "Internal type name shown in the administration interface"
+msgstr "داخلي ډول نوم چې د مدیریت انٹرفیس کې ښودل کېږي"
+
+msgid "Interval"
+msgstr "وقفه"
+
+msgid "Interval (required)"
+msgstr "وقفه (اړین)"
+
+msgid "Invalid characters in class name \"%1$s\""
+msgstr "په «%1$s» طبقه کې ناسم توري"
+
+msgid "Invalid characters in client name \"%1$s\""
+msgstr "په کارن نوم «%1$s» کې ناسم توري"
+
+msgid "Invalid class name \"%1$s\""
+msgstr "د طبقي نوم «%1$s» سم نه دی"
+
+msgid "Invalid domain \"%1$s\""
+msgstr "ډومین «%1$s» سم نه دی"
+
+msgid "Invalid factory \"%1$s\""
+msgstr "«%1$s» فابریکه سمه نه ده"
+
+msgid "Invoice"
+msgstr "بلنګ"
+
+msgid "Invoice No."
+msgstr "د بلنګ شمېره"
+
+msgid "Invoice no."
+msgstr "د بلنګ شمېره"
+
+msgid "Invoice number"
+msgstr "د بلنګ شمېره"
+
+msgid "Invoice number for the order"
+msgstr "د امر لپاره د بلنګ شمېره"
+
+msgid "Label"
+msgstr "ټاګ"
+
+msgid "Label (required)"
+msgstr "ټاګ (اړین)"
+
+msgid "Label describing the interval, will be used if no name is available"
+msgstr "ټاګ چې وقفه تشریح کوي، که نوم شتون ونلري کارول کېږي"
+
+msgid "Language"
+msgstr "ژبه"
+
+msgid "Language ID"
+msgstr "د ژبې پېژند"
+
+msgid "Language of the entered text"
+msgstr "د داخل شوي متن ژبه"
+
+msgid "Languages"
+msgstr "ژبې"
+
+msgid "Last"
+msgstr "وروستی"
+
+msgid "Last delivery status of the order"
+msgstr "د امر وروستی د سپارنې حالت"
+
+msgid "Last name"
+msgstr "تخلص"
+
+msgid "Last name (optional)"
+msgstr "تخلص (اختیاري)"
+
+msgid "Last name (required)"
+msgstr "تخلص (اړین)"
+
+msgid "Last payment status of the order"
+msgstr "د امر وروستی د تادیې حالت"
+
+msgid "Latest orders"
+msgstr "وروستي امرونه"
+
+msgid "Length"
+msgstr "اوږدوالی"
+
+msgid "List of products often bought together"
+msgstr "هغه محصولاتو فهرست چې ډېری ځلې یوځای پېرل کېږي"
+
+msgid "List of suggested products"
+msgstr "د وړاندیز شوي محصولاتو فهرست"
+
+msgid "List type"
+msgstr "د فهرست ډول"
+
+msgid "Loading entries ..."
+msgstr "منښتونه بارول ..."
+
+msgid "Locale"
+msgstr "ځایي"
+
+msgid "Log"
+msgstr "لوګ"
+
+msgid "Manual transfer"
+msgstr "دستی انتقال"
+
+msgid "Map"
+msgstr "نقشه"
+
+msgid "Media Lists Type"
+msgstr "د رسنیو فهرست ډول"
+
+msgid "Media Lists Types"
+msgstr "د رسنیو فهرست ډولونه"
+
+msgid "Media Property Type"
+msgstr "د رسنیو ملکیت ډول"
+
+msgid "Media Property Types"
+msgstr "د رسنیو ملکیت ډولونه"
+
+msgid "Media Type"
+msgstr "د رسنیو ډول"
+
+msgid "Media Types"
+msgstr "د رسنیو ډولونه"
+
+msgid "Media properties"
+msgstr "د رسنیو ملکیتونه"
+
+msgid "Menu"
+msgstr "مینو"
+
+msgid "Message"
+msgstr "پیغام"
+
+msgid "Min. quantity"
+msgstr "لږ تر لږه کچه"
+
+msgid "Minimum quantity"
+msgstr "لږ تر لږه کچه"
+
+msgid "Mobile"
+msgstr "ګرځنده"
+
+msgid "Mobile number"
+msgstr "د ګرځنده شمېره"
+
+msgid "Mobile number (optional)"
+msgstr "د ګرځنده شمېره (اختیاري)"
+
+msgid "Model"
+msgstr "موډل"
+
+msgid "Modifed"
+msgstr "بدل شوی"
+
+msgid "Modified"
+msgstr "بدل شوی"
+
+msgid "Months"
+msgstr "میاشتې"
+
+msgid "More"
+msgstr "نور"
+
+msgid "Move this entry up/down"
+msgstr "دا منښت پورته/ښکته وړئ"
+
+msgid "Name"
+msgstr "نوم"
+
+msgid "Name in URL (optional)"
+msgstr "نوم په URL کې (اختیاري)"
+
+msgid "Name of the basket"
+msgstr "د ټوکرۍ نوم"
+
+msgid "Name of the reviewer"
+msgstr "د بیا کتونکي نوم"
+
+msgid "Name of your shop shown to your customers"
+msgstr "ستاسې د پلورنځي نوم چې پیرودونکو ته ښودل کېږي"
+
+msgid "Natural"
+msgstr "طبیعي"
+
+msgid "New"
+msgstr "نوی"
+
+msgid "New category"
+msgstr "نوی ډول"
+
+msgid "New customers"
+msgstr "نوي پیرودونکي"
+
+msgid "New customers within the last seven days"
+msgstr "په تېرو اوو ورځو کې نوي پیرودونکي"
+
+msgid "New customers within the last seven days compared to the period before"
+msgstr "په تېرو اوو ورځو کې نوي پیرودونکي له مخکینۍ دورې سره پرتله"
+
+msgid "Next"
+msgstr "راتلونکی"
+
+msgid "Next date"
+msgstr "راتلونکې نیټه"
+
+msgid "Next date (optional)"
+msgstr "راتلونکې نیټه (اختیاري)"
+
+msgid "Next date the subscription is renewed"
+msgstr "راتلونکې نیټه چې ګډون نویږي"
+
+msgid "No currencies available. Please enable at least one currency"
+msgstr "هېڅ اسعار شتون نلري. مهرباني وکړئ لږ تر لږه یوه اسعار فعاله کړئ"
+
+msgid "No entries found"
+msgstr "هېڅ منښت ونه موندل شو"
+
+msgid "No file was uploaded"
+msgstr "هېڅ فایل نه دی لوړ شوی"
+
+msgid "No product found"
+msgstr "هېڅ محصول ونه موندل شو"
+
+msgid "No theme options available"
+msgstr "د تیم هېڅ اختیار شتون نلري"
+
+msgid "No view available"
+msgstr "هېڅ لید شتون نلري"
+
+msgid "No voucher"
+msgstr "هېڅ کوپن نشته"
+
+msgid "Non-shared properties for the media item"
+msgstr "د رسنیو توکي لپاره غیر شریک ملکیتونه"
+
+msgid "Non-shared properties for the price item"
+msgstr "د بیې توکي لپاره غیر شریک ملکیتونه"
+
+msgid "None"
+msgstr "هېڅ"
+
+msgid "Not all entries could be deleted"
+msgstr "ټول منښتونه ړنګ نه شول"
+
+msgid "Not allowed or editor site is different"
+msgstr "اجازه نشته یا د سمونګر سایټ توپیر لري"
+
+msgid "Not allowed to access JQAdm \"%1$s\" client"
+msgstr "JQAdm «%1$s» کارن ته لاسرسی اجازه نلري"
+
+msgid "Not implemented"
+msgstr "نه تطبیق شوی"
+
+msgid "Notes"
+msgstr "یادداشتونه"
+
+msgid "Notes (not shown to customer)"
+msgstr "یادداشتونه (پیرودونکي ته نه ښودل کېږي)"
+
+msgid "OK"
+msgstr "ښه"
+
+msgid "Official VAT ID to determine if the tax needs to be billed in invoices"
+msgstr "رسمي د ارزښت مالیې پېژند ترڅو وټاکل شي مالیه باید په بلنګونو کې واخیستل شي"
+
+msgid "Only .webp, .jpg, .png and .gif are allowed for icons"
+msgstr "آیکونونو لپاره یوازې .webp، .jpg، .png او .gif اجازه لري"
+
+msgid "Only .webp, .jpg, .png, .gif and .svg are allowed for logos"
+msgstr "لوګوګانو لپاره یوازې .webp، .jpg، .png، .gif او .svg اجازه لري"
+
+msgid "Only super users and administrators can delete entries"
+msgstr "یوازې سوپر کارنان او مدیران کولی شي منښتونه ړنګ کړي"
+
+msgid "Open"
+msgstr "باز"
+
+msgid "Open Qty"
+msgstr "خپله خوښه کچه"
+
+msgid "Option"
+msgstr "اختیار"
+
+msgid "Order"
+msgstr "امر"
+
+msgid "Order ID"
+msgstr "د امر پېژند"
+
+msgid "Order number entered by the customer"
+msgstr "د پیرودونکي له لوري داخل شوې د امر شمېره"
+
+msgid "Order of the language/currency combinations"
+msgstr "د ژبې/اسعار ترکیبونو ترتیب"
+
+msgid "Order of the service options in the checkout process"
+msgstr "د تادیې پروسې کې د خدماتو اختیارونو ترتیب"
+
+msgid "Order of the types in the frontend"
+msgstr "په مخکنۍ برخه کې د ډولونو ترتیب"
+
+msgid "Order totals"
+msgstr "د امر مجموعه"
+
+msgid "Ordered at"
+msgstr "په کې امر شوی"
+
+msgid "Orders by country"
+msgstr "امرونه د هېواد له مخې"
+
+msgid "Orders by day"
+msgstr "امرونه د ورځې له مخې"
+
+msgid "Orders by hour"
+msgstr "امرونه د ساعت له مخې"
+
+msgid "Orders by payment status"
+msgstr "امرونه د تادیې حالت له مخې"
+
+msgid "PHP setting \"%1$s\" is disabled"
+msgstr "د PHP تنظیم «%1$s» بې کاره دی"
+
+msgid "PHP setting \"%1$s\" is enabled"
+msgstr "د PHP تنظیم «%1$s» فعال دی"
+
+msgid "PHP setting for \"%1$s\" is too low"
+msgstr "د «%1$s» PHP تنظیم ډېر ټیټ دی"
+
+msgid "Page %1$d of %2$d"
+msgstr "پاڼه %1$d له %2$d"
+
+msgid "Password"
+msgstr "رمز"
+
+msgid "Password (required)"
+msgstr "رمز (اړین)"
+
+msgid "Path"
+msgstr "لار"
+
+msgid "Pay date"
+msgstr "د تادیې نیټه"
+
+msgid "Pay status"
+msgstr "د تادیې حالت"
+
+msgid "Payment"
+msgstr "تادیه"
+
+msgid "Payment date"
+msgstr "د تادیې نیټه"
+
+msgid "Payment status"
+msgstr "د تادیې حالت"
+
+msgid "Payment types"
+msgstr "د تادیې ډولونه"
+
+msgid "Periods"
+msgstr "دوره‌يي"
+
+msgid "Permission denied"
+msgstr "اجازه رد شوه"
+
+msgid "Personal data"
+msgstr "شخصي مالومات"
+
+msgid "Please select"
+msgstr "مهرباني وکړئ یو څه وټاکئ"
+
+msgid "Plugin"
+msgstr "پلګین"
+
+msgid "Plugin Type"
+msgstr "د پلګین ډول"
+
+msgid "Plugin Types"
+msgstr "د پلګین ډولونه"
+
+msgid "Plugin label for describing the configured plugin"
+msgstr "پلګین ټاګ د تنظیم شوي پلګین د تشریح لپاره"
+
+msgid "Plugin position (required)"
+msgstr "د پلګین موقف (اړین)"
+
+msgid "Plugin provider or plugin decorator configuration name"
+msgstr "د پلګین عرضه کوونکي یا پلګین سینګار کوونکي د تنظیم نوم"
+
+msgid "Position"
+msgstr "موقف"
+
+msgid "Position (required)"
+msgstr "موقف (اړین)"
+
+msgid "Postal"
+msgstr "پوستنی"
+
+msgid "Postal code for delivery if used in the area the customer is living"
+msgstr "د سپارنې لپاره پوستنی کوډ که په هغه سیمه کې کارېږي چې پیرودونکی پکې اوسیږي"
+
+msgid "Postal code for delivery if used in the area the supplier is living"
+msgstr "د سپارنې لپاره پوستنی کوډ که په هغه سیمه کې کارېږي چې عرضه کوونکی پکې اوسیږي"
+
+msgid "Postition"
+msgstr "موقف"
+
+msgid "Potential problems"
+msgstr "احتمالي ستونزې"
+
+msgid "Previous"
+msgstr "مخکنی"
+
+msgid "Price"
+msgstr "بیه"
+
+msgid "Price Lists Type"
+msgstr "د بیو فهرست ډول"
+
+msgid "Price Lists Types"
+msgstr "د بیو فهرست ډولونه"
+
+msgid "Price Property Type"
+msgstr "د بیې ملکیت ډول"
+
+msgid "Price Property Types"
+msgstr "د بیې ملکیت ډولونه"
+
+msgid "Price Type"
+msgstr "د بیې ډول"
+
+msgid "Price Types"
+msgstr "د بیې ډولونه"
+
+msgid "Price properties"
+msgstr "د بیې ملکیتونه"
+
+msgid "Priority"
+msgstr "لومړیتوب"
+
+msgid "Problem"
+msgstr "ستونزه"
+
+msgid "Product"
+msgstr "محصول"
+
+msgid "Product ID"
+msgstr "د محصول پېژند"
+
+msgid "Product ID, SKU or label"
+msgstr "د محصول پېژند، SKU یا ټاګ"
+
+msgid "Product Lists Type"
+msgstr "د محصولاتو فهرست ډول"
+
+msgid "Product Lists Types"
+msgstr "د محصولاتو فهرست ډولونه"
+
+msgid "Product Property Type"
+msgstr "د محصول ملکیت ډول"
+
+msgid "Product Property Types"
+msgstr "د محصول ملکیت ډولونه"
+
+msgid "Product Type"
+msgstr "د محصول ډول"
+
+msgid "Product Types"
+msgstr "د محصول ډولونه"
+
+msgid "Product attributes that are used by other products too"
+msgstr "د محصول ځانګړتیاوې چې نورو محصولاتو هم کاروي"
+
+msgid "Product characteristics that are not shared with other products"
+msgstr "د محصول ځانګړتیاوې چې له نورو محصولاتو سره نه شریکېږي"
+
+msgid "Product code"
+msgstr "د محصول کوډ"
+
+msgid "Product costs"
+msgstr "د محصول لګښتونه"
+
+msgid "Product height, e.g. 20.0 (in yard, inch, etc.)"
+msgstr "د محصول لوړوالی، لکه 20.0 (په یارد، انچ او داسې نورو کې)"
+
+msgid "Product length, e.g. 30.0 (in yard, inch, etc.)"
+msgstr "د محصول اوږدوالی، لکه 30.0 (په یارد، انچ او داسې نورو کې)"
+
+msgid "Product name"
+msgstr "د محصول نوم"
+
+msgid "Product payment"
+msgstr "د محصول تادیه"
+
+msgid "Product price"
+msgstr "د محصول بیه"
+
+msgid "Product quantity"
+msgstr "د محصول کچه"
+
+msgid "Product rebate"
+msgstr "د محصول تخفیف"
+
+msgid "Product shipping"
+msgstr "د محصول لېږد"
+
+msgid "Product status"
+msgstr "د محصول حالت"
+
+msgid "Product supplier"
+msgstr "د محصول عرضه کوونکی"
+
+msgid "Product tax"
+msgstr "د محصول مالیه"
+
+msgid "Product type"
+msgstr "د محصول ډول"
+
+msgid "Product weight, e.g. 1.25 (in pound, ounce, etc.)"
+msgstr "د محصول وزن، لکه 1.25 (په پونډ، اونس او داسې نورو کې)"
+
+msgid "Product width, e.g. 17.5 (in yard, inch etc.)"
+msgstr "د محصول سور، لکه 17.5 (په یارد، انچ او داسې نورو کې)"
+
+msgid "Products"
+msgstr "محصولات"
+
+msgid "Products bought together"
+msgstr "یوځای پېرل شوي محصولات"
+
+msgid "Promotion"
+msgstr "ودې"
+
+msgid "Properties"
+msgstr "ملکیتونه"
+
+msgid "Property value (required)"
+msgstr "د ملکیت ارزښت (اړین)"
+
+msgid "Provider"
+msgstr "عرضه کوونکی"
+
+msgid "Provider/decorator class names (required)"
+msgstr "د عرضه کوونکي/سینګار کوونکي طبقې نومونه (اړین)"
+
+msgid "Purchase"
+msgstr "پېرود"
+
+msgid "Quantity"
+msgstr "کچه"
+
+msgid "Quantity scale"
+msgstr "د کچې مقیاس"
+
+msgid "Rabate"
+msgstr "تخفیف"
+
+msgid "Rating"
+msgstr "امتیاز"
+
+msgid "Rating and number of ratings for the merchant"
+msgstr "د سوداګر امتیاز او د امتیازونو شمېر"
+
+msgid "Rating of the reviewer"
+msgstr "د بیا کتونکي امتیاز"
+
+msgid "Reason"
+msgstr "علت"
+
+msgid "Rebate"
+msgstr "تخفیف"
+
+msgid "Reference"
+msgstr "ارجاع"
+
+msgid "Reference ID"
+msgstr "د ارجاع پېژند"
+
+msgid "Refund"
+msgstr "بېرته ورکړه"
+
+msgid "Related ID"
+msgstr "اړوند پېژند"
+
+msgid "Related order"
+msgstr "اړوند امر"
+
+msgid "Related order ID (optional)"
+msgstr "د اړوند امر پېژند (اختیاري)"
+
+msgid "Related order of the customer"
+msgstr "د پیرودونکي اړوند امر"
+
+msgid "Remove background"
+msgstr "شالید لیرې کول"
+
+msgid "Renew"
+msgstr "نویول"
+
+msgid "Replace file"
+msgstr "فایل ځای په ځای کول"
+
+msgid "Request"
+msgstr "غوښتنه"
+
+msgid "Required parameter \"%1$s\" is missing"
+msgstr "اړین پیرامیټر «%1$s» ورک دی"
+
+msgid "Reset"
+msgstr "بیا تنظیمول"
+
+msgid "Response"
+msgstr "ځواب"
+
+msgid "Response to the reviewer"
+msgstr "بیا کتونکي ته ځواب"
+
+msgid "Review"
+msgstr "بیاکتنه"
+
+msgid "Reviewed entry"
+msgstr "بیا کتل شوی منښت"
+
+msgid "Reviewer name"
+msgstr "د بیا کتونکي نوم"
+
+msgid "Route or page ID (optional)"
+msgstr "د لارې یا پاڼې پېژند (اختیاري)"
+
+msgid "Rule"
+msgstr "قانون"
+
+msgid "Rule Type"
+msgstr "د قانون ډول"
+
+msgid "Rule Types"
+msgstr "د قوانینو ډولونه"
+
+msgid "Rule label for describing the configured rule"
+msgstr "د قانون ټاګ د تنظیم شوي قانون د تشریح لپاره"
+
+msgid "Rule position (required)"
+msgstr "د قانون موقف (اړین)"
+
+msgid "Rule provider or rule decorator configuration name"
+msgstr "د قانون عرضه کوونکي یا قانون سینګار کوونکي د تنظیم نوم"
+
+msgid "Rules"
+msgstr "قوانین"
+
+msgid "SKU"
+msgstr "SKU"
+
+msgid "Sales by weekday"
+msgstr "پلور د اونۍ د ورځو له مخې"
+
+msgid "Sales of the last 30 days"
+msgstr "د تېرو 30 ورځو پلور"
+
+msgid "Sales per month"
+msgstr "پلور په میاشت کې"
+
+msgid "Salutation"
+msgstr "بدرګه"
+
+msgid "Save"
+msgstr "خوندي کول"
+
+msgid "Save & Close"
+msgstr "خوندي کول او تړل"
+
+msgid "Save & Copy"
+msgstr "خوندي کول او کاپي"
+
+msgid "Save & New"
+msgstr "خوندي کول او نوی"
+
+msgid "Save entry (Ctrl+Enter)"
+msgstr "منښت خوندي کول (Ctrl+Enter)"
+
+msgid "Save entry (Ctrl+S)"
+msgstr "منښت خوندي کول (Ctrl+S)"
+
+msgid "Search"
+msgstr "لټون"
+
+msgid "Second level type for grouping entries"
+msgstr "د منښتونو د ډلبندۍ دویمه کچه ډول"
+
+msgid "Select all entries"
+msgstr "ټول منښتونه ټاکل"
+
+msgid "Select file"
+msgstr "فایل ټاکل"
+
+msgid "Service"
+msgstr "خدمت"
+
+msgid "Service Lists Type"
+msgstr "د خدماتو فهرست ډول"
+
+msgid "Service Lists Types"
+msgstr "د خدماتو فهرست ډولونه"
+
+msgid "Service Type"
+msgstr "د خدمت ډول"
+
+msgid "Service Types"
+msgstr "د خدمت ډولونه"
+
+msgid "Service attribute code"
+msgstr "د خدمت ځانګړتیا کوډ"
+
+msgid "Service costs"
+msgstr "د خدمت لګښتونه"
+
+msgid "Service name"
+msgstr "د خدمت نوم"
+
+msgid "Service position (required)"
+msgstr "د خدمت موقف (اړین)"
+
+msgid "Service price"
+msgstr "د خدمت بیه"
+
+msgid "Service provider or service decorator configuration name"
+msgstr "د خدمت عرضه کوونکي یا خدمت سینګار کوونکي د تنظیم نوم"
+
+msgid "Service rebate"
+msgstr "د خدمت تخفیف"
+
+msgid "Settings"
+msgstr "تنظیمات"
+
+msgid "Ship date"
+msgstr "د لېږد نیټه"
+
+msgid "Ship status"
+msgstr "د لېږد حالت"
+
+msgid "Shipping"
+msgstr "لېږد"
+
+msgid "Shipping / Payment costs"
+msgstr "د لېږد / تادیې لګښتونه"
+
+msgid "Shipping/Payment costs"
+msgstr "د لېږد/تادیې لګښتونه"
+
+msgid "Shipping/item"
+msgstr "لېږد / توکی"
+
+msgid "Shop domain"
+msgstr "د پلورنځي ډومین"
+
+msgid "Shop domain (required)"
+msgstr "د پلورنځي ډومین (اړین)"
+
+msgid "Shop e-mail"
+msgstr "د پلورنځي برېښنالیک"
+
+msgid "Shop e-mail address (required)"
+msgstr "د پلورنځي برېښنالیک پته (اړین)"
+
+msgid "Shop name"
+msgstr "د پلورنځي نوم"
+
+msgid "Shop name (required)"
+msgstr "د پلورنځي نوم (اړین)"
+
+msgid "Shop theme"
+msgstr "د پلورنځي تیم"
+
+msgid "Show"
+msgstr "ښودل"
+
+msgid "Show entry"
+msgstr "منښت ښودل"
+
+msgid "Show search form"
+msgstr "د لټون فورمه ښودل"
+
+msgid "Show/hide advanced data"
+msgstr "پرمختللي مالومات ښودل/پټول"
+
+msgid "Show/hide details"
+msgstr "جزئیات ښودل/پټول"
+
+msgid "Show/hide navigation labels"
+msgstr "د لارښوونې ټاګونه ښودل/پټول"
+
+msgid "Show/hide this entry"
+msgstr "دا منښت ښودل/پټول"
+
+msgid "Shown if the article reached a stock level of zero"
+msgstr "ښودل کېږي که توکی صفر موجودۍ ته رسېدلی وي"
+
+msgid "Since when the product is available, used for sorting in the front-end"
+msgstr "په مخکنۍ برخه کې د ترتیب لپاره کارول کېږي چې محصول له کله شتون لري"
+
+msgid "Site"
+msgstr "سایټ"
+
+msgid "Site \"%1$s\" not found"
+msgstr "سایټ «%1$s» ونه موندل شو"
+
+msgid "Site the order was placed at"
+msgstr "هغه سایټ چې امر پکې ورکړل شو"
+
+msgid "Sites"
+msgstr "سایټونه"
+
+msgid "Size"
+msgstr "کچه"
+
+msgid "Sorting of the attributes within the same attribute type"
+msgstr "په ورته ځانګړتیا ډول کې د ځانګړتیاوو ترتیب"
+
+msgid "Sorting of the suppliers"
+msgstr "د عرضه کوونکو ترتیب"
+
+msgid "Source of the invoice, e.g. by web or phone"
+msgstr "د بلنګ سرچینه، لکه له وېب یا تلیفون"
+
+msgid "Start date"
+msgstr "د پیل نیټه"
+
+msgid "Start typing ..."
+msgstr "لیکل پیل کړئ ..."
+
+msgid "State"
+msgstr "ولایت"
+
+msgid "Status"
+msgstr "حالت"
+
+msgid "Stock Type"
+msgstr "د موجودي ډول"
+
+msgid "Stock Types"
+msgstr "د موجودي ډولونه"
+
+msgid "Stock level"
+msgstr "د موجودۍ کچه"
+
+msgid "Stock type"
+msgstr "د موجودي ډول"
+
+msgid "Street"
+msgstr "کوڅه"
+
+msgid "Street name (optional)"
+msgstr "د کوڅې نوم (اختیاري)"
+
+msgid "Style"
+msgstr "سټایل"
+
+msgid "Sub-total"
+msgstr "فرعي مجموعه"
+
+msgid "Subscription"
+msgstr "ګډون"
+
+msgid "Suggested products"
+msgstr "وړاندیز شوي محصولات"
+
+msgid "Sum"
+msgstr "مجموعه"
+
+msgid "Supplier"
+msgstr "عرضه کوونکی"
+
+msgid "Supplier name or company"
+msgstr "د عرضه کوونکي نوم یا شرکت"
+
+msgid "Supplier position (required)"
+msgstr "د عرضه کوونکي موقف (اړین)"
+
+msgid "Suppliers who manufacture the product"
+msgstr "عرضه کوونکي چې محصول جوړوي"
+
+msgid "Tag Type"
+msgstr "د ټاګ ډول"
+
+msgid "Tag Types"
+msgstr "د ټاګ ډولونه"
+
+msgid "Tax"
+msgstr "مالیه"
+
+msgid "Tax rate"
+msgstr "د مالیې نرخ"
+
+msgid "Tax rate in %"
+msgstr "د مالیې نرخ په سلنه کې"
+
+msgid "Telephone"
+msgstr "ټیلیفون"
+
+msgid "Telephone number (optional)"
+msgstr "د ټیلیفون شمېره (اختیاري)"
+
+msgid "Temporary folder is missing"
+msgstr "موقت لارښود ورک دی"
+
+msgid "Text Lists Type"
+msgstr "د متنونو فهرست ډول"
+
+msgid "Text Lists Types"
+msgstr "د متنونو فهرست ډولونه"
+
+msgid "Text Type"
+msgstr "د متن ډول"
+
+msgid "Text Types"
+msgstr "د متنونو ډولونه"
+
+msgid "The entry is only shown on the web site after that date and time"
+msgstr "منښت یوازې له هغې نیټې او وخت وروسته پر ویبسایټ ښودل کېږي"
+
+msgid "The entry is only shown on the web site until that date and time"
+msgstr "منښت یوازې تر هغې نیټې او وخت پورې پر ویبسایټ ښودل کېږي"
+
+msgid "The media title is used for the title tag of the media on the web site"
+msgstr "د رسنۍ سرلیک پر ویبسایټ د رسنۍ د سرلیک ټاګ لپاره کارول کېږي"
+
+msgid "The option is only shown on the web site after that date and time"
+msgstr "اختیار یوازې له هغې نیټې او وخت وروسته پر ویبسایټ ښودل کېږي"
+
+msgid "The option is only shown on the web site until that date and time"
+msgstr "اختیار یوازې تر هغې نیټې او وخت پورې پر ویبسایټ ښودل کېږي"
+
+msgid "The rule is only used after that date and time"
+msgstr "قانون یوازې له هغې نیټې او وخت وروسته کارول کېږي"
+
+msgid "The rule is only used until that date and time"
+msgstr "قانون یوازې تر هغې نیټې او وخت پورې کارول کېږي"
+
+msgid "The uploaded file exceeds the max. allowed filesize"
+msgstr "لوړ شوی فایل له اعظمي اجازه شوي اندازې ډېر دی"
+
+msgid "The uploaded file was only partially uploaded"
+msgstr "لوړ شوی فایل یوازې په برخو کې لوړ شو"
+
+msgid "Theme to change the layout of your shop"
+msgstr "د خپل پلورنځي د بڼې د بدلولو لپاره تیم"
+
+msgid "Three letter ISO currency code"
+msgstr "د درې تورو ISO اسعار کوډ"
+
+msgid "Time frame (optional)"
+msgstr "د وخت موده (اختیاري)"
+
+msgid "Timestamp"
+msgstr "وخت نښه"
+
+msgid "Title"
+msgstr "سرلیک"
+
+msgid "Toggle dropdown"
+msgstr "ډراپ‌ډاون بدلول"
+
+msgid "Toogle selection"
+msgstr "انتخاب بدلول"
+
+msgid "Top countries"
+msgstr "غوره هېوادونه"
+
+msgid "Total"
+msgstr "مجموعه"
+
+msgid "Total orders"
+msgstr "ټول امرونه"
+
+msgid "Total orders within the last seven days compared to the period before"
+msgstr "په تېرو اوو ورځو کې ټول امرونه له مخکینۍ دورې سره پرتله"
+
+msgid "Total ratings"
+msgstr "ټول امتیازونه"
+
+msgid "Translate text"
+msgstr "متن ژباړل"
+
+msgid "Translations"
+msgstr "ژباړې"
+
+msgid "Tree node menu"
+msgstr "د ونې نیمګړي مینو"
+
+msgid "Two letter ISO country code"
+msgstr "د دوه تورو ISO هېواد کوډ"
+
+msgid "Two letter ISO language code"
+msgstr "د دوه تورو ISO ژبه کوډ"
+
+msgid "Type"
+msgstr "ډول"
+
+msgid "Type position (optional)"
+msgstr "د ډول موقف (اختیاري)"
+
+msgid "Types"
+msgstr "ډولونه"
+
+msgid "Types for additional images like icons"
+msgstr "د اضافي انځورونو لپاره ډولونه لکه آیکونونه"
+
+msgid "Types for additional prices like per one lb/kg or per month"
+msgstr "د اضافي بیو لپاره ډولونه لکه هر پونډ/کیلوګرام یا هر میاشت"
+
+msgid "Types for additional texts like per one lb/kg or per month"
+msgstr "د اضافي متنونو لپاره ډولونه لکه هر پونډ/کیلوګرام یا هر میاشت"
+
+msgid "URL of the customer web site"
+msgstr "د پیرودونکي د ویبسایټ URL"
+
+msgid "URL of the supplier web site"
+msgstr "د عرضه کوونکي د ویبسایټ URL"
+
+msgid "URL segment"
+msgstr "د URL برخه"
+
+msgid "URL target"
+msgstr "د URL هدف"
+
+msgid "Unable to call method \"%1$s\""
+msgstr "طریقه «%1$s» نشي غوښتل کېدای"
+
+msgid "Unable to read content from \"%1$s\""
+msgstr "د «%1$s» مینځپانګه نشي لوستل کېدای"
+
+msgid "Unfinished orders"
+msgstr "ناتکمله امرونه"
+
+msgid "Unique attribute code (required)"
+msgstr "بې سارې د ځانګړتیا کوډ (اړین)"
+
+msgid "Unique attribute code, e.g. \"green\" for attributes of type \"color\""
+msgstr "بې سارې د ځانګړتیا کوډ، لکه د «رنګ» ډول ځانګړتیاوو لپاره «شین»"
+
+msgid "Unique category code (required)"
+msgstr "بې سارې د ډول کوډ (اړین)"
+
+msgid "Unique category code, either from external system or self-invented"
+msgstr "بې سارې د ډول کوډ، یا له بهرنۍ سیستم یا پخپله جوړ شوی"
+
+msgid "Unique code (required)"
+msgstr "بې سارې کوډ (اړین)"
+
+msgid "Unique code to identify the service, usually self-invented"
+msgstr "بې سارې کوډ د خدمت د پېژندلو لپاره، معمولاً پخپله جوړ شوی"
+
+msgid "Unique customer account name"
+msgstr "بې سارې د پیرودونکي حساب نوم"
+
+msgid "Unique customer e-mail address"
+msgstr "بې سارې د پیرودونکي برېښنالیک پته"
+
+msgid "Unique group code (required)"
+msgstr "بې سارې د ډلې کوډ (اړین)"
+
+msgid "Unique service code (required)"
+msgstr "بې سارې د خدمت کوډ (اړین)"
+
+msgid "Unique site code (required)"
+msgstr "بې سارې د سایټ کوډ (اړین)"
+
+msgid "Unique supplier code"
+msgstr "بې سارې د عرضه کوونکي کوډ"
+
+msgid "Unique type code"
+msgstr "بې سارې د ډول کوډ"
+
+msgid "Unique type code (required)"
+msgstr "بې سارې د ډول کوډ (اړین)"
+
+msgid "Unique type code, e.g. \"color\" for attributes like \"green\", \"blue\", \"red\""
+msgstr "بې سارې د ډول کوډ، لکه د «شین»، «نیلي»، «سور» ځانګړتیاوو لپاره «رنګ»"
+
+msgid "Unit price"
+msgstr "د واحد بیه"
+
+msgid "Unknown upload error"
+msgstr "ناپېژندل شوې د لوړولو تېروتنه"
+
+msgid "Upload CSV"
+msgstr "CSV لوړول"
+
+msgid "Upload shop icon"
+msgstr "د پلورنځي آیکون لوړول"
+
+msgid "Upload shop logo"
+msgstr "د پلورنځي لوګو لوړول"
+
+msgid "Uploaded"
+msgstr "لوړ شوی"
+
+msgid "Use"
+msgstr "کارول"
+
+msgid "User groups"
+msgstr "د کارنانو ډلې"
+
+msgid "Usual time frame for the delivery of the product"
+msgstr "د محصول د سپارنې معمولي وخت"
+
+msgid "VAT ID"
+msgstr "د ارزښت مالیې پېژند"
+
+msgid "Value"
+msgstr "ارزښت"
+
+msgid "Value added tax identifier (optional)"
+msgstr "د ارزښت مالیې پېژند (اختیاري)"
+
+msgid "Variant attributes"
+msgstr "جلا بڼې ځانګړتیاوې"
+
+msgid "Variant product attributes that are stored with the ordered products"
+msgstr "د محصول جلا بڼې ځانګړتیاوې چې له امر شویو محصولاتو سره خوندي کېږي"
+
+msgid "Vendor"
+msgstr "پلورونکی"
+
+msgid "Verified"
+msgstr "تایید شوی"
+
+msgid "View details"
+msgstr "جزئیات لیدل"
+
+msgid "Voucher"
+msgstr "کوپن"
+
+msgid "Web site"
+msgstr "وېبسایټ"
+
+msgid "Web site URL (optional)"
+msgstr "د ویبسایټ URL (اختیاري)"
+
+msgid "Weeks"
+msgstr "اوونۍ"
+
+msgid "Weight"
+msgstr "وزن"
+
+msgid "When the account and e-mail address has been verified"
+msgstr "کله چې حساب او برېښنالیک پته تایید شوي وي"
+
+msgid "Width"
+msgstr "سوروالی"
+
+msgid "YYYY-MM-DD hh:mm:ss (optional)"
+msgstr "YYYY-MM-DD hh:mm:ss (اختیاري)"
+
+msgid "Years"
+msgstr "کالونه"
+
+msgid "Your export will be available in a few minutes for download"
+msgstr "ستاسې صادرات به څو دقیقو کې د ډاونلوډ لپاره شتون ولري"
+
+msgid "Your response"
+msgstr "ستاسې ځواب"
+
+msgid "Zip code"
+msgstr "پوستنی کوډ"
+
+msgid "Zip code (optional)"
+msgstr "پوستنی کوډ (اختیاري)"
+
+msgid "__hidden__"
+msgstr "__پټ__"
+
+msgid "account"
+msgstr "حساب"
+
+msgid "address"
+msgstr "پتې"
+
+msgid "address:delivery"
+msgstr "د سپارنې پته"
+
+msgid "address:payment"
+msgstr "د بلنګ پته"
+
+msgid "api"
+msgstr "د غوښتنلیک پروګرام کولو اړیکه"
+
+msgid "attribute"
+msgstr "ځانګړتیا"
+
+msgid "basket"
+msgstr "ټوکرۍ"
+
+msgid "bundle"
+msgstr "بسته"
+
+msgid "catalog"
+msgstr "کتلاګ"
+
+msgid "category"
+msgstr "ډولونه"
+
+msgid "characteristic"
+msgstr "ځانګړتیاوې"
+
+msgid "code"
+msgstr "کوډونه"
+
+msgid "company"
+msgstr "شرکت"
+
+msgid "configuration"
+msgstr "تنظیم"
+
+msgid "countcountry"
+msgstr "د هېواد له مخې شمېر"
+
+msgid "countday"
+msgstr "د ورځې له مخې شمېر"
+
+msgid "counthour"
+msgstr "د ساعت له مخې شمېر"
+
+msgid "countpaystatus"
+msgstr "د تادیې حالت له مخې شمېر"
+
+msgid "coupon"
+msgstr "کوپن"
+
+msgid "customer"
+msgstr "پیرودونکي"
+
+msgid "dashboard"
+msgstr "ډشبورډ"
+
+msgid "day"
+msgstr "د ورځې له مخې"
+
+msgid "deliverytype"
+msgstr "د سپارنې ډول له مخې"
+
+msgid "download"
+msgstr "پولي ډاونلوډونه"
+
+msgid "goods"
+msgstr "توکي"
+
+msgid "group"
+msgstr "ډلې"
+
+msgid "hour"
+msgstr "د ساعت له مخې"
+
+msgid "image"
+msgstr "انځورونه"
+
+msgid "invoice"
+msgstr "بلنګونه"
+
+msgid "latest"
+msgstr "وروستۍ"
+
+msgid "locale"
+msgstr "ځایي"
+
+msgid "locale/currency"
+msgstr "اسعار"
+
+msgid "locale/language"
+msgstr "ژبې"
+
+msgid "locale/site"
+msgstr "سایټونه"
+
+msgid "log"
+msgstr "لوګونه"
+
+msgid "marketing"
+msgstr "بازاریابي"
+
+msgid "media"
+msgstr "رسنۍ"
+
+msgid "miss"
+msgstr "ناغوښتې"
+
+msgid "mr"
+msgstr "ښاغلی"
+
+msgid "mrs"
+msgstr "مېرمن"
+
+msgid "ms"
+msgstr "ملی ثانیه"
+
+msgid "new"
+msgstr "نوی"
+
+msgid "no"
+msgstr "نه"
+
+msgid "none"
+msgstr "هېڅ"
+
+msgid "not available any more"
+msgstr "نور شتون نلري"
+
+msgid "option"
+msgstr "اختیارونه"
+
+msgid "order"
+msgstr "امرونه"
+
+msgid "order:phone"
+msgstr "تیلیفون"
+
+msgid "order:web"
+msgstr "وېب"
+
+msgid "pay:-1"
+msgstr "ناتکمله"
+
+msgid "pay:0"
+msgstr "ړنګ شوی"
+
+msgid "pay:1"
+msgstr "لغوه شوی"
+
+msgid "pay:2"
+msgstr "رد شوی"
+
+msgid "pay:3"
+msgstr "بېرته ورکړل شوی"
+
+msgid "pay:4"
+msgstr "انتظار"
+
+msgid "pay:5"
+msgstr "اجازه شوی"
+
+msgid "pay:6"
+msgstr "اخیستل شوی"
+
+msgid "pay:7"
+msgstr "تادیه: 7"
+
+msgid "paymentstatus"
+msgstr "د تادیې حالت له مخې"
+
+msgid "paymenttype"
+msgstr "د تادیې ډول له مخې"
+
+msgid "physical"
+msgstr "فزیکي"
+
+msgid "plugin"
+msgstr "پلګینونه"
+
+msgid "price"
+msgstr "بیې"
+
+msgid "product"
+msgstr "محصولات"
+
+msgid "property"
+msgstr "ملکیتونه"
+
+msgid "quick/countcompleted"
+msgstr "چټک/تکمیل شوي"
+
+msgid "quick/countcustomer"
+msgstr "چټک/پیرودونکی"
+
+msgid "quick/counttotal"
+msgstr "چټک/مجموعه"
+
+msgid "quick/countunfinished"
+msgstr "چټک/ناتکمله"
+
+msgid "reason:-1"
+msgstr "ناکامه"
+
+msgid "reason:0"
+msgstr "پای ته رسېدلی"
+
+msgid "reason:1"
+msgstr "لغوه شوی"
+
+msgid "related"
+msgstr "اړوند"
+
+msgid "review"
+msgstr "بیاکتنې"
+
+msgid "rule"
+msgstr "د بیو قوانین"
+
+msgid "sales"
+msgstr "پلور"
+
+msgid "salesweekday"
+msgstr "د اونۍ ورځو پلور"
+
+msgid "selected"
+msgstr "ټاکل شوی"
+
+msgid "selection"
+msgstr "ډولونه"
+
+msgid "service"
+msgstr "خدمتونه"
+
+msgid "servicedelivery"
+msgstr "د سپارنې ډولونو له مخې"
+
+msgid "servicepayment"
+msgstr "د تادیې ډولونو له مخې"
+
+msgid "settings"
+msgstr "تنظیمات"
+
+msgid "setup"
+msgstr "جوړول"
+
+msgid "special"
+msgstr "ځانګړی"
+
+msgid "stat:-1"
+msgstr "ناتکمله"
+
+msgid "stat:0"
+msgstr "ړنګ شوی"
+
+msgid "stat:1"
+msgstr "انتظار"
+
+msgid "stat:2"
+msgstr "په پرمختګ کې"
+
+msgid "stat:3"
+msgstr "ولېږل شو"
+
+msgid "stat:4"
+msgstr "ورسپارل شو"
+
+msgid "stat:5"
+msgstr "ورک"
+
+msgid "stat:6"
+msgstr "رد شوی"
+
+msgid "stat:7"
+msgstr "بېرته راغلی"
+
+msgid "status:-1"
+msgstr "ارشیف"
+
+msgid "status:-2"
+msgstr "بیاکتنه"
+
+msgid "status:0"
+msgstr "بې کاره"
+
+msgid "status:1"
+msgstr "فعال"
+
+msgid "status:2"
+msgstr "پټ"
+
+msgid "stock"
+msgstr "موجودۍ"
+
+msgid "subscription"
+msgstr "ګډونونه"
+
+msgid "supplier"
+msgstr "عرضه کوونکي"
+
+msgid "tag"
+msgstr "ټاګونه"
+
+msgid "tax:0"
+msgstr "مالیه: 0"
+
+msgid "tax:1"
+msgstr "مالیه: 1"
+
+msgid "text"
+msgstr "متنونه"
+
+msgid "theme"
+msgstr "تیم"
+
+msgid "transaction"
+msgstr "لېږد"
+
+msgid "type"
+msgstr "ډول"
+
+msgid "type/attribute"
+msgstr "ځانګړتیا"
+
+msgid "type/attribute/lists"
+msgstr "د ځانګړتیاو فهرستونه"
+
+msgid "type/attribute/property"
+msgstr "د ځانګړتیا ملکیتونه"
+
+msgid "type/catalog/lists"
+msgstr "د کتلاګ فهرستونه"
+
+msgid "type/customer/lists"
+msgstr "د پیرودونکو فهرستونه"
+
+msgid "type/customer/property"
+msgstr "د پیرودونکي ملکیتونه"
+
+msgid "type/media"
+msgstr "رسنۍ"
+
+msgid "type/media/lists"
+msgstr "د رسنیو فهرستونه"
+
+msgid "type/media/property"
+msgstr "د رسنیو ملکیتونه"
+
+msgid "type/plugin"
+msgstr "پلګینونه"
+
+msgid "type/price"
+msgstr "بیې"
+
+msgid "type/price/lists"
+msgstr "د بیو فهرستونه"
+
+msgid "type/price/property"
+msgstr "د بیې ملکیتونه"
+
+msgid "type/product"
+msgstr "محصولات"
+
+msgid "type/product/lists"
+msgstr "د محصولاتو فهرستونه"
+
+msgid "type/product/property"
+msgstr "د محصول ملکیتونه"
+
+msgid "type/rule"
+msgstr "قانون"
+
+msgid "type/service"
+msgstr "خدمتونه"
+
+msgid "type/service/lists"
+msgstr "د خدماتو فهرستونه"
+
+msgid "type/stock"
+msgstr "موجودۍ"
+
+msgid "type/tag"
+msgstr "ټاګونه"
+
+msgid "type/text"
+msgstr "متنونه"
+
+msgid "type/text/lists"
+msgstr "د متنونو فهرستونه"
+
+msgid "users"
+msgstr "کارنان"
+
+msgid "yes"
+msgstr "هو"
+
