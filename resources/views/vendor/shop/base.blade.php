@@ -42,6 +42,21 @@
 					{{ $key }}: {{ $value }};
 				@endforeach
 			}
+
+			.navbar-top .asaan-logo {
+				width: auto;
+				height: 22px;
+				border-radius: 6px;
+				margin: 0;
+			}
+
+			@media (min-width:992px) {
+				.navbar-top {
+					min-height: 4.5rem;
+					flex-wrap: nowrap;
+					align-items: center;
+				}
+			}
 		</style>
 
 		<link rel="preload" href="{{ asset('vendor/shop/themes/default/assets/roboto-condensed-v19-latin-regular.woff2') }}" as="font" type="font/woff2" crossorigin>
@@ -51,7 +66,7 @@
 	<body class="{{ $page ?? '' }}">
 		<nav class="navbar navbar-expand-md navbar-top">
 			<a class="navbar-brand" href="/" title="{{ aitrans('To the home page') }}">
-				<img src="{{ asset( $mediaUrl . '/' . ( $siteItem->getLogo() ?: $siteItem->getIcon() ?: 'asaan.png' ) ) }}" height="40" alt="{{ aitrans('To the home page') }}">
+				<img class="asaan-logo" src="{{ asset( $mediaUrl . '/' . ( $siteItem->getLogo() ?: $siteItem->getIcon() ?: 'asaan.png' ) ) }}" height="22" alt="{{ aitrans('To the home page') }}">
 			</a>
 
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-top" aria-controls="navbar-top" aria-expanded="false" aria-label="Toggle navigation">
