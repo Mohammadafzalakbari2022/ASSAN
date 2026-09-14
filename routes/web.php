@@ -17,7 +17,7 @@ Route::get('/ready', function() {
     return 'OK';
 });
 
-Route::group(['prefix' => 'admin', 'middleware' => ['web']], function () {
+Route::group(['prefix' => 'admin/default/jqadm', 'middleware' => ['web']], function () {
     Route::get('/debug/jqadm-info', function () {
         if (request('k') !== 'debug-js8qwb') abort(404);
 
