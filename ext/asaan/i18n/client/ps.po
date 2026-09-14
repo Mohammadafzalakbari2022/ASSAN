@@ -49,6 +49,12 @@ msgstr "-%1$s%%"
 msgid "A non-recoverable error occured"
 msgstr "بېرته نه راګرځېدونکې تېروتنه رامنځته شوه"
 
+msgid "ABOUT US"
+msgstr "زموږ په اړه"
+
+msgid "About the company"
+msgstr "د شرکت په اړه"
+
 msgid "Add"
 msgstr "زیاتول"
 
@@ -97,6 +103,9 @@ msgstr "لږ تر لږه یو محصول ټوکرۍ ته نه شو اضافه ک
 msgid "Back"
 msgstr "شاته"
 
+msgid "Back to top"
+msgstr "سرته بېرته پورته"
+
 msgid "Basket"
 msgstr "ټوکرۍ"
 
@@ -134,6 +143,9 @@ msgid "Buy now"
 msgstr "همدا اوس وپېرئ"
 
 msgid "Cancel"
+msgstr "لغوه کول"
+
+msgid "Cancellation"
 msgstr "لغوه کول"
 
 msgid "Categories"
@@ -183,6 +195,9 @@ msgstr "شرکت"
 
 msgid "Confirmation"
 msgstr "تصدیق"
+
+msgid "Contact us"
+msgstr "موږ سره اړیکه"
 
 msgid "Country"
 msgstr "هېواد"
@@ -316,6 +331,9 @@ msgstr "ډومین «%1$s» سم نه دی"
 msgid "Invoice"
 msgstr "بلنګ"
 
+msgid "LEGAL"
+msgstr "قانوني"
+
 msgid "Language"
 msgstr "ژبه"
 
@@ -330,6 +348,9 @@ msgstr "وروستی لیدل شوی"
 
 msgid "Latest"
 msgstr "وروستۍ"
+
+msgid "Legal information"
+msgstr "قانوني معلومات"
 
 msgid "Less"
 msgstr "لږ"
@@ -463,6 +484,9 @@ msgstr "د بیې فیلتر"
 msgid "Price range"
 msgstr "د بیې ساحه"
 
+msgid "Privacy Notice"
+msgstr "د شخصي معلوماتو ساتنه"
+
 msgid "Proceed"
 msgstr "دوام ورکول"
 
@@ -586,6 +610,9 @@ msgstr "لېږد"
 msgid "Show"
 msgstr "ښودل"
 
+msgid "Social media links"
+msgstr "د ټولنیزو رسنیو لینکونه"
+
 msgid "Sort by"
 msgstr "ترتیبول چې له مخې"
 
@@ -646,6 +673,9 @@ msgstr "یو نظر وکړئ"
 msgid "Telephone"
 msgstr "ټیلیفون"
 
+msgid "Terms & Conditions"
+msgstr "شرایط او ضوابط"
+
 msgid "Terms and conditions"
 msgstr "شرایط او ضوابط"
 
@@ -660,6 +690,9 @@ msgstr "وخت"
 
 msgid "Title"
 msgstr "سرلیک"
+
+msgid "To the home page"
+msgstr "کور ته بېرته تګ"
 
 msgid "Toggle fullscreen"
 msgstr "ډکه پرده بدلول"

@@ -1,5 +1,6 @@
+@php $aimeosLang = app( 'aimeos.context' )->get()->locale()->getLanguageId() ?: app()->getLocale(); @endphp
 <!DOCTYPE html>
-<html class="no-js" lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="{{ in_array(app()->getLocale(), ['ar', 'az', 'dv', 'fa', 'he', 'ku', 'ps', 'ur']) ? 'rtl' : 'ltr' }}">
+<html class="no-js" lang="{{ str_replace('_', '-', $aimeosLang) }}" dir="{{ in_array($aimeosLang, ['ar', 'az', 'dv', 'fa', 'he', 'ku', 'ps', 'ur']) ? 'rtl' : 'ltr' }}">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +16,7 @@
 		<link rel="apple-touch-icon" href="{{ asset('vendor/shop/themes/default/assets/apple-touch-icon.png') }}">
 		<meta name="theme-color" content="#1c5b3a">
 
-		@if( in_array(app()->getLocale(), ['ar', 'az', 'dv', 'fa', 'he', 'ku', 'ps', 'ur']) )
+		@if( in_array($aimeosLang, ['ar', 'az', 'dv', 'fa', 'he', 'ku', 'ps', 'ur']) )
 			<link type="text/css" rel="stylesheet" href="{{ asset('vendor/shop/themes/default/app.rtl.css?v=' . config( 'shop.version', 1 ) ) }}">
 		@else
 			<link type="text/css" rel="stylesheet" href="{{ asset('vendor/shop/themes/default/app.css?v=' . config( 'shop.version', 1 ) ) }}">
