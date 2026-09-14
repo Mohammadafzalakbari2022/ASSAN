@@ -1,4 +1,9 @@
-@php $aimeosLang = app( 'aimeos.context' )->get()->locale()->getLanguageId() ?: app()->getLocale(); @endphp
+@php
+	$aimeosLang = app( 'aimeos.context' )->get()->locale()->getLanguageId() ?: app()->getLocale();
+	$siteItem = app( 'aimeos.context' )->get()->locale()->getSiteItem();
+	$mediaUrl = app( 'aimeos.context' )->get()->config()->get( 'resource/fs-media/baseurl' );
+	$siteIcon = $siteItem->getIcon() ?: $siteItem->getLogo() ?: 'asaan.png';
+@endphp
 <!DOCTYPE html>
 <html class="no-js" lang="{{ str_replace('_', '-', $aimeosLang) }}" dir="{{ in_array($aimeosLang, ['ar', 'az', 'dv', 'fa', 'he', 'ku', 'ps', 'ur']) ? 'rtl' : 'ltr' }}">
 	<head>
@@ -6,14 +11,18 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="csrf-token" content="{{ csrf_token() }}">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="apple-mobile-web-app-title" content="{{ config('app.name', 'ASAAN') }}">
 
 		@if( config('app.debug') !== true )
 			<meta http-equiv="Content-Security-Policy" content="base-uri 'self'; default-src 'self' 'nonce-{{ app( 'aimeos.context' )->get()->nonce() }}'; {{ config( 'shop.csp.frontend', 'style-src \'unsafe-inline\' \'self\'; img-src \'self\' data: https://aimeos.org; frame-src https://www.youtube.com https://player.vimeo.com' ) }}">
 		@endif
 
 		<link rel="manifest" href="{{ asset('manifest.json') }}">
-		<link rel="icon" href="{{ asset( app( 'aimeos.context' )->get()->config()->get( 'resource/fs-media/baseurl' ) . '/' . ( app( 'aimeos.context' )->get()->locale()->getSiteItem()->getIcon() ?: '../vendor/shop/themes/default/assets/icon.png' ) ) }}">
-		<link rel="apple-touch-icon" href="{{ asset('vendor/shop/themes/default/assets/apple-touch-icon.png') }}">
+		<link rel="icon" href="{{ asset( $mediaUrl . '/' . $siteIcon ) }}">
+		<link rel="apple-touch-icon" href="{{ asset( $mediaUrl . '/' . $siteIcon ) }}">
 		<meta name="theme-color" content="#1c5b3a">
 
 		@if( in_array($aimeosLang, ['ar', 'az', 'dv', 'fa', 'he', 'ku', 'ps', 'ur']) )
@@ -42,7 +51,7 @@
 	<body class="{{ $page ?? '' }}">
 		<nav class="navbar navbar-expand-md navbar-top">
 			<a class="navbar-brand" href="/" title="{{ aitrans('To the home page') }}">
-				<img src="{{ asset( app( 'aimeos.context' )->get()->config()->get( 'resource/fs-media/baseurl' ) . '/' . ( app( 'aimeos.context' )->get()->locale()->getSiteItem()->getLogo() ?: '../vendor/shop/themes/default/assets/logo.png' ) ) }}" height="40" alt="{{ aitrans('To the home page') }}">
+				<img src="{{ asset( $mediaUrl . '/' . ( $siteItem->getLogo() ?: $siteItem->getIcon() ?: 'asaan.png' ) ) }}" height="40" alt="{{ aitrans('To the home page') }}">
 			</a>
 
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-top" aria-controls="navbar-top" aria-expanded="false" aria-label="Toggle navigation">
@@ -112,7 +121,7 @@
 					<div class="col-md-4 footer-right">
 						<div class="footer-block">
 							<a class="logo" href="/" title="{{ aitrans('To the home page') }}">
-								<img src="{{ asset( app( 'aimeos.context' )->get()->config()->get( 'resource/fs-media/baseurl' ) . '/' . ( app( 'aimeos.context' )->get()->locale()->getSiteItem()->getLogo() ?: '../vendor/shop/themes/default/assets/logo.png' ) ) }}" height="40" alt="{{ aitrans('To the home page') }}">
+								<img src="{{ asset( $mediaUrl . '/' . ( $siteItem->getLogo() ?: $siteItem->getIcon() ?: 'asaan.png' ) ) }}" height="40" alt="{{ aitrans('To the home page') }}">
 							</a>
 							<div class="social" aria-label="{{ aitrans('Social media links') }}">
 								<p><a href="#" class="sm facebook" title="Facebook" rel="noopener">Facebook</a></p>
@@ -135,6 +144,11 @@
 		<!-- Scripts -->
 		<script src="{{ asset('vendor/shop/themes/default/app.js?v=' . config( 'shop.version', 1 ) ) }}"></script>
 		<script src="{{ asset('vendor/shop/themes/default/aimeos.js?v=' . config( 'shop.version', 1 ) ) }}"></script>
+		<script nonce="{{ app( 'aimeos.context' )->get()->nonce() }}">
+			if( 'serviceWorker' in navigator ) {
+				navigator.serviceWorker.register( '{{ asset("sw.js") }}', { scope: '/' } ).catch( function() {} );
+			}
+		</script>
 		@yield('aimeos_scripts')
 	</body>
 </html>

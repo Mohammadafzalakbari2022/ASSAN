@@ -17,6 +17,41 @@ Route::get('/ready', function() {
     return 'OK';
 });
 
+Route::get('/manifest.json', function() {
+	$config = app( 'config' );
+	$context = app( 'aimeos.context' )->get( true );
+
+	try {
+		$icon = $context->locale()->getSiteItem()->getIcon() ?: 'asaan.png';
+		$baseurl = $context->config()->get( 'resource/fs-media/baseurl', '/aimeos' );
+		$iconUrl = $baseurl . '/' . $icon;
+	} catch( \Throwable $e ) {
+		$iconUrl = 'asaan.png';
+	}
+
+	$name = $config->get( 'app.name', 'ASAAN' );
+	$lang = $context->locale()->getLanguageId() ?: app()->getLocale();
+
+	return response()->json( [
+		'id' => url( '/' ),
+		'name' => $name . ' — Afghan Online Shop',
+		'short_name' => $name,
+		'description' => $name . ' web shop for kitchenware and more',
+		'lang' => str_replace( '_', '-', $lang ),
+		'dir' => in_array( $lang, ['ar', 'az', 'dv', 'fa', 'he', 'ku', 'ps', 'ur'] ) ? 'rtl' : 'ltr',
+		'start_url' => '/',
+		'scope' => '/',
+		'display' => 'standalone',
+		'background_color' => '#ffffff',
+		'theme_color' => '#1c5b3a',
+		'icons' => [
+			['src' => url( $iconUrl ), 'sizes' => '192x192', 'type' => 'image/png', 'purpose' => 'any'],
+			['src' => url( $iconUrl ), 'sizes' => '512x512', 'type' => 'image/png', 'purpose' => 'any'],
+			['src' => url( $iconUrl ), 'sizes' => '512x512', 'type' => 'image/png', 'purpose' => 'maskable'],
+		],
+	] );
+})->middleware( 'web' );
+
 $params = [];
 $conf = ['prefix' => '', 'where' => []];
 
