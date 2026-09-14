@@ -200,11 +200,14 @@ return array_replace_recursive( $multiroute, $multishop + [
 				// Single-shop: site switching stays locked; language & currency management is back on
 				'site' => ['groups' => 'no-access'],
 				'locale' => [
+					'groups' => ['admin', 'super'],
 					'site' => ['groups' => 'no-access'],
+					'language' => ['groups' => ['admin', 'super']],
+					'currency' => ['groups' => ['admin', 'super']],
 				],
 			],
-			// Sidebar: dashboard/sales/goods/users/marketing/settings/locale(language+currency)/setup/type/log
-			'navbar' => [
+// Sidebar: dashboard/sales/goods/users/marketing/settings/setup/locale/type/log
+				'navbar' => [
 				0 => 'dashboard',
 				10 => ['_' => 'sales', 10 => 'order', 20 => 'subscription', 30 => 'basket'],
 				20 => ['_' => 'goods', 10 => 'product', 20 => 'catalog', 30 => 'attribute', 40 => 'supplier'],
@@ -212,7 +215,6 @@ return array_replace_recursive( $multiroute, $multishop + [
 				40 => ['_' => 'marketing', 10 => 'coupon', 20 => 'rule', 30 => 'review'],
 				50 => 'settings',
 				60 => ['_' => 'setup', 20 => 'service', 30 => 'plugin'],
-				70 => ['_' => 'locale', 10 => 'locale/language', 20 => 'locale/currency'],
 				80 => 'type',
 				90 => 'log',
 			],
