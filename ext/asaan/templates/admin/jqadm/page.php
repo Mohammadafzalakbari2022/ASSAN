@@ -20,6 +20,10 @@ $enc = $this->encoder();
  */
 $navlist = map( $this->config( 'admin/jqadm/navbar', [] ) )->ksort();
 
+// ASSAN single-shop: only Language & Currency are surfaced under the
+// "Locales" group. Site switcher and locale/site stay locked (see middleware).
+$navlist[70] = ['_' => 'locale', '10' => 'locale/language', '20' => 'locale/currency'];
+
 foreach( $navlist as $key => $navitem )
 {
 	$name = is_array( $navitem ) ? ( $navitem['_'] ?? current( $navitem ) ) : $navitem;

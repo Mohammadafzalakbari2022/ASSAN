@@ -9,8 +9,9 @@ use Illuminate\Http\Request;
  * Blocks admin backend panels that are not part of the ASAAN single-shop setup.
  *
  * The engine stays multi-site capable but the UI offers exactly one shop.
- * Locale panels (site, language, currency) and the site switcher are
+ * Site panels (site, locale, locale/site) and the site switcher are
  * handled by the setup command and must not be changed from the backend.
+ * Language and currency are configurable in the backend.
  * This guard works for every group including "super".
  */
 class AsaanAdminGuard
@@ -20,8 +21,6 @@ class AsaanAdminGuard
         'site',
         'locale',
         'locale/site',
-        'locale/language',
-        'locale/currency',
     ];
 
     public function handle(Request $request, Closure $next)
