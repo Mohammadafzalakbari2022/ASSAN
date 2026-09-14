@@ -144,8 +144,8 @@ return array_replace_recursive( $multiroute, $multishop + [
 		'fs-media' => [
 			'adapter' => 'Standard',
 			'tempdir' => storage_path( 'tmp' ),
-			'basedir' => public_path( 'aimeos' ),
-			'baseurl' => rtrim(env('ASSET_URL', PHP_SAPI == 'cli' ? env('APP_URL') : ''), '/') . '/aimeos',
+			'basedir' => public_path( 'assets' ),
+			'baseurl' => rtrim(env('ASSET_URL', PHP_SAPI == 'cli' ? env('APP_URL') : ''), '/') . '/assets',
 		],
 		'fs-mimeicon' => [
 			'adapter' => 'Standard',

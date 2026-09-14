@@ -17,7 +17,7 @@
 		<meta name="apple-mobile-web-app-title" content="{{ config('app.name', 'ASAAN') }}">
 
 		@if( config('app.debug') !== true )
-			<meta http-equiv="Content-Security-Policy" content="base-uri 'self'; default-src 'self' 'nonce-{{ app( 'aimeos.context' )->get()->nonce() }}'; {{ config( 'shop.csp.frontend', 'style-src \'unsafe-inline\' \'self\'; img-src \'self\' data: https://aimeos.org; frame-src https://www.youtube.com https://player.vimeo.com' ) }}">
+			<meta http-equiv="Content-Security-Policy" content="base-uri 'self'; default-src 'self' 'nonce-{{ app( 'aimeos.context' )->get()->nonce() }}'; {{ config( 'shop.csp.frontend', 'style-src \'unsafe-inline\' \'self\'; img-src \'self\' data:; frame-src https://www.youtube.com https://player.vimeo.com' ) }}">
 		@endif
 
 		<link rel="manifest" href="{{ asset('manifest.json') }}">

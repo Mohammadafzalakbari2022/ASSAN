@@ -23,7 +23,7 @@ deploy. Everything you change goes into one of two project-owned places:
 | Language dropdown shows native names | `ext/asaan/client/html/templates/locale/select/language-body.php` |
 | Afghan dates on history/subscription/stock | `ext/asaan/client/html/templates/account/...`, `catalog/stock/body.php` |
 | Admin navbar, settings form, dashboard | `ext/asaan/admin/jqadm/templates/...`, `ext/asaan/lib/custom/src/Admin/JQAdm/...` |
-| Brand logo, favicon, PWA icons | `ext/asaan/media/brand/` (seeded into `public/aimeos/` on every deploy) |
+| Brand logo, favicon, PWA icons | `ext/asaan/media/brand/` (seeded into `public/assets/` on every deploy) |
 | Languages, currencies, dates, demo catalog | `app/Console/Commands/AsaanSetup.php` (`asaan:setup`) |
 | Behavior switches | `config/shop.php` |
 
@@ -119,7 +119,7 @@ every deploy (`docker/entrypoint.sh` → `php artisan asaan:setup`) and is
 - Afghan date handling (`app/Support/AsaanDate.php`)
 
 Important deploy reminder: any image you upload through the dashboard into
-`public/aimeos/1.d/` disappears on the next deploy (Render's disk is wiped and
+`public/assets/1.d/` disappears on the next deploy (Render's disk is wiped and
 that folder is git-ignored). The safe pattern, already used here, is to put brand
 files in `ext/asaan/media/` and let `AsaanSetup` copy them into place on each boot.
 

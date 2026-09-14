@@ -11,8 +11,8 @@ sed -ri -e 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available
 echo "ServerName localhost" > /etc/apache2/conf-available/servername.conf
 a2enconf servername >/dev/null 2>&1 || true
 
-mkdir -p storage/framework/cache/data storage/framework/sessions storage/framework/views bootstrap/cache public/aimeos
-chown -R www-data:www-data storage bootstrap/cache public/aimeos
+mkdir -p storage/framework/cache/data storage/framework/sessions storage/framework/views bootstrap/cache public/assets
+chown -R www-data:www-data storage bootstrap/cache public/assets
 
 if [ -n "${DATABASE_URL:-}" ] && [ -z "${DB_HOST:-}" ]; then
     echo "=== Deriving DB connection settings from DATABASE_URL ==="
@@ -103,6 +103,6 @@ if grep -q 'TH,Markdown,LH' "$f"; then
 fi
 echo "Admin vendor.js patched: $f"
 
-chown -R www-data:www-data storage bootstrap/cache public/aimeos
+chown -R www-data:www-data storage bootstrap/cache public/assets
 
 exec apache2-foreground

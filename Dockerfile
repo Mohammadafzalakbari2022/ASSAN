@@ -23,8 +23,8 @@ RUN cp config/shop.php /tmp/assan-shop.php \
     && composer install --no-dev --no-interaction --no-progress --prefer-dist --optimize-autoloader \
     && php artisan vendor:publish --tag=config --tag=public --force \
     && cp /tmp/assan-shop.php config/shop.php \
-    && mkdir -p storage/framework/cache/data storage/framework/sessions storage/framework/views bootstrap/cache public/aimeos \
-    && chown -R www-data:www-data storage bootstrap/cache public/aimeos
+    && mkdir -p storage/framework/cache/data storage/framework/sessions storage/framework/views bootstrap/cache public/assets \
+    && chown -R www-data:www-data storage bootstrap/cache public/assets
 
 EXPOSE 80
 

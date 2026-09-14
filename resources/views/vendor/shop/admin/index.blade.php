@@ -55,7 +55,7 @@
 
 		<div class="login-wrapper">
 			<div class="brand">
-				<img class="brand-logo" src="{{ asset('aimeos/asaan.png') }}" alt="ASAAN">
+				<img class="brand-logo" src="{{ asset('assets/asaan.png') }}" alt="ASAAN">
 				<div>ASAAN</div>
 			</div>
 

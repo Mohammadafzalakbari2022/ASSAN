@@ -23,7 +23,7 @@ Route::get('/manifest.json', function() {
 
 	try {
 		$icon = $context->locale()->getSiteItem()->getIcon() ?: 'asaan.png';
-		$baseurl = $context->config()->get( 'resource/fs-media/baseurl', '/aimeos' );
+		$baseurl = $context->config()->get( 'resource/fs-media/baseurl', '/assets' );
 		$iconUrl = $baseurl . '/' . $icon;
 	} catch( \Throwable $e ) {
 		$iconUrl = 'asaan.png';
@@ -35,7 +35,7 @@ Route::get('/manifest.json', function() {
 	// Prefer the durable square brand icons that are seeded into the media
 	// directory on every deploy (icon-192.png / icon-512.png), falling back to
 	// the dashboard-set site icon. Square icons are required for installability.
-	$baseurl = $context->config()->get( 'resource/fs-media/baseurl', '/aimeos' );
+	$baseurl = $context->config()->get( 'resource/fs-media/baseurl', '/assets' );
 	$icon192 = $baseurl . '/icon-192.png';
 	$icon512 = $baseurl . '/icon-512.png';
 	$iconAny = $iconUrl;

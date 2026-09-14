@@ -3,6 +3,7 @@
 /public/storage
 /public/vendor
 /public/aimeos
+/public/assets
 /storage/*.key
 /vendor
 .env

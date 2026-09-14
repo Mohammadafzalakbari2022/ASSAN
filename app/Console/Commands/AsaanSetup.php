@@ -82,7 +82,7 @@ class AsaanSetup extends Command
 		],
 	];
 
-	/** @var array<string, string> Product label => image file served from public/aimeos/ */
+	/** @var array<string, string> Product label => image file served from public/assets/ */
 protected $productImages = [
 		'Cookware set (12 pcs)' => 'hero-2.jpg',
 		'Non-stick frying pan 26 cm' => 'products/product-frying-pan.jpg',
@@ -161,6 +161,7 @@ protected $attributes = [
 		$this->translateCatalog( $scontext );
 		$this->seedBrandMedia( $scontext );
 		$this->seedProductImages( $scontext );
+		$this->seedCmsImages( $scontext );
 		$this->seedBrandAssets();
 
 		\Aimeos\MShop::cache( true );
@@ -259,7 +260,7 @@ protected $attributes = [
 		}
 
 		// The site icon/logo may point at files (e.g. dashboard uploads under
-		// public/aimeos/1.d/) that don't exist on a fresh container, because
+		// public/assets/1.d/) that don't exist on a fresh container, because
 		// the media directory is gitignored and wiped on every deploy. Heal
 		// the references to the ASAAN brand logo, which seedBrandMedia()
 		// copies from the repository on every deploy. Only heal broken values
@@ -269,7 +270,7 @@ protected $attributes = [
 		{
 			$path = $item->$getter();
 
-			if( $path === '' || !is_file( public_path( 'aimeos/' . ltrim( $path, '/' ) ) ) )
+			if( $path === '' || !is_file( public_path( 'assets/' . ltrim( $path, '/' ) ) ) )
 			{
 				$item->{'set' . substr( $getter, 3 )}( $fallback );
 				$healed[] = strtolower( substr( $getter, 3 ) );
@@ -701,7 +702,7 @@ if( $item->getLabel() !== $translations[0] )
 	 */
 	protected function seedBrandMedia( $context ) : void
 	{
-		$imgDir = public_path( 'aimeos' );
+		$imgDir = public_path( 'assets' );
 		if( !is_dir( $imgDir ) ) {
 			@mkdir( $imgDir, 0777, true );
 		}
@@ -721,11 +722,11 @@ if( $item->getLabel() !== $translations[0] )
 			if( is_file( base_path( 'ext/asaan/media/' . $file ) ) )
 			{
 				@copy( base_path( 'ext/asaan/media/' . $file ), $imgDir . '/' . $file );
-				$heroes[] = '/aimeos/' . $file;
+				$heroes[] = '/assets/' . $file;
 			}
 		}
 
-		$brand = '/aimeos/asaan.png';
+		$brand = '/assets/asaan.png';
 		$manager = MShop::create( $context, 'media' );
 		$items = $manager->search( $manager->filter()->slice( 0, 1000 ) );
 		$heroIdx = 0;
@@ -757,7 +758,7 @@ if( $item->getLabel() !== $translations[0] )
 	 * Points each demo product's main image to its own local photo.
 	 *
 	 * The photos live in ext/asaan/media/products (attribution in
-	 * ATTRIBUTION.txt) and are copied to public/aimeos/products so the admin
+	 * ATTRIBUTION.txt) and are copied to public/assets/products so the admin
 	 * image previews work under the restrictive img-src content policy. Two
 	 * products reuse the in-repo kitchen heroes. Idempotent: it only rewrites
 	 * the URL of each product's existing first media item.
@@ -765,7 +766,7 @@ if( $item->getLabel() !== $translations[0] )
 	protected function seedProductImages( $context ) : void
 	{
 		$srcDir = base_path( 'ext/asaan/media/products' );
-		$imgDir = public_path( 'aimeos/products' );
+		$imgDir = public_path( 'assets/products' );
 
 		if( !is_dir( $imgDir ) ) {
 			@mkdir( $imgDir, 0777, true );
@@ -797,7 +798,7 @@ if( $item->getLabel() !== $translations[0] )
 				continue;
 			}
 
-			$url = '/aimeos/' . $target;
+			$url = '/assets/' . $target;
 			$media->setMimeType( 'image/jpeg' )
 				->setUrl( $url )
 				->setPreviews( array_fill_keys( [240, 480, 720, 960, 1350, 1920], $url ) );
@@ -806,6 +807,54 @@ if( $item->getLabel() !== $translations[0] )
 		}
 
 		$this->info( sprintf( 'Product images assigned: %1$d products, %2$d photos copied', $set, $copied ) );
+	}
+
+
+	/**
+	 * Replaces the aimeos.org demo images in CMS content with local ASAAN files.
+	 *
+	 * The demo homepage content is stored in the database (mshop_text, GrapeJS
+	 * JSON with html/css sections) and references stock images on aimeos.org.
+	 * This rewrites those URLs to the kitchen hero photos and brand logo already
+	 * seeded into the local media directory. Idempotent: after the first run the
+	 * content no longer contains aimeos.org and is simply skipped.
+	 */
+	protected function seedCmsImages( $context ) : void
+	{
+		$map = [
+			'https://aimeos.org/media/default/content-top-1.webp' => '/assets/hero-1.jpg',
+			'https://aimeos.org/media/default/content-top-2.webp' => '/assets/hero-2.jpg',
+			'https://aimeos.org/media/default/content-top-3.webp' => '/assets/hero-3.jpg',
+			'https://aimeos.org/media/default/content-mid-1.webp' => '/assets/hero-1.jpg',
+			'https://aimeos.org/media/default/content-mid-2.webp' => '/assets/hero-2.jpg',
+			'https://aimeos.org/media/default/content-bottom-1.webp' => '/assets/hero-3.jpg',
+			'https://aimeos.org/media/default/content-bottom-2.webp' => '/assets/hero-1.jpg',
+			'https://aimeos.org/media/default/content-bottom-3.webp' => '/assets/hero-2.jpg',
+			'https://aimeos.org/media/default/content-bottom-4.webp' => '/assets/hero-3.jpg',
+			'https://aimeos.org/media/default/background.webp' => '/assets/hero-1.jpg',
+			'https://aimeos.org/media/default/logo-1.png' => '/assets/asaan.png',
+			'https://aimeos.org/media/default/logo-2.png' => '/assets/asaan.png',
+			'https://aimeos.org/media/default/logo-3.png' => '/assets/asaan.png',
+			'https://aimeos.org/media/default/logo-4.png' => '/assets/asaan.png',
+		];
+
+		$manager = MShop::create( $context, 'text' );
+		$filter = $manager->filter()->add( 'text.domain', '==', 'cms' )->add( 'text.type', '==', 'content' )->add( 'text.content', '~=', 'aimeos.org/media' );
+		$changed = 0;
+
+		foreach( $manager->search( $filter ) as $item )
+		{
+			$content = strtr( $item->getContent(), $map );
+
+			if( $content !== $item->getContent() )
+			{
+				$item->setContent( $content );
+				$manager->save( $item );
+				$changed++;
+			}
+		}
+
+		$this->info( sprintf( 'CMS content updated: %1$d texts use local images instead of aimeos.org', $changed ) );
 	}
 
 
@@ -842,7 +891,7 @@ if( $item->getLabel() !== $translations[0] )
 		// PWA manifest can reference durable files (the media dir is wiped on
 		// every deploy, so they are re-created here while asaan.png comes from
 		// seedBrandMedia()).
-		$imgDir = public_path( 'aimeos' );
+		$imgDir = public_path( 'assets' );
 
 		if( is_dir( $imgDir ) )
 		{
