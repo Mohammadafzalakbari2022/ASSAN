@@ -45,14 +45,24 @@ Route::group(['prefix' => 'admin', 'middleware' => ['web']], function () {
             $results[$res] = $view->access($config->get('admin/jqadm/resource/' . $res . '/groups', []));
         }
 
+        $creates = [];
+        foreach (['dashboard', 'settings', 'locale/language', 'locale/currency', 'locale/site', 'site', 'log'] as $res) {
+            try {
+                $class = '\\Aimeos\\Admin\\JQAdm\\' . str_replace('/', '\\', ucwords($res, '/')) . '\\Standard';
+                $ok = class_exists($class);
+                $client = \Aimeos\Admin\JQAdm::create($context, $aimeos, $res);
+                $creates[$res] = ['class_exists' => $ok, 'created' => true, 'class' => get_class($client)];
+            } catch (\Throwable $e) {
+                $creates[$res] = ['class_exists' => isset($ok) ? $ok : class_exists('\\Aimeos\\Admin\\JQAdm\\' . str_replace('/', '\\', ucwords($res, '/')) . '\\Standard'), 'created' => false, 'exception' => get_class($e), 'code' => $e->getCode(), 'message' => $e->getMessage()];
+            }
+        }
+
         return response()->json([
             'user_code' => $context->user() ? $context->user()->getCode() : null,
             'user_id' => $context->user() ? $context->user()->getId() : null,
             'context_groups' => $context->groups(),
             'access_results' => $results,
-            'language_groups_config' => $config->get('admin/jqadm/resource/locale/language/groups'),
-            'currency_groups_config' => $config->get('admin/jqadm/resource/locale/currency/groups'),
-            'locale_groups_config' => $config->get('admin/jqadm/resource/locale/groups'),
+            'create_results' => $creates,
         ], 200, ['Content-Type' => 'application/json']);
     });
 });
