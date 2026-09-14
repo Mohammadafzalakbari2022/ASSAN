@@ -25,8 +25,8 @@ $enc = $this->encoder();
  */
 $config = $this->config( 'client/html/locale/select/language/url/config', [] );
 
-// ASAAN shows every language under its own native name (each language in itself)
-$native = ['en' => 'English', 'fa' => 'دری', 'ps' => 'پښتو'];
+// Custom native-language names are DISCONNECTED; built-in Aimeos translations are used instead
+$native = [];
 
 
 ?>

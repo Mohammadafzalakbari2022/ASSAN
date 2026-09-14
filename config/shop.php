@@ -197,16 +197,13 @@ return array_replace_recursive( $multiroute, $multishop + [
 				],
 			],
 			'resource' => [
-				// Single-shop: block site switching and locale management for all user groups
+				// Single-shop: site switching stays locked; language & currency management is back on
 				'site' => ['groups' => 'no-access'],
 				'locale' => [
-					'groups' => 'no-access',
 					'site' => ['groups' => 'no-access'],
-					'language' => ['groups' => 'no-access'],
-					'currency' => ['groups' => 'no-access'],
 				],
 			],
-			// Sidebar: dashboard/sales/goods/users/marketing/settings/setup/type/log only
+			// Sidebar: dashboard/sales/goods/users/marketing/settings/locale(language+currency)/setup/type/log
 			'navbar' => [
 				0 => 'dashboard',
 				10 => ['_' => 'sales', 10 => 'order', 20 => 'subscription', 30 => 'basket'],
@@ -215,6 +212,7 @@ return array_replace_recursive( $multiroute, $multishop + [
 				40 => ['_' => 'marketing', 10 => 'coupon', 20 => 'rule', 30 => 'review'],
 				50 => 'settings',
 				60 => ['_' => 'setup', 20 => 'service', 30 => 'plugin'],
+				70 => ['_' => 'locale', 10 => 'locale/language', 20 => 'locale/currency'],
 				80 => 'type',
 				90 => 'log',
 			],
@@ -283,7 +281,12 @@ return array_replace_recursive( $multiroute, $multishop + [
 		]
 	],
 
-	'i18n' => [
+	// Custom translation overrides (asaan custom wording: menu labels, language / currency /
+	// country / AI names) are DISCONNECTED for now. The entries are kept in place below;
+	// flip $asaanCustomI18n to true to reconnect them.
+	'custom_i18n' => $asaanCustomI18n = false,
+
+	'i18n' => $asaanCustomI18n ? [
 		'en' => [
 			'client' => [
 				'Suppliers' => ['Brands']
@@ -337,7 +340,7 @@ return array_replace_recursive( $multiroute, $multishop + [
 				'AF' => ['افغانستان'],
 			],
 		],
-	],
+	] : [],
 
 	'madmin' => [
 		'cache' => [
