@@ -51,13 +51,29 @@ Route::group(['prefix' => 'admin', 'middleware' => ['web']], function () {
                 $class = '\\Aimeos\\Admin\\JQAdm\\' . str_replace('/', '\\', ucwords($res, '/')) . '\\Standard';
                 $ok = class_exists($class);
                 $client = \Aimeos\Admin\JQAdm::create($context, $aimeos, $res);
-                $creates[$res] = ['class_exists' => $ok, 'created' => true, 'class' => get_class($client)];
+                $searchInfo = '';
+                $searchHtml = '';
+                try {
+                    $searchHtml = (string) $client->search();
+                    $searchInfo = 'search_ok len=' . strlen($searchHtml);
+                } catch (\Throwable $e2) {
+                    $searchInfo = 'search_exception: ' . get_class($e2) . ' code=' . $e2->getCode() . ' msg=' . substr($e2->getMessage(), 0, 160);
+                }
+                $creates[$res] = ['class_exists' => $ok, 'created' => true, 'class' => get_class($client), 'search' => $searchInfo];
             } catch (\Throwable $e) {
-                $creates[$res] = ['class_exists' => isset($ok) ? $ok : class_exists('\\Aimeos\\Admin\\JQAdm\\' . str_replace('/', '\\', ucwords($res, '/')) . '\\Standard'), 'created' => false, 'exception' => get_class($e), 'code' => $e->getCode(), 'message' => $e->getMessage()];
+                $creates[$res] = ['class_exists' => isset($ok) ? $ok : false, 'created' => false, 'exception' => get_class($e), 'code' => $e->getCode(), 'message' => $e->getMessage()];
             }
         }
 
+        $routePrefix = optional(Route::getCurrentRoute())->getPrefix();
+        $routeKey = collect(config('shop.routes'))->where('prefix', $routePrefix)->keys()->first();
+        $guardName = data_get(config('shop.guards'), $routeKey, Auth::getDefaultDriver());
+
         return response()->json([
+            'route_prefix' => $routePrefix,
+            'route_key' => $routeKey,
+            'guard_name' => $guardName,
+            'auth_default' => Auth::getDefaultDriver(),
             'user_code' => $context->user() ? $context->user()->getCode() : null,
             'user_id' => $context->user() ? $context->user()->getId() : null,
             'context_groups' => $context->groups(),
