@@ -75,12 +75,20 @@ Route::group(['prefix' => 'admin/default/jqadm', 'middleware' => ['web']], funct
         $out['context_user_id'] = $context->user() ? $context->user()->getId() : null;
         $out['context_groups'] = $context->groups();
 
-        // access helper details
+        // access helper details (via reflection: helpers stored in private $helper array)
         try {
-            $helper = $view->access;
-            $out['access_helper_class'] = is_object($helper) ? get_class($helper) : gettype($helper);
+            $rp = new \ReflectionProperty($view, 'helper');
+            $helpers = $rp->getValue($view);
+            $out['access_helper_registered'] = $helpers['access'] ?? null;
+            if (isset($helpers['access'])) {
+                $out['access_helper_class'] = get_class($helpers['access']);
+                $out['access_helper_groups'] = (new \ReflectionProperty($helpers['access'], 'groups'))->getValue($helpers['access']) ?? 'n/a';
+            } else {
+                $out['access_helper_class'] = 'NOT REGISTERED';
+                $out['access_helper_groups'] = 'n/a';
+            }
         } catch (\Throwable $e) {
-            $out['access_helper_class'] = 'ERR: ' . $e->getMessage();
+            $out['access_helper_registered'] = 'ERR: ' . $e->getMessage();
         }
         $codes = [];
         try {
@@ -94,13 +102,21 @@ Route::group(['prefix' => 'admin/default/jqadm', 'middleware' => ['web']], funct
 
         // navbar merge reality
         try {
-            $navbar = \Aimeos\Base\Map::from($context->config()->get('admin/jqadm/navbar', []))->ksort();
+            $navbar = \Aimeos\Map::from($context->config()->get('admin/jqadm/navbar', []))->ksort();
             $navout = [];
             foreach ($navbar as $key => $navitem) {
                 $name = is_array($navitem) ? ($navitem['_'] ?? current($navitem)) : $navitem;
                 $navout[$key] = ['item' => $navitem, 'name' => $name, 'access' => $view->access($context->config()->get('admin/jqadm/resource/' . $name . '/groups', []))];
             }
             $out['navbar_merged'] = $navout;
+            $kept = [];
+            foreach ($navbar as $k => $navitem) {
+                $name = is_array($navitem) ? ($navitem['_'] ?? current($navitem)) : $navitem;
+                if ($view->access($context->config()->get('admin/jqadm/resource/' . $name . '/groups', []))) {
+                    $kept[$k] = $name;
+                }
+            }
+            $out['navbar_rendered'] = $kept;
         } catch (\Throwable $e) {
             $out['navbar_merged'] = 'ERR: ' . $e->getMessage();
         }
