@@ -21,17 +21,48 @@ Route::group(['prefix' => 'admin/default/jqadm', 'middleware' => ['web']], funct
     Route::get('/debug/jqadm-info', function () {
         if (request('k') !== 'debug-js8qwb') abort(404);
 
+        $out = [];
+
+        // Authentication facts
+        $defaultGuard = Auth::getDefaultDriver();
+        $out['auth_default_guard'] = $defaultGuard;
+        $out['auth_web_id'] = Auth::guard('web')->id();
+        $out['auth_web_user'] = Auth::guard('web')->user() ? [
+            'class' => get_class(Auth::guard('web')->user()),
+            'id' => Auth::guard('web')->user()->getAuthIdentifier(),
+            'except' => array_values(array_diff(get_object_vars(Auth::guard('web')->user()), [])) ?? 'n/a',
+        ] : null;
+        $out['shop_guards'] = config('shop.guards', []);
+        $out['shop_routes_keys'] = array_keys(config('shop.routes', []));
+        $out['shop_routes_jqadm'] = config('shop.routes.jqadm', null);
+
+        // DB shape: users table vs mshop customer
+        foreach (['users', 'mshop_customer'] as $table) {
+            try {
+                $out['table_' . $table] = \Illuminate\Support\Facades\Schema::hasTable($table) ? 'exists' : 'missing';
+            } catch (\Throwable $e) {
+                $out['table_' . $table] = 'error: ' . $e->getMessage();
+            }
+        }
+        try {
+            $out['users_count'] = \Illuminate\Support\Facades\DB::table('users')->count();
+            $out['users_sample'] = \Illuminate\Support\Facades\DB::table('users')->select('id', 'email')->limit(5)->get()->toArray();
+            $out['customer_sample'] = \Illuminate\Support\Facades\DB::table('mshop_customer')->select('id', 'code', 'label', 'status')->limit(5)->get()->toArray();
+            $out['group_rows'] = \Illuminate\Support\Facades\DB::table('mshop_customer_group')->select('id', 'code', 'label')->get()->toArray();
+        } catch (\Throwable $e) {
+            $out['db_error'] = $e->getMessage();
+        }
+
+        // Backend context access resolution
         $aimeos = app('aimeos')->get();
         $site = 'default';
         $lang = config('app.locale', 'en');
 
-        // backend context (no locale apply, mirrors JqadmController::createAdmin)
         $context = app('aimeos.context')->get(false, 'backend');
         $context->setI18n(app('aimeos.i18n')->get([$lang, 'en']));
         $context->setLocale(app('aimeos.locale')->getBackend($context, $site)->setLanguageId($lang));
 
         $config = $context->config();
-
         $siteManager = \Aimeos\MShop::create($context, 'locale/site');
         $siteItem = $siteManager->find($site);
         $config->apply($siteItem->getConfig());
@@ -40,46 +71,16 @@ Route::group(['prefix' => 'admin/default/jqadm', 'middleware' => ['web']], funct
         $view = app('aimeos.view')->create($context, $paths, $lang);
         $context->setView($view);
 
-        $results = [];
+        $out['context_user_code'] = $context->user() ? $context->user()->getCode() : null;
+        $out['context_user_id'] = $context->user() ? $context->user()->getId() : null;
+        $out['context_groups'] = $context->groups();
+
+        $out['access'] = [];
         foreach (['dashboard', 'settings', 'locale', 'locale/language', 'locale/currency', 'locale/site', 'site', 'log', 'group'] as $res) {
-            $results[$res] = $view->access($config->get('admin/jqadm/resource/' . $res . '/groups', []));
+            $out['access'][$res] = $view->access($config->get('admin/jqadm/resource/' . $res . '/groups', []));
         }
 
-        $creates = [];
-        foreach (['dashboard', 'settings', 'locale/language', 'locale/currency', 'locale/site', 'site', 'log'] as $res) {
-            try {
-                $class = '\\Aimeos\\Admin\\JQAdm\\' . str_replace('/', '\\', ucwords($res, '/')) . '\\Standard';
-                $ok = class_exists($class);
-                $client = \Aimeos\Admin\JQAdm::create($context, $aimeos, $res);
-                $searchInfo = '';
-                $searchHtml = '';
-                try {
-                    $searchHtml = (string) $client->search();
-                    $searchInfo = 'search_ok len=' . strlen($searchHtml);
-                } catch (\Throwable $e2) {
-                    $searchInfo = 'search_exception: ' . get_class($e2) . ' code=' . $e2->getCode() . ' msg=' . substr($e2->getMessage(), 0, 160);
-                }
-                $creates[$res] = ['class_exists' => $ok, 'created' => true, 'class' => get_class($client), 'search' => $searchInfo];
-            } catch (\Throwable $e) {
-                $creates[$res] = ['class_exists' => isset($ok) ? $ok : false, 'created' => false, 'exception' => get_class($e), 'code' => $e->getCode(), 'message' => $e->getMessage()];
-            }
-        }
-
-        $routePrefix = optional(Route::getCurrentRoute())->getPrefix();
-        $routeKey = collect(config('shop.routes'))->where('prefix', $routePrefix)->keys()->first();
-        $guardName = data_get(config('shop.guards'), $routeKey, Auth::getDefaultDriver());
-
-        return response()->json([
-            'route_prefix' => $routePrefix,
-            'route_key' => $routeKey,
-            'guard_name' => $guardName,
-            'auth_default' => Auth::getDefaultDriver(),
-            'user_code' => $context->user() ? $context->user()->getCode() : null,
-            'user_id' => $context->user() ? $context->user()->getId() : null,
-            'context_groups' => $context->groups(),
-            'access_results' => $results,
-            'create_results' => $creates,
-        ], 200, ['Content-Type' => 'application/json']);
+        return response()->json($out, 200, ['Content-Type' => 'application/json']);
     });
 });
 
