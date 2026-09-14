@@ -32,6 +32,14 @@ Route::get('/manifest.json', function() {
 	$name = $config->get( 'app.name', 'ASAAN' );
 	$lang = $context->locale()->getLanguageId() ?: app()->getLocale();
 
+	// Prefer the durable square brand icons that are seeded into the media
+	// directory on every deploy (icon-192.png / icon-512.png), falling back to
+	// the dashboard-set site icon. Square icons are required for installability.
+	$baseurl = $context->config()->get( 'resource/fs-media/baseurl', '/aimeos' );
+	$icon192 = $baseurl . '/icon-192.png';
+	$icon512 = $baseurl . '/icon-512.png';
+	$iconAny = $iconUrl;
+
 	return response()->json( [
 		'id' => url( '/' ),
 		'name' => $name . ' — Afghan Online Shop',
@@ -45,9 +53,10 @@ Route::get('/manifest.json', function() {
 		'background_color' => '#ffffff',
 		'theme_color' => '#1c5b3a',
 		'icons' => [
-			['src' => url( $iconUrl ), 'sizes' => '192x192', 'type' => 'image/png', 'purpose' => 'any'],
-			['src' => url( $iconUrl ), 'sizes' => '512x512', 'type' => 'image/png', 'purpose' => 'any'],
-			['src' => url( $iconUrl ), 'sizes' => '512x512', 'type' => 'image/png', 'purpose' => 'maskable'],
+			['src' => url( $icon192 ), 'sizes' => '192x192', 'type' => 'image/png', 'purpose' => 'any'],
+			['src' => url( $icon512 ), 'sizes' => '512x512', 'type' => 'image/png', 'purpose' => 'any'],
+			['src' => url( $icon512 ), 'sizes' => '512x512', 'type' => 'image/png', 'purpose' => 'maskable'],
+			['src' => url( $iconAny ), 'sizes' => 'any', 'type' => 'image/png', 'purpose' => 'any'],
 		],
 	] );
 })->middleware( 'web' );

@@ -256,8 +256,37 @@ protected $attributes = [
 		if( $changed )
 		{
 			$item->setConfig( $config );
+		}
+
+		// The site icon/logo may point at files (e.g. dashboard uploads under
+		// public/aimeos/1.d/) that don't exist on a fresh container, because
+		// the media directory is gitignored and wiped on every deploy. Heal
+		// the references to the ASAAN brand logo, which seedBrandMedia()
+		// copies from the repository on every deploy. Only heal broken values
+		// so a working upload (e.g. on a persistent disk) is left alone.
+		$healed = [];
+		foreach( ['getIcon' => 'asaan.png', 'getLogo' => 'asaan.png'] as $getter => $fallback )
+		{
+			$path = $item->$getter();
+
+			if( $path === '' || !is_file( public_path( 'aimeos/' . ltrim( $path, '/' ) ) ) )
+			{
+				$item->{'set' . substr( $getter, 3 )}( $fallback );
+				$healed[] = strtolower( substr( $getter, 3 ) );
+				$changed = true;
+			}
+		}
+
+		if( $changed )
+		{
 			$manager->save( $item );
-			$this->info( sprintf( 'Site "%1$s" label set to "ASAAN", date mode default set to Afghan', $site ) );
+			$msg = sprintf( 'Site "%1$s" label set to "ASAAN", date mode default set to Afghan', $site );
+
+			if( $healed ) {
+				$msg .= sprintf( ', icon/logo reset to %1$s (broken or missing files)', $fallback );
+			}
+
+			$this->info( $msg );
 		}
 		else
 		{
@@ -807,6 +836,22 @@ if( $item->getLabel() !== $translations[0] )
 
 		if( is_file( $srcDir . '/favicon.ico' ) ) {
 			@copy( $srcDir . '/favicon.ico', public_path( 'favicon.ico' ) );
+		}
+
+		// Also publish the square brand icons into the media directory so the
+		// PWA manifest can reference durable files (the media dir is wiped on
+		// every deploy, so they are re-created here while asaan.png comes from
+		// seedBrandMedia()).
+		$imgDir = public_path( 'aimeos' );
+
+		if( is_dir( $imgDir ) )
+		{
+			foreach( ['icon-192.png', 'icon-512.png', 'apple-touch-icon.png'] as $file )
+			{
+				if( is_file( $srcDir . '/' . $file ) ) {
+					@copy( $srcDir . '/' . $file, $imgDir . '/' . $file );
+				}
+			}
 		}
 
 		$this->info( 'Brand assets seeded: theme logo, favicon, apple-touch-icon and PWA icons replaced with ASAAN.af.png' );
