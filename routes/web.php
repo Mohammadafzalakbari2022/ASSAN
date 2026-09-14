@@ -76,8 +76,12 @@ Route::group(['prefix' => 'admin/default/jqadm', 'middleware' => ['web']], funct
         $out['context_groups'] = $context->groups();
 
         // access helper details
-        $helper = $view->access();
-        $out['access_helper_class'] = get_class($helper);
+        try {
+            $helper = $view->access;
+            $out['access_helper_class'] = is_object($helper) ? get_class($helper) : gettype($helper);
+        } catch (\Throwable $e) {
+            $out['access_helper_class'] = 'ERR: ' . $e->getMessage();
+        }
         $codes = [];
         try {
             $manager = \Aimeos\MShop::create($context, 'group');
@@ -89,27 +93,34 @@ Route::group(['prefix' => 'admin/default/jqadm', 'middleware' => ['web']], funct
         $out['access_resolved_codes'] = $codes;
 
         // navbar merge reality
-        $navbar = \Aimeos\Base\Map::from($context->config()->get('admin/jqadm/navbar', []))->ksort();
-        $navout = [];
-        foreach ($navbar as $key => $navitem) {
-            $name = is_array($navitem) ? ($navitem['_'] ?? current($navitem)) : $navitem;
-            $navout[$key] = ['item' => $navitem, 'name' => $name, 'access' => $view->access($context->config()->get('admin/jqadm/resource/' . $name . '/groups', []))];
+        try {
+            $navbar = \Aimeos\Base\Map::from($context->config()->get('admin/jqadm/navbar', []))->ksort();
+            $navout = [];
+            foreach ($navbar as $key => $navitem) {
+                $name = is_array($navitem) ? ($navitem['_'] ?? current($navitem)) : $navitem;
+                $navout[$key] = ['item' => $navitem, 'name' => $name, 'access' => $view->access($context->config()->get('admin/jqadm/resource/' . $name . '/groups', []))];
+            }
+            $out['navbar_merged'] = $navout;
+        } catch (\Throwable $e) {
+            $out['navbar_merged'] = 'ERR: ' . $e->getMessage();
         }
-        $out['navbar_merged'] = $navout;
 
         // config paths actually used by Aimeos
         try {
-            $out['config_paths'] = array_values($aimeos->getConfigPaths('default'));
+            $out['config_paths'] = array_values($aimeos->getConfigPaths());
         } catch (\Throwable $e) {
             $out['config_paths'] = ['ERR: ' . $e->getMessage()];
         }
 
-        $out['access'] = [];
         foreach (['dashboard', 'settings', 'locale', 'locale/language', 'locale/currency', 'locale/site', 'site', 'log', 'group'] as $res) {
-            $out['access'][$res] = $view->access($config->get('admin/jqadm/resource/' . $res . '/groups', []));
+            try {
+                $out['access'][$res] = $view->access($config->get('admin/jqadm/resource/' . $res . '/groups', []));
+            } catch (\Throwable $e) {
+                $out['access'][$res] = 'ERR: ' . $e->getMessage();
+            }
         }
 
-        return response()->json(array_slice(array_merge($out, []), 0), 200, ['Content-Type' => 'application/json', 'X-Role-Out' => 'v8']);
+        return response()->json($out, 200, ['Content-Type' => 'application/json', 'X-Role-Out' => 'v8']);
     });
 });
 
