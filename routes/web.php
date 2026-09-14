@@ -75,12 +75,41 @@ Route::group(['prefix' => 'admin/default/jqadm', 'middleware' => ['web']], funct
         $out['context_user_id'] = $context->user() ? $context->user()->getId() : null;
         $out['context_groups'] = $context->groups();
 
+        // access helper details
+        $helper = $view->access();
+        $out['access_helper_class'] = get_class($helper);
+        $codes = [];
+        try {
+            $manager = \Aimeos\MShop::create($context, 'group');
+            $filter = $manager->filter(true)->add('group.id', '==', $context->groups());
+            $codes = $manager->search($filter)->col('group.code')->all();
+        } catch (\Throwable $e) {
+            $codes = ['ERR: ' . $e->getMessage()];
+        }
+        $out['access_resolved_codes'] = $codes;
+
+        // navbar merge reality
+        $navbar = \Aimeos\Base\Map::from($context->config()->get('admin/jqadm/navbar', []))->ksort();
+        $navout = [];
+        foreach ($navbar as $key => $navitem) {
+            $name = is_array($navitem) ? ($navitem['_'] ?? current($navitem)) : $navitem;
+            $navout[$key] = ['item' => $navitem, 'name' => $name, 'access' => $view->access($context->config()->get('admin/jqadm/resource/' . $name . '/groups', []))];
+        }
+        $out['navbar_merged'] = $navout;
+
+        // config paths actually used by Aimeos
+        try {
+            $out['config_paths'] = array_values($aimeos->getConfigPaths('default'));
+        } catch (\Throwable $e) {
+            $out['config_paths'] = ['ERR: ' . $e->getMessage()];
+        }
+
         $out['access'] = [];
         foreach (['dashboard', 'settings', 'locale', 'locale/language', 'locale/currency', 'locale/site', 'site', 'log', 'group'] as $res) {
             $out['access'][$res] = $view->access($config->get('admin/jqadm/resource/' . $res . '/groups', []));
         }
 
-        return response()->json($out, 200, ['Content-Type' => 'application/json']);
+        return response()->json(array_slice(array_merge($out, []), 0), 200, ['Content-Type' => 'application/json', 'X-Role-Out' => 'v8']);
     });
 });
 
