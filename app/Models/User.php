@@ -22,6 +22,9 @@ class User extends Authenticatable implements MustVerifyEmail
         'email',
         'password',
         'siteid',
+        'role',
+        'phone',
+        'active',
     ];
 
     /**
@@ -41,5 +44,16 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'active' => 'boolean',
     ];
+
+    public function isAdmin(): bool
+    {
+        return $this->role === 'admin' || (int) $this->getAttribute('superuser') === 1;
+    }
+
+    public function isDelivery(): bool
+    {
+        return $this->role === 'delivery';
+    }
 }

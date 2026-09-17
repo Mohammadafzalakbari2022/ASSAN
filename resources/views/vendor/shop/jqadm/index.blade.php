@@ -38,6 +38,7 @@
 					$langs = ['en' => 'English', 'fa' => 'دری', 'ps' => 'پښتو'];
 					$query = collect( Request::query() )->except( ['locale'] )->toArray();
 				@endphp
+				<a href="{{ route( 'delivery.admin.orders.index' ) }}" style="color:var(--ai-bg); margin:0 0.5rem; font:inherit; text-decoration:none; display:inline-flex; align-items:center;">Delivery</a>
 				<select class="lang-select" aria-label="Language" onchange="location.href=this.value">
 					@foreach( $langs as $lang => $name )
 						<option value="{{ route( 'aimeos_shop_jqadm_search', ['site' => $site, 'resource' => Request::route( 'resource', 'dashboard' ), 'locale' => $lang] + $query ) }}" @if( $locale === $lang ) selected="selected" @endif>{{ $name }}</option>

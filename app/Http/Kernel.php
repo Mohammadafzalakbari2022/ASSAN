@@ -66,5 +66,6 @@ class Kernel extends HttpKernel
         'verified' => \App\Http\Middleware\EnsureEmailIsVerified::class,
         'setlocale' => \App\Http\Middleware\SetLocale::class,
         'asan.guard' => \App\Http\Middleware\AsaanAdminGuard::class,
+        'role' => \App\Http\Middleware\EnsureUserRole::class,
     ];
 }

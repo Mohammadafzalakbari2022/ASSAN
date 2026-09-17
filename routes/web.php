@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\DeliveryOrderController;
+use App\Http\Controllers\Admin\DeliveryStaffController;
 
 /*
 |--------------------------------------------------------------------------
@@ -97,3 +99,17 @@ if( env( 'SHOP_MULTIROUTE' ) )
         ) )->where( ['locale' => '[a-z]{2}(\_[A-Z]{2})?', 'site' => '[A-Za-z0-9\.\-]+'], 'path', '.*' );
     });
 }
+
+Route::middleware( ['auth', 'role:admin'] )->prefix( 'admin/delivery' )->name( 'delivery.admin.' )->group( function() {
+    Route::get( '', [DeliveryStaffController::class, 'index'] )->name( 'staff.index' );
+    Route::get( 'staff/create', [DeliveryStaffController::class, 'create'] )->name( 'staff.create' );
+    Route::post( 'staff', [DeliveryStaffController::class, 'store'] )->name( 'staff.store' );
+    Route::get( 'staff/{user}/edit', [DeliveryStaffController::class, 'edit'] )->name( 'staff.edit' );
+    Route::put( 'staff/{user}', [DeliveryStaffController::class, 'update'] )->name( 'staff.update' );
+    Route::post( 'staff/{user}/toggle', [DeliveryStaffController::class, 'toggle'] )->name( 'staff.toggle' );
+    Route::delete( 'staff/{user}', [DeliveryStaffController::class, 'destroy'] )->name( 'staff.destroy' );
+
+    Route::get( 'orders', [DeliveryOrderController::class, 'index'] )->name( 'orders.index' );
+    Route::post( 'orders/{order}/assign', [DeliveryOrderController::class, 'assign'] )->whereNumber( 'order' )->name( 'orders.assign' );
+    Route::delete( 'orders/{assignment}/unassign', [DeliveryOrderController::class, 'unassign'] )->name( 'orders.unassign' );
+} );
