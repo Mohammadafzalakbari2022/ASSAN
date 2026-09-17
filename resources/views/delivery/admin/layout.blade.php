@@ -45,6 +45,7 @@
         .hint { color:var(--muted); font-size:0.85rem; margin-block-start:0.3rem; }
         :focus-visible { outline:2px solid var(--brand); outline-offset:2px; }
     </style>
+    @stack('head')
 </head>
 <body>
     <header class="top">
@@ -52,6 +53,7 @@
             <span class="brand">ASAAN Delivery</span>
             <nav class="menu">
                 <a href="{{ route('delivery.admin.orders.index') }}" class="{{ request()->routeIs('delivery.admin.orders.*') ? 'active' : '' }}">Orders</a>
+                <a href="{{ route('delivery.admin.map') }}" class="{{ request()->routeIs('delivery.admin.map') ? 'active' : '' }}">Map</a>
                 <a href="{{ route('delivery.admin.staff.index') }}" class="{{ request()->routeIs('delivery.admin.staff.*') ? 'active' : '' }}">Staff</a>
             </nav>
         </div>

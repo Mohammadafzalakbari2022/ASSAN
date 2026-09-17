@@ -320,8 +320,8 @@ to the live shop until all phases pass their tests.
   address, phone, items, Delivered / Couldn't deliver.
 - **Phase 4 — Status sync.** (DONE, verified) Delivered/Failed update the shop's
   own order delivery stage, and the admin order panel and customer history agree.
-- **Phase 5 — Tracking.** Phone sends position; admin map shows dots, last-seen,
-  and a basic trail. Auto-refresh.
+- **Phase 5 — Tracking.** (DONE, verified) Phone sends position; admin map shows
+  dots, last-seen, and a basic trail. Auto-refresh.
 - **Phase 6 — Polish and rules.** Back-button protection, keyboard, RTL, error
   placement, offline/stale states, mobile/desktop gating.
 - **Phase 7 — Deploy.** Only after hand-testing everything on a copy.
@@ -495,7 +495,34 @@ Breeze `/profile` routes are not used by this Aimeos-based app. Out of scope.
   `app/Http/Controllers/Delivery/OrderController.php`,
   `tests/Concerns/CreatesShopOrderTables.php`, `tests/Feature/DeliveryAppTest.php`.
 
+### Phase 5 — Tracking (DONE, verified)
+
+- A delivery phone sends its position while the delivery page is open. A bar at
+  the bottom of the app offers **Share my location** (the phone asks for
+  permission the first time) and then shows when it last sent. If permission is
+  refused, it says so plainly instead of pretending.
+- The admin **Map** page (Delivery → Map) draws every on-duty delivery person on
+  a free OpenStreetMap map using Leaflet, which is served from our own site
+  (`public/leaflet/`) so it does not depend on anyone else's server.
+- A dot is green **live** if seen in the last 2 minutes, amber **stale** up to
+  15 minutes, grey **offline** beyond that or if never seen. Each dot has a short
+  dotted trail, a popup with name, phone, accuracy and active order count, and a
+  side list you can click to jump to a person. The page refreshes itself every
+  10 seconds.
+- Position is stored with the server's own clock and tied to the person's own
+  current order; the phone cannot claim someone else's order. Points older than
+  7 days are trimmed automatically. Only admins can read positions.
+- 12 tests pass. The live/stale/offline rule and the "delivery only" server rule
+  were each disabled on purpose, the matching tests failed, and both were put
+  back.
+- Files: `public/leaflet/**`, `app/Support/DeliveryTracking.php`,
+  `app/Http/Controllers/Delivery/LocationController.php`,
+  `app/Http/Controllers/Admin/DeliveryMapController.php`,
+  `resources/views/delivery/admin/map.blade.php`,
+  `resources/views/delivery/app/partials/tracker.blade.php`,
+  `routes/delivery.php`, `routes/web.php`, `tests/Feature/DeliveryTrackingTest.php`.
+
 ### Next up
 
-Phase 5 — tracking: the phone sends its position, and the admin map shows dots,
-last-seen times, and a basic trail, refreshing on its own.
+Phase 6 — polish and rules: back-button protection, keyboard, RTL, error
+placement, offline/stale states, mobile/desktop gating.

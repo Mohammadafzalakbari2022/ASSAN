@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Delivery\AuthController;
+use App\Http\Controllers\Delivery\LocationController;
 use App\Http\Controllers\Delivery\OrderController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,6 +24,7 @@ Route::prefix( 'delivery' )->name( 'delivery.' )->group( function() {
     Route::middleware( ['auth', 'role:delivery', 'active'] )->group( function() {
         Route::get( '', [OrderController::class, 'index'] )->name( 'orders.index' );
         Route::post( 'logout', [AuthController::class, 'logout'] )->name( 'logout' );
+        Route::post( 'location', [LocationController::class, 'store'] )->name( 'location' );
 
         Route::get( 'orders/{assignment}', [OrderController::class, 'show'] )->name( 'orders.show' );
         Route::post( 'orders/{assignment}/start', [OrderController::class, 'start'] )->name( 'orders.start' );

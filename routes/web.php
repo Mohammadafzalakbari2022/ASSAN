@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\DeliveryMapController;
 use App\Http\Controllers\Admin\DeliveryOrderController;
 use App\Http\Controllers\Admin\DeliveryStaffController;
 
@@ -112,6 +113,9 @@ Route::middleware( ['auth', 'role:admin'] )->prefix( 'admin/delivery' )->name( '
     Route::get( 'orders', [DeliveryOrderController::class, 'index'] )->name( 'orders.index' );
     Route::post( 'orders/{order}/assign', [DeliveryOrderController::class, 'assign'] )->whereNumber( 'order' )->name( 'orders.assign' );
     Route::delete( 'orders/{assignment}/unassign', [DeliveryOrderController::class, 'unassign'] )->name( 'orders.unassign' );
+
+    Route::get( 'map', [DeliveryMapController::class, 'index'] )->name( 'map' );
+    Route::get( 'map/locations', [DeliveryMapController::class, 'locations'] )->name( 'map.locations' );
 } );
 
 require __DIR__.'/delivery.php';

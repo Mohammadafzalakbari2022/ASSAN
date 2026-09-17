@@ -48,7 +48,13 @@
         ul.items li { display:flex; justify-content:space-between; gap:0.75rem; padding-block:0.4rem; border-block-end:1px solid var(--line); }
         details summary { cursor:pointer; font-weight:600; margin-block-end:0.6rem; }
         :focus-visible { outline:2px solid var(--brand); outline-offset:2px; }
+        .tracker { position:fixed; inset-block-end:0; inset-inline:0; background:#fff; border-block-start:1px solid var(--line); z-index:6; }
+        .tracker-inner { max-width:40rem; margin-inline:auto; padding:0.6rem 1rem calc(0.6rem + env(safe-area-inset-bottom)); display:flex; align-items:center; justify-content:space-between; gap:0.75rem; }
+        .tracker-text { font-size:0.85rem; color:var(--muted); }
+        .tracker .btn { min-height:2.25rem; font-size:0.9rem; }
+        body.has-tracker { padding-block-end:4.5rem; }
     </style>
+    @stack('head')
 </head>
 <body>
     <header class="top">
@@ -78,5 +84,13 @@
 
         @yield('content')
     </main>
+
+    @auth
+        @if (auth()->user()->isDelivery())
+            @include('delivery.app.partials.tracker')
+        @endif
+    @endauth
+
+    @stack('scripts')
 </body>
 </html>
