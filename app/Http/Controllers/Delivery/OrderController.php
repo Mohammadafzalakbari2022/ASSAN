@@ -7,6 +7,7 @@ use App\Models\DeliveryAssignment;
 use App\Support\ShopOrders;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 
 class OrderController extends Controller
@@ -69,10 +70,18 @@ class OrderController extends Controller
                 ->with('error', 'This delivery was already finished.');
         }
 
-        $assignment->update([
-            'status' => DeliveryAssignment::STATUS_DELIVERED,
-            'delivered_at' => now(),
-        ]);
+        DB::transaction(function () use ($assignment, $request) {
+            $assignment->update([
+                'status' => DeliveryAssignment::STATUS_DELIVERED,
+                'delivered_at' => now(),
+            ]);
+
+            $this->orders->setDeliveryStatus(
+                $assignment->order_id,
+                ShopOrders::STATUS_DELIVERED,
+                'delivery:' . $request->user()->id
+            );
+        });
 
         return redirect()->route('delivery.orders.index')
             ->with('status', 'Marked as delivered.');
@@ -95,11 +104,19 @@ class OrderController extends Controller
                 ->with('error', 'This delivery was already finished.');
         }
 
-        $assignment->update([
-            'status' => DeliveryAssignment::STATUS_FAILED,
-            'note' => $data['reason'],
-            'failed_at' => now(),
-        ]);
+        DB::transaction(function () use ($assignment, $data, $request) {
+            $assignment->update([
+                'status' => DeliveryAssignment::STATUS_FAILED,
+                'note' => $data['reason'],
+                'failed_at' => now(),
+            ]);
+
+            $this->orders->setDeliveryStatus(
+                $assignment->order_id,
+                ShopOrders::STATUS_REFUSED,
+                'delivery:' . $request->user()->id
+            );
+        });
 
         return redirect()->route('delivery.orders.index')
             ->with('status', 'Marked as not delivered.');

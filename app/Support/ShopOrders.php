@@ -7,12 +7,12 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 
 /**
- * Read-only access to the shop's own order tables.
+ * Access to the shop's own order tables.
  *
  * The shop (Aimeos) keeps orders in plain database tables rather than in
  * application models, so this small helper gathers the pieces the delivery
- * board needs: the order itself, the delivery address, and the current
- * assignment.
+ * board needs (the order, the delivery address, the items) and writes the
+ * delivery result back into the shop's order status.
  */
 class ShopOrders
 {
@@ -164,6 +164,47 @@ class ShopOrders
             ->where('parentid', $orderId)
             ->orderBy('pos')
             ->get(['name', 'quantity', 'price', 'currencyid']);
+    }
+
+    /**
+     * Write the delivery result back into the shop's own order, so the admin
+     * order panel and the customer's order history agree with the delivery app.
+     *
+     * Refuses to touch an order that is already finished (delivered, refused,
+     * returned, lost or deleted).
+     */
+    public function setDeliveryStatus(int $orderId, int $status, string $editor = 'asan-delivery'): bool
+    {
+        return (bool) DB::transaction(function () use ($orderId, $status, $editor) {
+            $order = DB::table('mshop_order')
+                ->where('id', $orderId)
+                ->lockForUpdate()
+                ->first(['id', 'siteid', 'statusdelivery']);
+
+            if ($order === null || !$this->isOpen((int) $order->statusdelivery)) {
+                return false;
+            }
+
+            $now = now();
+
+            DB::table('mshop_order')->where('id', $orderId)->update([
+                'statusdelivery' => $status,
+                'mtime' => $now,
+                'editor' => $editor,
+            ]);
+
+            DB::table('mshop_order_status')->insert([
+                'siteid' => $order->siteid,
+                'parentid' => $orderId,
+                'type' => 'status-delivery',
+                'value' => (string) $status,
+                'mtime' => $now,
+                'ctime' => $now,
+                'editor' => $editor,
+            ]);
+
+            return true;
+        });
     }
 
     public static function customerName(?object $order): string

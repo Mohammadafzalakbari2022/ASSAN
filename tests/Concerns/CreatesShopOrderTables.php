@@ -28,6 +28,7 @@ trait CreatesShopOrderTables
                 $table->string('currencyid', 3)->default('');
                 $table->timestamp('ctime')->nullable();
                 $table->timestamp('mtime')->nullable();
+                $table->string('editor')->default('');
             });
         }
 
@@ -64,6 +65,19 @@ trait CreatesShopOrderTables
                 $table->decimal('price', 12, 2)->default(0);
                 $table->string('currencyid', 3)->default('');
                 $table->integer('pos')->default(0);
+            });
+        }
+
+        if (!Schema::hasTable('mshop_order_status')) {
+            Schema::create('mshop_order_status', function (Blueprint $table) {
+                $table->bigIncrements('id');
+                $table->string('siteid')->default('');
+                $table->unsignedBigInteger('parentid');
+                $table->string('type', 32)->default('');
+                $table->string('value', 64);
+                $table->timestamp('mtime')->nullable();
+                $table->timestamp('ctime')->nullable();
+                $table->string('editor')->default('');
             });
         }
     }

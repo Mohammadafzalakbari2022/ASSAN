@@ -252,4 +252,72 @@ class DeliveryAppTest extends TestCase
 
         $this->assertGuest();
     }
+
+    public function test_delivering_updates_the_shop_order_status(): void
+    {
+        $staff = $this->makeStaff();
+        $assignment = $this->makeAssignment($this->makeOrder(210), $staff);
+
+        $this->actingAs($staff)->post(route('delivery.orders.deliver', $assignment));
+
+        $this->assertSame(
+            ShopOrders::STATUS_DELIVERED,
+            (int) DB::table('mshop_order')->where('id', 210)->value('statusdelivery')
+        );
+
+        $this->assertDatabaseHas('mshop_order_status', [
+            'parentid' => 210,
+            'type' => 'status-delivery',
+            'value' => (string) ShopOrders::STATUS_DELIVERED,
+        ]);
+    }
+
+    public function test_failed_delivery_updates_the_shop_order_status(): void
+    {
+        $staff = $this->makeStaff();
+        $assignment = $this->makeAssignment($this->makeOrder(211), $staff);
+
+        $this->actingAs($staff)
+            ->post(route('delivery.orders.fail', $assignment), ['reason' => 'Nobody home']);
+
+        $this->assertSame(
+            ShopOrders::STATUS_REFUSED,
+            (int) DB::table('mshop_order')->where('id', 211)->value('statusdelivery')
+        );
+
+        $this->assertDatabaseHas('mshop_order_status', [
+            'parentid' => 211,
+            'type' => 'status-delivery',
+            'value' => (string) ShopOrders::STATUS_REFUSED,
+        ]);
+    }
+
+    public function test_delivery_does_not_overwrite_a_finished_order_status(): void
+    {
+        $staff = $this->makeStaff();
+        $assignment = $this->makeAssignment($this->makeOrder(212, ShopOrders::STATUS_DELIVERED), $staff);
+
+        $this->actingAs($staff)
+            ->post(route('delivery.orders.fail', $assignment), ['reason' => 'Nobody home']);
+
+        $this->assertSame(
+            ShopOrders::STATUS_DELIVERED,
+            (int) DB::table('mshop_order')->where('id', 212)->value('statusdelivery')
+        );
+
+        $this->assertSame(0, DB::table('mshop_order_status')->where('parentid', 212)->count());
+    }
+
+    public function test_delivered_order_leaves_the_admin_board(): void
+    {
+        $admin = User::factory()->create(['role' => 'admin']);
+        $staff = $this->makeStaff();
+        $assignment = $this->makeAssignment($this->makeOrder(213), $staff);
+
+        $this->actingAs($admin)->get('/admin/delivery/orders')->assertSee('INV-213');
+
+        $this->actingAs($staff)->post(route('delivery.orders.deliver', $assignment));
+
+        $this->actingAs($admin)->get('/admin/delivery/orders')->assertDontSee('INV-213');
+    }
 }

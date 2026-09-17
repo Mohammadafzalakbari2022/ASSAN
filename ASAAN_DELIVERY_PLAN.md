@@ -318,8 +318,8 @@ to the live shop until all phases pass their tests.
   the assignment.
 - **Phase 3 — Delivery app.** Separate login, Today list, order screen with
   address, phone, items, Delivered / Couldn't deliver.
-- **Phase 4 — Status sync.** Delivered/Failed must update the shop's own order
-  delivery stage, and the admin order panel and customer history must agree.
+- **Phase 4 — Status sync.** (DONE, verified) Delivered/Failed update the shop's
+  own order delivery stage, and the admin order panel and customer history agree.
 - **Phase 5 — Tracking.** Phone sends position; admin map shows dots, last-seen,
   and a basic trail. Auto-refresh.
 - **Phase 6 — Polish and rules.** Back-button protection, keyboard, RTL, error
@@ -476,8 +476,26 @@ Breeze `/profile` routes are not used by this Aimeos-based app. Out of scope.
   `database/migrations/2026_09_17_000005_*.php`,
   `tests/Feature/DeliveryAppTest.php`.
 
+### Phase 4 — Status sync (DONE, verified)
+
+- When a delivery person marks an order **Delivered**, the shop's own order
+  delivery stage becomes "Delivered"; **Couldn't deliver** becomes "Refused"
+  (the shop's closest wording for a failed attempt). The admin order panel and
+  the customer's order history therefore agree with the delivery app.
+- Each change is also written into the shop's status history with the note
+  `status-delivery` and the staff member's id, the same way the shop records its
+  own changes.
+- An order that is already finished (delivered, refused, returned, lost or
+  deleted) is never overwritten.
+- The assignment and the shop-order update happen together; if one part fails,
+  neither is kept.
+- 19 tests pass. The status write was disabled on purpose, the three tests that
+  depend on it failed, and it was put back.
+- Files: `app/Support/ShopOrders.php` (`setDeliveryStatus`),
+  `app/Http/Controllers/Delivery/OrderController.php`,
+  `tests/Concerns/CreatesShopOrderTables.php`, `tests/Feature/DeliveryAppTest.php`.
+
 ### Next up
 
-Phase 4 — status sync: a delivery marked Delivered or Failed must also update the
-shop's own order delivery stage, so the admin order panel and the customer's
-order history agree.
+Phase 5 — tracking: the phone sends its position, and the admin map shows dots,
+last-seen times, and a basic trail, refreshing on its own.
