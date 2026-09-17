@@ -521,6 +521,12 @@ Breeze `/profile` routes are not used by this Aimeos-based app. Out of scope.
   `resources/views/delivery/admin/map.blade.php`,
   `resources/views/delivery/app/partials/tracker.blade.php`,
   `routes/delivery.php`, `routes/web.php`, `tests/Feature/DeliveryTrackingTest.php`.
+- **Staff see themselves live too.** The delivery person's order screen now opens
+  with the same Leaflet map: the delivery address is a red dot (only when the
+  order has real coordinates), and the staff member's own position is a blue dot
+  that moves with the phone. The map fits both dots once they are known, and
+  shares the same self-hosted Leaflet. The phone's location buttons still work
+  exactly as before. Tested with 2 new checks in `tests/Feature/DeliveryPolishTest.php`.
 
 ### Phase 6 — Polish and rules (DONE, verified)
 

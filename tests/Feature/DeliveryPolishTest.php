@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\DeliveryAssignment;
 use App\Models\User;
 use App\Support\ShopOrders;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -21,7 +22,7 @@ class DeliveryPolishTest extends TestCase
         $this->createShopOrderTables();
     }
 
-    protected function makeOrder(int $id, int $statusdelivery = ShopOrders::STATUS_UNFINISHED): int
+    protected function makeOrder(int $id, int $statusdelivery = ShopOrders::STATUS_UNFINISHED, ?float $lat = null, ?float $lng = null): int
     {
         DB::table('mshop_order')->insert([
             'id' => $id,
@@ -43,6 +44,8 @@ class DeliveryPolishTest extends TestCase
             'address1' => 'Kabul Street 1',
             'city' => 'Kabul',
             'mobile' => '0700000000',
+            'latitude' => $lat,
+            'longitude' => $lng,
         ]);
 
         return $id;
@@ -139,5 +142,49 @@ class DeliveryPolishTest extends TestCase
                 'delivery_user_id' => $staff->id,
             ])
             ->assertSee('data-unsaved="1"', false);
+    }
+
+    public function test_order_page_ships_a_live_tracking_map(): void
+    {
+        $admin = $this->makeAdmin();
+        $staff = $this->makeStaff();
+        $this->makeOrder(304);
+
+        $assignment = DeliveryAssignment::create([
+            'order_id' => 304,
+            'delivery_user_id' => $staff->id,
+            'assigned_by' => $admin->id,
+            'status' => DeliveryAssignment::STATUS_ASSIGNED,
+            'assigned_at' => now(),
+        ]);
+
+        $this->actingAs($staff)
+            ->get(route('delivery.orders.show', $assignment))
+            ->assertOk()
+            ->assertSee('delivery-map', false)
+            ->assertSee('leaflet/leaflet.css', false)
+            ->assertSee('leaflet/leaflet.js', false)
+            ->assertSee('Delivery destination', false);
+    }
+
+    public function test_order_page_shows_the_destination_marker_when_coordinates_exist(): void
+    {
+        $admin = $this->makeAdmin();
+        $staff = $this->makeStaff();
+        $this->makeOrder(305, ShopOrders::STATUS_UNFINISHED, 34.5, 69.1);
+
+        $assignment = DeliveryAssignment::create([
+            'order_id' => 305,
+            'delivery_user_id' => $staff->id,
+            'assigned_by' => $admin->id,
+            'status' => DeliveryAssignment::STATUS_ASSIGNED,
+            'assigned_at' => now(),
+        ]);
+
+        $this->actingAs($staff)
+            ->get(route('delivery.orders.show', $assignment))
+            ->assertOk()
+            ->assertSee('destLat = 34.5', false)
+            ->assertSee('destLng = 69.1', false);
     }
 }
