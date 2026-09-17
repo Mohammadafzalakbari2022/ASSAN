@@ -49,17 +49,17 @@ class DeliveryOrderController extends Controller
         $shopOrder = $this->orders->order($order);
 
         if ($shopOrder === null) {
-            return back()->with('error', 'That order was not found.');
+            return back()->withErrors(['order_' . $order => 'That order was not found.']);
         }
 
         if (!$this->orders->isOpen((int) $shopOrder->statusdelivery)) {
-            return back()->with('error', 'That order is already finished and cannot be assigned.');
+            return back()->withErrors(['order_' . $order => 'That order is already finished and cannot be assigned.']);
         }
 
         $staff = User::find($data['delivery_user_id']);
 
         if ($staff === null || !$staff->active) {
-            return back()->with('error', 'That delivery account is disabled and cannot be assigned.');
+            return back()->withErrors(['order_' . $order => 'That delivery account is disabled and cannot be assigned.']);
         }
 
         try {
@@ -92,7 +92,7 @@ class DeliveryOrderController extends Controller
                 return false;
             });
         } catch (QueryException $e) {
-            return back()->with('error', 'This order is already assigned to someone else.');
+            return back()->withErrors(['order_' . $order => 'This order is already assigned to someone else.']);
         }
 
         return back()->with('status', $reassigned
@@ -103,7 +103,7 @@ class DeliveryOrderController extends Controller
     public function unassign(DeliveryAssignment $assignment): RedirectResponse
     {
         if ($assignment->status !== DeliveryAssignment::STATUS_ASSIGNED) {
-            return back()->with('error', 'This order is already being delivered and cannot be unassigned.');
+            return back()->withErrors(['order_' . $assignment->order_id => 'This order is already being delivered and cannot be unassigned.']);
         }
 
         $assignment->delete();
@@ -111,3 +111,4 @@ class DeliveryOrderController extends Controller
         return back()->with('status', 'Order unassigned.');
     }
 }
+

@@ -44,13 +44,17 @@
         .err { color:var(--danger); font-size:0.85rem; margin-block-start:0.3rem; }
         .hint { color:var(--muted); font-size:0.85rem; margin-block-start:0.3rem; }
         :focus-visible { outline:2px solid var(--brand); outline-offset:2px; }
+        .history-nav { display:none; }
+        html.os-desktop .history-nav { display:inline-flex; gap:0.4rem; }
     </style>
+    @include('delivery.partials.os')
     @stack('head')
 </head>
-<body>
+<body @if ($errors->any()) data-unsaved="1" @endif>
     <header class="top">
         <div class="top-inner">
             <span class="brand">ASAAN Delivery</span>
+            @include('delivery.partials.history')
             <nav class="menu">
                 <a href="{{ route('delivery.admin.orders.index') }}" class="{{ request()->routeIs('delivery.admin.orders.*') ? 'active' : '' }}">Orders</a>
                 <a href="{{ route('delivery.admin.map') }}" class="{{ request()->routeIs('delivery.admin.map') ? 'active' : '' }}">Map</a>
@@ -69,5 +73,8 @@
 
         @yield('content')
     </div>
+
+    @include('delivery.partials.unsaved-guard')
+    @stack('scripts')
 </body>
 </html>

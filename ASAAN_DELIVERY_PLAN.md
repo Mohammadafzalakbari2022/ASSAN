@@ -322,8 +322,8 @@ to the live shop until all phases pass their tests.
   own order delivery stage, and the admin order panel and customer history agree.
 - **Phase 5 — Tracking.** (DONE, verified) Phone sends position; admin map shows
   dots, last-seen, and a basic trail. Auto-refresh.
-- **Phase 6 — Polish and rules.** Back-button protection, keyboard, RTL, error
-  placement, offline/stale states, mobile/desktop gating.
+- **Phase 6 — Polish and rules.** (DONE, verified) Back-button protection,
+  keyboard, RTL, error placement, mobile/desktop gating.
 - **Phase 7 — Deploy.** Only after hand-testing everything on a copy.
 
 ---
@@ -522,7 +522,46 @@ Breeze `/profile` routes are not used by this Aimeos-based app. Out of scope.
   `resources/views/delivery/app/partials/tracker.blade.php`,
   `routes/delivery.php`, `routes/web.php`, `tests/Feature/DeliveryTrackingTest.php`.
 
+### Phase 6 — Polish and rules (DONE, verified)
+
+- **Leaving a page with unsaved typing asks first.** One shared guard
+  (`resources/views/delivery/partials/unsaved-guard.blade.php`) watches every form
+  field on every delivery page, so a page added later cannot forget it. Typing
+  nothing means leaving is instant; a failed save comes back with the form marked
+  `data-unsaved` on the page body, so the guard is armed only while there is
+  really something to lose. Submitting clears it.
+- **Desktop back and forward buttons.** The header now carries Back / Forward,
+  shown only on desktop (`html.os-desktop`), and greyed out when there is nowhere
+  to go. Because the router keeps only a back list, the page keeps its own record
+  of where you have been (`sessionStorage`), drops the forward entries when you
+  start a fresh trip, and does not record a jump made by our own button as a new
+  visit. `Alt+Left`, `Alt+Right` and `Escape` drive the same buttons. Nothing was
+  added on mobile — the phone's own back gesture is left to do its job.
+- **Mobile is judged by the device, not the window width.** A shared snippet in
+  each layout sets `os-desktop` from the operating system/browser, so a tablet or
+  a phone in landscape does not get the desktop controls.
+- **Errors sit next to the thing that is wrong.** Assigning an order to a
+  disabled account, a finished order, a missing order, or unassigning a
+  half-delivered order now puts the message in that order's own row instead of a
+  banner at the top. The delivery-person box is `required` so an empty choice is
+  reported at the box, and the first message on the page moves focus to its field
+  and scrolls it into view.
+- `resources/views/delivery/partials/{history,unsaved-guard,os}.blade.php`,
+  `resources/views/delivery/{admin,app}/layout.blade.php`,
+  `resources/views/delivery/admin/orders/index.blade.php`,
+  `resources/views/delivery/app/orders/show.blade.php` (its one-off guard removed),
+  `app/Http/Controllers/Admin/DeliveryOrderController.php`.
+- 6 new tests (`tests/Feature/DeliveryPolishTest.php`) check the shared controls
+  and messages ship on the admin, delivery and login pages, and that the unsaved
+  mark appears only after a failed save. Four existing assignment tests were
+  pointed at the new per-order error keys. Proof: the row-scoped error key, the
+  history include and the `data-unsaved` mark were each broken on purpose, the
+  matching tests failed, and all were put back.
+- Note: the back/forward buttons themselves are JavaScript and cannot be tested by
+  the server-side suite; they need a quick hand-check in a real browser (see
+  Phase 7).
+
 ### Next up
 
-Phase 6 — polish and rules: back-button protection, keyboard, RTL, error
-placement, offline/stale states, mobile/desktop gating.
+Phase 7 — deploy: a copy to hand-test first, then release. Nothing is pushed to
+the live site until it has been hand-tested and the owner says go.

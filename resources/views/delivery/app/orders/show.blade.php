@@ -90,22 +90,4 @@
             </form>
         </details>
     </div>
-
-    <script>
-        (function () {
-            var reason = document.getElementById('reason');
-            if (!reason) return;
-
-            var dirty = false;
-            reason.addEventListener('input', function () {
-                dirty = reason.value.trim() !== '';
-            });
-
-            window.addEventListener('beforeunload', function (event) {
-                if (!dirty) return;
-                event.preventDefault();
-                event.returnValue = '';
-            });
-        })();
-    </script>
 @endsection

@@ -72,7 +72,8 @@
                                         @if (!$staff->isEmpty())
                                             <form method="POST" action="{{ route('delivery.admin.orders.assign', $order->id) }}">
                                                 @csrf
-                                                <select name="delivery_user_id" aria-label="Change delivery person">
+                                                <input type="hidden" name="_order" value="{{ $order->id }}">
+                                                <select name="delivery_user_id" required aria-label="Change delivery person">
                                                     @foreach ($staff as $person)
                                                         <option value="{{ $person->id }}" @selected($person->id === $order->assignment->delivery_user_id)>{{ $person->name }}</option>
                                                     @endforeach
@@ -94,8 +95,9 @@
                                     @else
                                         <form method="POST" action="{{ route('delivery.admin.orders.assign', $order->id) }}">
                                             @csrf
-                                            <select name="delivery_user_id" aria-label="Delivery person">
-                                                <option value="">Choose…</option>
+                                            <input type="hidden" name="_order" value="{{ $order->id }}">
+                                            <select name="delivery_user_id" required aria-label="Delivery person">
+                                                <option value="" disabled @selected(old('_order') == $order->id)>Choose…</option>
                                                 @foreach ($staff as $person)
                                                     <option value="{{ $person->id }}">{{ $person->name }}@if ($person->phone) — {{ $person->phone }}@endif</option>
                                                 @endforeach
@@ -104,7 +106,10 @@
                                         </form>
                                     @endif
                                 @endif
-                                @error('delivery_user_id')<div class="err">{{ $message }}</div>@enderror
+                                @error('order_' . $order->id)<div class="err">{{ $message }}</div>@enderror
+                                @if (old('_order') == $order->id)
+                                    @error('delivery_user_id')<div class="err">{{ $message }}</div>@enderror
+                                @endif
                             </td>
                         </tr>
                     @endforeach

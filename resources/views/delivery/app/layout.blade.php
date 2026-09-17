@@ -53,13 +53,17 @@
         .tracker-text { font-size:0.85rem; color:var(--muted); }
         .tracker .btn { min-height:2.25rem; font-size:0.9rem; }
         body.has-tracker { padding-block-end:4.5rem; }
+        .history-nav { display:none; }
+        html.os-desktop .history-nav { display:inline-flex; gap:0.4rem; }
     </style>
+    @include('delivery.partials.os')
     @stack('head')
 </head>
-<body>
+<body @if ($errors->any()) data-unsaved="1" @endif>
     <header class="top">
         <div class="top-inner">
             <span class="brand">ASAAN Delivery</span>
+            @include('delivery.partials.history')
             @auth
                 @if (auth()->user()->isDelivery())
                     <nav>
@@ -92,5 +96,7 @@
     @endauth
 
     @stack('scripts')
+
+    @include('delivery.partials.unsaved-guard')
 </body>
 </html>

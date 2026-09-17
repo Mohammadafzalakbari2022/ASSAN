@@ -140,7 +140,7 @@ class DeliveryAssignmentTest extends TestCase
         $this->actingAs($admin)
             ->from('/admin/delivery/orders')
             ->post(route('delivery.admin.orders.assign', 105), ['delivery_user_id' => $staff->id])
-            ->assertSessionHas('error');
+            ->assertSessionHasErrors('order_105');
 
         $this->assertDatabaseMissing('delivery_assignments', ['order_id' => 105]);
     }
@@ -168,7 +168,7 @@ class DeliveryAssignmentTest extends TestCase
         $this->actingAs($admin)
             ->from('/admin/delivery/orders')
             ->post(route('delivery.admin.orders.assign', 107), ['delivery_user_id' => $staff->id])
-            ->assertSessionHas('error');
+            ->assertSessionHasErrors('order_107');
 
         $this->assertDatabaseMissing('delivery_assignments', ['order_id' => 107]);
     }
@@ -181,7 +181,7 @@ class DeliveryAssignmentTest extends TestCase
         $this->actingAs($admin)
             ->from('/admin/delivery/orders')
             ->post(route('delivery.admin.orders.assign', 999999), ['delivery_user_id' => $staff->id])
-            ->assertSessionHas('error');
+            ->assertSessionHasErrors('order_999999');
 
         $this->assertDatabaseMissing('delivery_assignments', ['order_id' => 999999]);
     }
@@ -223,7 +223,7 @@ class DeliveryAssignmentTest extends TestCase
         $this->actingAs($admin)
             ->from('/admin/delivery/orders')
             ->delete(route('delivery.admin.orders.unassign', $assignment))
-            ->assertSessionHas('error');
+            ->assertSessionHasErrors('order_109');
 
         $this->assertDatabaseHas('delivery_assignments', ['id' => $assignment->id]);
     }
