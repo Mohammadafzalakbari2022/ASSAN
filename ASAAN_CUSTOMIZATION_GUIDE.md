@@ -151,3 +151,45 @@ files in `ext/asaan/media/` and let `AsaanSetup` copy them into place on each bo
 - Implement / extend admin panels: https://aimeos.org/docs/latest/admin/jqadm/implement-panels and `/extend-panels`
 - Create extensions (skeleton): https://aimeos.org/extensions
 - All config keys reference: https://aimeos.org/docs/latest/config
+
+---
+
+## 6. Change homepage banner text and button (no code needed)
+
+The big headline + button on the covered image at the top of the homepage are
+stored inside the homepage CMS page, not in code. Two ways to change them:
+
+**Easy way (recommended):**
+
+1. Log in at `https://assan-hmn5.onrender.com/admin`
+2. Menu: Dashboard → Home (CMS page list)
+3. Click the row labeled "Demo content: Home" → Edit
+4. A visual drag-and-drop editor opens (GrapeJS). Click the text or button on
+   the canvas and type your replacement, e.g. change the button label, or "Select
+   your unique style".
+5. Press the SAVE button (disk icon) — the change appears on the storefront right away.
+
+**Careful:** for a button or text to be readable over the banner, don't hand-type a
+color into the editor's "style" box. The site removes custom color tags on purpose
+(for safety) when it shows the page. Instead, keep using the **class** `btn
+btn-primary` (green button, white text) which is already styled by the site's
+theme. To make any element a styled button, set its Class to `btn btn-primary`.
+If you want a different colour, tell me and I'll add a matching class once
+(Dashboard icon, H1, accent → each can get its own colour class).
+
+**Alternative (data-level) way:** I changed "Take a look" → "Shop now" and gave
+it the green background on 2026-09-15 in the live database. If you ever need it
+restored, it's the homepage content row in the database (`mshop_text`, label
+"Demo content: Home", type "content"). Re-running `php artisan asaan:setup` does
+NOT overwrite this text/banner (it only re-seeds brand images and the demo
+catalogue, not the CMS banner text).
+
+---
+
+## 7. Site appearance light switches (CSS classes, no layout change)
+
+| Want | Use on the element | Result |
+|---|---|---|
+| Solid green button, white text | Class `btn btn-primary` | Site's themed button |
+| Rounded corners | `--ai-radius: 50` already set for buttons | rounded |
+| Solid dark/contrast on any light banner | Class `btn btn-dark` | dark button, white text |
