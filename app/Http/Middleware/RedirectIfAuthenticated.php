@@ -23,6 +23,12 @@ class RedirectIfAuthenticated
 
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
+                $user = Auth::guard($guard)->user();
+
+                if ($user !== null && $user->isDelivery() && ($request->is('delivery') || $request->is('delivery/*'))) {
+                    return redirect()->route('delivery.orders.index');
+                }
+
                 return redirect(config( 'app.shop_multishop' ) && config( 'app.shop_registration' ) ? '/admin' : airoute( 'aimeos_shop_account' ));
             }
         }

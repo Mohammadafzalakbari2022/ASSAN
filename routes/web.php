@@ -113,3 +113,5 @@ Route::middleware( ['auth', 'role:admin'] )->prefix( 'admin/delivery' )->name( '
     Route::post( 'orders/{order}/assign', [DeliveryOrderController::class, 'assign'] )->whereNumber( 'order' )->name( 'orders.assign' );
     Route::delete( 'orders/{assignment}/unassign', [DeliveryOrderController::class, 'unassign'] )->name( 'orders.unassign' );
 } );
+
+require __DIR__.'/delivery.php';

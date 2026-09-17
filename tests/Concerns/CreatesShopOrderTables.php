@@ -54,5 +54,17 @@ trait CreatesShopOrderTables
                 $table->double('latitude')->nullable();
             });
         }
+        if (!Schema::hasTable('mshop_order_product')) {
+            Schema::create('mshop_order_product', function (Blueprint $table) {
+                $table->bigIncrements('id');
+                $table->string('siteid')->default('');
+                $table->unsignedBigInteger('parentid');
+                $table->string('name')->default('');
+                $table->double('quantity')->default(1);
+                $table->decimal('price', 12, 2)->default(0);
+                $table->string('currencyid', 3)->default('');
+                $table->integer('pos')->default(0);
+            });
+        }
     }
 }

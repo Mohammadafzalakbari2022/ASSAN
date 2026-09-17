@@ -40,6 +40,20 @@ class ShopOrders
         self::STATUS_RETURNED,
     ];
 
+    /**
+     * @var array<int, string>
+     */
+    protected const ORDER_COLUMNS = [
+        'id',
+        'invoiceno',
+        'customerid',
+        'statuspayment',
+        'statusdelivery',
+        'price',
+        'currencyid',
+        'ctime',
+    ];
+
     public function isOpen(int $statusDelivery): bool
     {
         return !in_array($statusDelivery, self::CLOSED_STATUSES, true);
@@ -73,16 +87,7 @@ class ShopOrders
             ->whereNotIn('statusdelivery', self::CLOSED_STATUSES)
             ->orderByDesc('id')
             ->limit($limit)
-            ->get([
-                'id',
-                'invoiceno',
-                'customerid',
-                'statuspayment',
-                'statusdelivery',
-                'price',
-                'currencyid',
-                'ctime',
-            ]);
+            ->get(self::ORDER_COLUMNS);
 
         if ($orders->isEmpty()) {
             return collect();
@@ -109,16 +114,7 @@ class ShopOrders
     {
         $order = DB::table('mshop_order')
             ->where('id', $id)
-            ->first([
-                'id',
-                'invoiceno',
-                'customerid',
-                'statuspayment',
-                'statusdelivery',
-                'price',
-                'currencyid',
-                'ctime',
-            ]);
+            ->first(self::ORDER_COLUMNS);
 
         if ($order === null) {
             return null;
@@ -127,6 +123,83 @@ class ShopOrders
         $order->address = $this->addressesByOrder([$id])[$id] ?? null;
 
         return $order;
+    }
+
+    /**
+     * Fetch a set of orders by their ids, keyed by order id, each carrying its
+     * delivery address.
+     *
+     * @param  array<int, int|string>  $ids
+     * @return Collection<int, object>
+     */
+    public function byIds(array $ids): Collection
+    {
+        $ids = array_values(array_unique(array_map('intval', $ids)));
+
+        if (empty($ids)) {
+            return collect();
+        }
+
+        $orders = DB::table('mshop_order')
+            ->whereIn('id', $ids)
+            ->get(self::ORDER_COLUMNS);
+
+        $addresses = $this->addressesByOrder($ids);
+
+        return $orders->map(function (object $order) use ($addresses): object {
+            $order->address = $addresses[$order->id] ?? null;
+
+            return $order;
+        })->keyBy('id');
+    }
+
+    /**
+     * The products belonging to one order, in the order they were added.
+     *
+     * @return Collection<int, object>
+     */
+    public function items(int $orderId): Collection
+    {
+        return DB::table('mshop_order_product')
+            ->where('parentid', $orderId)
+            ->orderBy('pos')
+            ->get(['name', 'quantity', 'price', 'currencyid']);
+    }
+
+    public static function customerName(?object $order): string
+    {
+        $address = $order->address ?? null;
+        $name = trim(($address->company ?? '') !== ''
+            ? $address->company
+            : trim(($address->firstname ?? '') . ' ' . ($address->lastname ?? '')));
+
+        return $name !== '' ? $name : 'Customer';
+    }
+
+    public static function customerPhone(?object $order): string
+    {
+        $address = $order->address ?? null;
+
+        return ($address->mobile ?? '') ?: ($address->telephone ?? '');
+    }
+
+    public static function customerAddress(?object $order): string
+    {
+        $address = $order->address ?? null;
+
+        if ($address === null) {
+            return '';
+        }
+
+        $parts = array_filter([
+            $address->address1 ?? '',
+            $address->address2 ?? '',
+            $address->address3 ?? '',
+            $address->city ?? '',
+            $address->state ?? '',
+        ], fn ($part) => trim((string) $part) !== '');
+
+        return implode(', ', array_map('trim', $parts));
     }
 
     /**

@@ -21,12 +21,14 @@ class DeliveryAssignment extends Model
         'assigned_at',
         'started_at',
         'delivered_at',
+        'failed_at',
     ];
 
     protected $casts = [
         'assigned_at' => 'datetime',
         'started_at' => 'datetime',
         'delivered_at' => 'datetime',
+        'failed_at' => 'datetime',
     ];
 
     public function deliveryUser(): BelongsTo

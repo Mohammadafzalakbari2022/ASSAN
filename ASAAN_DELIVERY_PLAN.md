@@ -453,7 +453,31 @@ Breeze `/profile` routes are not used by this Aimeos-based app. Out of scope.
   `tests/Feature/DeliveryAssignmentTest.php`,
   `tests/Concerns/CreatesShopOrderTables.php`.
 
+### Phase 3 — Delivery app (DONE, verified)
+
+- Separate, phone-first area at `/delivery` with its own sign-in page
+  (`/delivery/login`). Only active accounts with the delivery role can enter;
+  customers, admins, and disabled accounts are refused with the message shown
+  next to the email field.
+- "My deliveries" list shows only that person's assigned and in-progress orders,
+  with customer name and address.
+- Order screen shows the customer name, tap-to-call phone, address, an "Open on
+  map" link (free OpenStreetMap), the items, and the order total, with
+  **Start delivery**, **Delivered**, and **Couldn't deliver** (reason required).
+- A disabled account is signed out of a live session immediately. Staff can
+  never open or act on another person's delivery.
+- 15 tests pass. The "only your own delivery" check and the "disabled account"
+  check were each disabled on purpose, their tests failed, and the checks were
+  put back.
+- Files: `app/Http/Controllers/Delivery/AuthController.php`,
+  `app/Http/Controllers/Delivery/OrderController.php`,
+  `app/Http/Middleware/EnsureUserActive.php`,
+  `resources/views/delivery/{auth,app}/**`, `routes/delivery.php`,
+  `database/migrations/2026_09_17_000005_*.php`,
+  `tests/Feature/DeliveryAppTest.php`.
+
 ### Next up
 
-Phase 3 — the delivery app itself: separate `/delivery` login, "Today" list, and
-the order screen (address, phone, items, Delivered / Couldn't deliver).
+Phase 4 — status sync: a delivery marked Delivered or Failed must also update the
+shop's own order delivery stage, so the admin order panel and the customer's
+order history agree.
