@@ -17,7 +17,7 @@ class EnsureUserActive
     {
         $user = $request->user();
 
-        if ($user !== null && !$user->active) {
+        if ($user !== null && $user->active === false) {
             Auth::guard('web')->logout();
             $request->session()->invalidate();
             $request->session()->regenerateToken();

@@ -53,7 +53,7 @@ class DeliveryTrackingTest extends TestCase
         $this->actingAs($customer)->postJson(route('delivery.location'), [
             'latitude' => 34.5,
             'longitude' => 69.2,
-        ])->assertForbidden();
+        ])->assertRedirect(route('delivery.login'));
 
         $this->assertDatabaseCount('delivery_locations', 0);
     }

@@ -68,5 +68,6 @@ class Kernel extends HttpKernel
         'asan.guard' => \App\Http\Middleware\AsaanAdminGuard::class,
         'role' => \App\Http\Middleware\EnsureUserRole::class,
         'active' => \App\Http\Middleware\EnsureUserActive::class,
+        'delivery.access' => \App\Http\Middleware\EnsureDeliveryAccess::class,
     ];
 }

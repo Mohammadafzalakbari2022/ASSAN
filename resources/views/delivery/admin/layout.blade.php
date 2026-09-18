@@ -22,6 +22,7 @@
         .alert { padding:0.75rem 1rem; border-radius:0.5rem; margin-block-end:1rem; }
         .alert.ok { background:var(--brand-soft); color:var(--brand); }
         .alert.bad { background:#fdecea; color:var(--danger); }
+        .alert.info { background:#eef2ff; color:#3730a3; }
         table { width:100%; border-collapse:collapse; }
         th, td { text-align:start; padding:0.6rem 0.5rem; border-block-end:1px solid var(--line); vertical-align:middle; }
         th { color:var(--muted); font-weight:600; font-size:0.85rem; }
@@ -69,6 +70,9 @@
         @endif
         @if (session('error'))
             <div class="alert bad">{{ session('error') }}</div>
+        @endif
+        @if (session('info'))
+            <div class="alert info">{{ session('info') }}</div>
         @endif
 
         @yield('content')

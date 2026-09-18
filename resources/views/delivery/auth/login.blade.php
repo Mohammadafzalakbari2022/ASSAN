@@ -3,6 +3,12 @@
 @section('title', 'Sign in')
 
 @section('content')
+    @if ($signedInAs)
+        <div class="alert info" style="margin-block-end:0.9rem;">
+            This browser is signed in as {{ $signedInAs }}. Signing in here switches this browser to the delivery person's account.
+        </div>
+    @endif
+
     <div class="card">
         <h1>Delivery sign in</h1>
 

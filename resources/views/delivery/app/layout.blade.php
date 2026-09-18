@@ -21,6 +21,7 @@
         .alert { padding:0.75rem 1rem; border-radius:0.6rem; margin-block-end:1rem; }
         .alert.ok { background:var(--brand-soft); color:var(--brand); }
         .alert.bad { background:#fdecea; color:var(--danger); }
+        .alert.info { background:#eef2ff; color:#3730a3; }
         h1 { font-size:1.25rem; margin:0 0 1rem; }
         .card { background:#fff; border:1px solid var(--line); border-radius:0.8rem; padding:1rem; margin-block-end:0.9rem; }
         .card h2 { margin:0 0 0.35rem; font-size:1.05rem; }
@@ -84,6 +85,9 @@
         @endif
         @if (session('error'))
             <div class="alert bad">{{ session('error') }}</div>
+        @endif
+        @if (session('info'))
+            <div class="alert info">{{ session('info') }}</div>
         @endif
 
         @yield('content')

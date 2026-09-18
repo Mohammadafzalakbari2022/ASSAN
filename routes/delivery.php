@@ -16,12 +16,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix( 'delivery' )->name( 'delivery.' )->group( function() {
-    Route::middleware( 'guest' )->group( function() {
-        Route::get( 'login', [AuthController::class, 'showLogin'] )->name( 'login' );
-        Route::post( 'login', [AuthController::class, 'login'] )->name( 'login.store' );
-    } );
+    Route::get( 'login', [AuthController::class, 'showLogin'] )->name( 'login' );
+    Route::post( 'login', [AuthController::class, 'login'] )->name( 'login.store' );
 
-    Route::middleware( ['auth', 'role:delivery', 'active'] )->group( function() {
+    Route::middleware( ['auth', 'delivery.access', 'active'] )->group( function() {
         Route::get( '', [OrderController::class, 'index'] )->name( 'orders.index' );
         Route::post( 'logout', [AuthController::class, 'logout'] )->name( 'logout' );
         Route::post( 'location', [LocationController::class, 'store'] )->name( 'location' );

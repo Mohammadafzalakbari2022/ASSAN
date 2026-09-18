@@ -142,11 +142,24 @@ class DeliveryAppTest extends TestCase
         $this->actingAs($staff)->get('/delivery')->assertRedirect(route('delivery.login'));
     }
 
-    public function test_customer_cannot_reach_the_delivery_area(): void
+    public function test_customer_is_redirected_instead_of_forbidden(): void
     {
         $customer = User::factory()->create(['role' => 'customer']);
 
-        $this->actingAs($customer)->get('/delivery')->assertForbidden();
+        $this->actingAs($customer)
+            ->get('/delivery')
+            ->assertRedirect(route('delivery.login'))
+            ->assertSessionHas('info');
+    }
+
+    public function test_shop_account_can_reach_the_delivery_signin_to_switch(): void
+    {
+        $admin = User::factory()->create(['role' => 'admin']);
+
+        $this->actingAs($admin)
+            ->get('/delivery/login')
+            ->assertOk()
+            ->assertSee('delivery person');
     }
 
     public function test_staff_only_sees_their_own_deliveries(): void
